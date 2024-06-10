@@ -30,7 +30,7 @@ jobs:
 
       - name: Deploy to BPIServer
         env:
-          HOST: 192.168.178.21
+          HOST: 197.188.233.112
           USERNAME: bpi
           TARGET_DIR: /var/www/ict-summit-8
           APP_NAME: ict-summit-8 #should match the name of the server block
