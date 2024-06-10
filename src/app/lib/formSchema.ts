@@ -1,0 +1,25 @@
+import { z } from 'zod'
+
+export const FormDataSchema = z.object({
+  participationCategory: z.string({invalid_type_error: "Please select a participation category."}),
+  specifyParticipation: z.string(),
+  generalOrganizationRating: z.string({invalid_type_error: "Please give a rating."}),
+  registrationProceedingsRating: z.string({invalid_type_error: "Please give a rating."}),
+  relevanceOfTopicsRating: z.string({invalid_type_error: "Please give a rating."}),
+  breakAwaySessionRating: z.string({invalid_type_error: "Please give a rating."}),
+  exhibitoionSetupRating: z.string({invalid_type_error: "Please give a rating."}),
+  receivedIctBenefits: z.string({invalid_type_error: "Please select Yes or No."}),
+  specifyIctBenefits: z.string(),
+  bestDescribes: z.string({invalid_type_error: "Please select a word."}),
+  participateAgain: z.string({invalid_type_error: "Please select a preference."}),
+  relevanceOfTopicsToWorkRating: z.string({invalid_type_error: "Please give a rating."}),
+  relevanceOfThemeToIctArenaRating: z.string({invalid_type_error: "Please give a rating."}),
+  relevanceOfSummitToYourInstitutionRating: z.string({invalid_type_error: "Please give a rating."}),
+  usefulnessOfInfroFromBreakawayRating: z.string({invalid_type_error: "Please give a rating."}),
+  extentWhichProductsMatchedSummitThemeRating: z.string({invalid_type_error: "Please give a rating."}),
+  relevanceOfTopicsToPredicamentsFacedByLocalIctMarketRating: z.string({invalid_type_error: "Please give a rating."}),
+  topicsForNextYearSuggestion: z.string().min(1, 'Please give a suggestion.'),
+  themeForNextYearSuggestion: z.string().min(1, 'Please give a suggestion.'),
+  townForNextYearSuggestion: z.string().min(1, 'Please give a suggestion.'),
+  anyOtherSuggestions: z.string().min(1, 'Please give a suggestion.'),
+})

@@ -1,113 +1,654 @@
 import Image from "next/image";
+import Nav from "./ui/nav";
+import { Button } from "./ui/button";
+import {
+  SquareArrowOutUpRight,
+  LocateFixed,
+  Calendar,
+  Download,
+  Facebook,
+  Globe,
+  Linkedin,
+} from "lucide-react";
+import Sponsors2024 from "./ui/sponsors-2024";
+import Presentations from "./ui/presentations";
+import PhotoGallery from "./ui/photo-gallery";
+import VideoGallery from "./ui/video-gallery";
+
+import Link from "next/link";
+import Form from "./ui/form";
+import Sponsors2023 from "./ui/sponsors-2023";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <Nav />
+      <section
+        id="home"
+        className="relative w-full min-h-screen flex items-center justify-center"
+      >
+        <div className="w-full h-full absolute top-0 right-0 -z-10 overflow-hidden">
+          <Image
+            src="/ict-summit-namibia.jpg"
+            alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
+            className="object-cover relative animate-move blur-[2px] sm:blur-none"
+            fill
+            quality={100}
+            priority
+          />
         </div>
-      </div>
+        {/* gradient layer */}
+        <div className="absolute -z-[9] h-full w-full bg-gradient-to-b from-transparent via-[#eceff800] via-80% to-[#ECEFF8] to-100%"></div>
+        {/* content container */}
+        <main className="h-full w-full mt-[172px] px-4 sm:px-8 md:px-[100px] flex flex-col items-start justify-center gap-8">
+          <div className="w-full md:w-1/2 h-full flex flex-col items-center justify-center gap-6 sm:gap-8 ">
+            <h1 className="text-xl text-headings text-left font-bold">
+              8th NATIONAL ICT SUMMIT
+            </h1>
+            <h2 className="text-xl sm:text-2xl text-center text-headings sm:leading-snug leading-relaxed font-medium italic py-2 bg-clip-text w-full ">
+              "Building resilience to <br />
+              <span
+                className="font-bold text-[40px] px-4 sm:text-7xl bg-clip-text text-center text-transparent tracking-tight"
+                style={{
+                  backgroundImage: "radial-gradient(circle, #0095FF , #0077CC)",
+                }}
+              >
+                "ADAPT OR DIE"
+              </span>{" "}
+              <br />
+              in the era of <br />
+              <span className="text-primary font-bold">
+                Digital Transformation
+              </span>{" "}
+              <br className="visible sm:hidden" />
+              and <br className="visible sm:hidden" />
+              <span className="text-primary font-bold">
+                Artificial Intelligence (AI)
+              </span>
+              "
+            </h2>
+            <Button className="text-base border rounded-2xl border-headings bg-transparent text-headings hover:bg-primary hover:border-white hover:text-white active:scale-[.99] group transition-all py-7 px-[18px]">
+              OPEN ICT SUMMIT INVITATION
+              <SquareArrowOutUpRight className="ml-2 h-5 w-5 group-active:scale-[.99]" />
+            </Button>
+            <div className="flex flex-col items-center w-full justify- gap-4 sm:gap-8">
+              <div className="text-headings textlg sm:text-2xl font-semibold flex items-center justify-center gap-4">
+                <LocateFixed className="text-primary" />
+                MERCURE HOTEL, WINDHOEK
+              </div>
+              <div className="text-headings textlg sm:text-2xl font-semibold flex items-center justify-center gap-4">
+                <Calendar className="text-primary" />
+                9-11 September 2024
+              </div>
+            </div>
+          </div>
+        </main>
+      </section>
+      <Sponsors2024 />
+      <section
+        id="about"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(0, 149, 255, 0.2) , rgba(236, 239, 248, 0.2) 50%)",
+        }}
+        className="w-full flex flex-col items-center justify-center h-fit bg-[#ECEFF8]"
+      >
+        <div className="w-full absolute h-full z-[1] opacity-10">
+          <Image
+            src="/brief-background.jpg"
+            alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
+            className="object-cover"
+            fill
+          />
+        </div>
+        {/* container */}
+        <div className="flex flex-col gap-16 z-10  py-16 px-4 sm:px-8 md:px-[100px]">
+          <div className="flex flex-col justify-center items-start gap-8">
+            <h2 className=" text-2xl md:text-4xl font-bold text-headings">
+              THE NATIONAL ICT SUMMIT IN BRIEF
+            </h2>
+            <div className="flex flex-col md:flex-row gap-4">
+              <p className="text-base md:text-lg text-headings">
+                Hundreds of Information and Communication Technology, (ICT)
+                experts and institutions will converge in Windhoek for the 7th
+                National ICT Summit scheduled to take place from the 9th - 11th
+                October 2023. The Summit will be held under the brand
+                “Re-thinking cybersecurity investment to secure the digital
+                economy and its opportunities”. <br /> <br />
+                The Summit creates a platform for the ICT industry to discuss
+                trends and challenges facing the industry globally and in the
+                country. ICT industry players use this platform to showcase
+                their ICT solutions and services. The Summit also exposes the
+                youth to latest ICT trends and affords them the opportunity to
+                also present their latest innovations and inventions.
+              </p>
+              <p className="text-base md:text-lg text-headings">
+                This Summit will define the roadmap for development and
+                effective integration of technology, as well as the agenda for
+                growing ICT for an inclusive society.It will position ICT as a
+                vital tool in achieving Government's main national priorities of
+                economic growth and development towards the goals of poverty
+                eradication and shared prosperity for all Namibians.
+              </p>
+            </div>
+          </div>
+          <div className="w-full h-fit flex flex-col md:flex-row items-start justify-center gap-16">
+            <div className="w-full flex flex-col justify-center items-start gap-8">
+              <h2 className="text-headings font-semibold text-xl md:text-3xl">
+                Mandate
+              </h2>
+              <p className="text-base md:text-lg text-headings">
+                To create a platform for the Information and Communication
+                Technology ( ICT) industry to discuss the trends and challenges
+                facing the industry globally and in the country. To encourage
+                ICT industry players to showcase their ICT solutions as well as
+                to expose the youth to latest ICT trends.
+              </p>
+            </div>
+            <div className="w-full flex flex-col justify-center items-start gap-8">
+              <h2 className="text-headings font-semibold text-xl md:text-3xl">
+                Our Vision
+              </h2>
+              <p className="text-base md:text-lg text-headings">
+                To be the ICT Summit for all Namibians joining hands and live up
+                to the image of ICT for all Namibians.
+              </p>
+            </div>
+            <div className="w-full flex flex-col justify-center items-start gap-8">
+              <h2 className="text-headings font-semibold text-xl md:text-3xl">
+                Our Mission
+              </h2>
+              <p className="text-base md:text-lg text-headings">
+                To be the main catalyst in empowering Namibians to be ICT
+                professionals to be able to unlock the full potential of
+                technology and human capital and deliver value to the citizens,
+                visitors and investors, so that Namibia becomes a leader in ICT
+                development in Africa.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        id="programme"
+        className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-16 bg-[#ECEFF8]"
+      >
+        <div className="border relative overflow-hidden rounded-xl w-full md:w-fit h-fit flex flex-col md:flex-row items-center sm:items-start md:items-center justify-between py-8 px-7 gap-8 md:gap-16">
+          <Image
+            src="/ict-invitation-background.jpg"
+            alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
+            className="object-cover z-[1]"
+            fill
+          />
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          <div className="w-fit h-fit flex flex-col gap-4 md:gap-8 z-[2]">
+            <h2 className="text-white font-semibold text-xl md:text-3xl text-center sm:text-left md:text-center">
+              ICT SUMMIT PROGRAMME 2024
+            </h2>
+            <h3 className="text-[#cceaff] text-center sm:text-left md:text-center font-semibold text-lg md:text-2xl">
+              Download the ICT Summit programme PDF for 2024
+            </h3>
+          </div>
+          <Button
+            className="z-[2] rounded-xl text-headings border-2 border-primary hover:border-none font-medium bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+            size={"lg"}
+          >
+            DOWNLOAD PROGRAMME
+          </Button>
+        </div>
+      </section>
+      <section
+        id="presenters"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(0, 149, 255, 0.2) , rgba(236, 239, 248, 0.2) 50%)",
+        }}
+        className="w-full h-fit flex items-center justify-center px-4 sm:px-[64px] md:px-[100px] py-8 bg-[#ECEFF8]"
+      >
+        <div className="w-full h-full flex flex-col justify-center items-center gap-16">
+          <h2 className="text-headings font-bold text-2xl sm:text-4xl">
+            Presenters
           </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          {/* container */}
+          <div className="flex flex-col max-w-screen-lg mx-auto justify-center items-start gap-8">
+            {/* top part */}
+            <div className="w-full h-fit flex flex-col md:flex-row items-center md:items-start justify-center gap-8">
+              {/* presenter 1 */}
+              <div className="flex flex-col items-center justify-center w-full sm:w-2/3 gap-4 sm:gap-8">
+                <div className="w-full h-[200px] md:h-[400px] relative">
+                  <Image
+                    src="/elton-witbooi.jpeg"
+                    alt="Presentation by Elton Witbooi"
+                    fill
+                    className=" object-contain"
+                  />
+                </div>
+                <div className="w-full h-fit flex flex-col items-start justify-start gap-0 sm:gap-4">
+                  <h3 className="font-semibold text-headings text-lg sm:text-2xl">
+                    Elton Witbooi
+                  </h3>
+                  <p className="text-base sm:text-lg">
+                    Executive: Cyber Security & ICT: CRAN
+                  </p>
+                </div>
+              </div>
+              {/* presenter 2 */}
+              <div className="flex flex-col items-center justify-center w-full sm:w-2/3 gap-4 sm:gap-8">
+                <div className="w-full h-[200px] md:h-[400px] relative">
+                  <Image
+                    src="/nakale.jpeg"
+                    alt="Presentation by Elton Witbooi"
+                    fill
+                    className=" object-contain"
+                  />
+                </div>
+                <div className="w-full h-fit flex flex-col items-start justify-start gap-0 sm:gap-4">
+                  <h3 className="font-semibold text-headings text-lg sm:text-2xl">
+                    Nashilongo Gervasius Nakale
+                  </h3>
+                  <p className="text-base sm:text-lg">
+                    Executive Director and Founder: Namtshuew Digital cc
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+            {/* panel discussion */}
+            <div className="flex flex-col md:flex-row items-center justify-center w-full gap-8">
+              <div className="w-full h-[300px] md:h-[600px] relative">
+                <Image
+                  src="/panel-discussion.jpeg"
+                  alt="Presentation by Elton Witbooi"
+                  fill
+                  className=" object-contain"
+                />
+              </div>
+              <div className="w-full h-fit flex flex-col items-center md:items-start justify-start gap-4">
+                <h3 className="font-semibold text-headings text-2xl">
+                  Panel Discussion
+                </h3>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+                <p className="text-base sm:text-lg text-center md:text-left">
+                  <span className="text-headings text-lg font-semibold">
+                    Dr. Becky Ndjoze-Ojo:
+                  </span>
+                  <br />
+                  Member of parliament and a member of Parliamentary Standing
+                  Committee on ICT and Innovation.
+                </p>
+                <p className="text-base sm:text-lg text-center md:text-left">
+                  <span className="text-headings text-lg font-semibold">
+                    Mrs. Emilia Nghikembua:
+                  </span>
+                  <br />
+                  CEO: CRAN
+                </p>
+                <p className="text-base sm:text-lg text-center md:text-left">
+                  <span className="text-headings text-lg font-semibold">
+                    Prof Heike Winschiers - Theophilus
+                  </span>
+                  <br />
+                  Professor, Department: Software Engineering NUST
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Presentations />
+      <section
+        id="press-release"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(0, 149, 255, 0.2) , rgba(236, 239, 248, 0.2) 50%)",
+        }}
+        className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-16 bg-[#ECEFF8]"
+      >
+        <div className="w-full h-full flex flex-col justify-center items-center md:items-start gap-16">
+          <h2 className="text-headings font-semibold text-2xl sm:text-4xl">
+            Press Release
           </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+          <div className="w-full h-fit flex flex-col md:flex-row items-center md:items-start justify-center gap-8">
+            <div className="flex flex-col items-center justify-center w-full sm:w-2/3 gap-8">
+              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg">
+                <Image
+                  src="/press-release/ict-industry-challenge-2019.jpg"
+                  alt="Presentation by Elton Witbooi"
+                  fill
+                  className=" object-contain"
+                />
+              </div>
+              <div className="w-full h-fit flex items-start justify-start gap-4">
+                <h3 className="font-semibold text-headings text-left text-lg md:text-2xl">
+                  Invitation: Industry Challenge for ICT Summit 2019
+                </h3>
+                <Button className="bg-transparent">
+                  <Link
+                    href="/press-release/Ict-summit-industry-challenge-2019.pdf"
+                    target="_blank"
+                  >
+                    <Download className="text-headings" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+            <div className="flex flex-col items-center sm:items-start justify-center  w-full sm:w-2/3 gap-8">
+              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg">
+                <Image
+                  src="/press-release/ict-summit-press-ad-2019.png"
+                  alt="Presentation by Elton Witbooi"
+                  fill
+                  className=" object-contain"
+                />
+              </div>
+              <div className="w-full h-fit flex items-center sm:items-start justify-start gap-4">
+                <h3 className="font-semibold text-headings text-left text-lg md:text-2xl">
+                  ICT Summit Press Ad 2019
+                </h3>
+                <Button className="bg-transparent">
+                  <Link
+                    href="/press-release/Ict-summit-press-ad-2019.pdf"
+                    target="_blank"
+                  >
+                    <Download className="text-headings" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-start justify-center  w-full sm:w-2/3 gap-8">
+              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg">
+                <Image
+                  src="/press-release/ict-summit-logo.png"
+                  alt="Presentation by Elton Witbooi"
+                  fill
+                  className=" object-contain scale-90"
+                />
+              </div>
+              <div className="w-full h-fit flex items-center sm:items-start justify-start gap-4">
+                <h3 className="font-semibold text-headings text-left text-lg md:text-2xl">
+                  ICT Summit Booklet 2023
+                </h3>
+                <Button className="bg-transparent">
+                  <Link
+                    href="/press-release/Ict-summit-booklet-2023.pdf"
+                    target="_blank"
+                  >
+                    <Download className="text-headings" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <PhotoGallery />
+      <VideoGallery />
+      <section
+        id="youth-exhibition"
+        className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-8 bg-[#ECEFF8]"
+      >
+        <div className=" max-w-[960px] border relative overflow-hidden rounded-xl w-fit h-[100vh] md:h-[80vh] flex flex-col-reverse md:flex-row items-center justify-between py-6 md:py-12 px-6 md:px-12 gap-8">
+          <Image
+            src="/ict-invitation-background.jpg"
+            alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
+            className="object-cover z-[1] brightness-50 md:brightness-100"
+            fill
+          />
+
+          <div className="w-full md:w-1/2 h-fit flex flex-col items-center md:items-start gap-8 z-[2]">
+            <div className="flex flex-col justify-center items-center md:items-start gap-4">
+              <h2 className="text-white font-semibold text-xl md:text-3xl">
+                Youth Exhibition Program
+              </h2>
+              <h3 className="text-white md:text-[#cceaff] font-semibold text-center md:text-left text-lg md:text-2xl w-full">
+                For the youth to register and present their ict projects during
+                the national ICT Summit youth day.
+              </h3>
+            </div>
+            <Button
+              className="z-[2] rounded-xl w-fit text-headings border-2 border-primary hover:border-none font-medium bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+              size={"lg"}
+            >
+              Register for Youth Day
+            </Button>
+          </div>
+          <div className="relative w-full md:w-1/2 h-full ">
+            <Image
+              src="/youthday.jpg"
+              alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
+              className="z-[2] object-contain"
+              fill
+            />
+          </div>
+        </div>
+      </section>
+      <section
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 1) 50%)",
+        }}
+        className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-16 bg-[#ECEFF8]"
+      >
+        <div className="w-full max-w-[960px] h-full flex flex-col justify-center items-center gap-16">
+          <div className="w-full h-fit flex flex-col justify-center items-center gap-4">
+            <h2 className="text-headings font-semibold text-left w-full text-2xl md:text-4xl">
+              Our Exhibitors
+            </h2>
+            <p className="text-headings/70 font-semibold text-left w-full text-xl md:text-3xl">
+              A strong line-up of industry leaders and game changers will be
+              exhibiting at this years’ summit. Visit their stands to learn more
+              about their offerings
+            </p>
+          </div>
+
+          {/* container */}
+          <div className="flex flex-col md:flex-row md:flex-wrap w-full mx-auto justify-between items-center md:items-start gap-8">
+            <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl">
+              <Image
+                src="/exhibitors/altus-logo.jpeg"
+                alt="Altus Logo"
+                className="z-[2] object-cover"
+                width={250}
+                height={250}
+              />
+              <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
+                <Link
+                  href="https://na.linkedin.com/company/altusictnamibia"
+                  className="text-headings z-[3] hover:text-headings/50"
+                  target="_blank"
+                >
+                  <Linkedin />
+                </Link>
+                <Link
+                  href="https://www.altus.com.na/"
+                  className="text-headings z-[3] hover:text-headings/50"
+                  target="_blank"
+                >
+                  <Globe />
+                </Link>
+              </div>
+            </div>
+            <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl">
+              <Image
+                src="/exhibitors/datacom-logo.png"
+                alt="Datacom Logo"
+                className="z-[2] object-cover"
+                width={250}
+                height={250}
+              />
+              <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
+                <Link
+                  href="https://www.facebook.com/datacomcommunity/"
+                  className="text-headings z-[3] hover:text-headings/50"
+                  target="_blank"
+                >
+                  <Facebook />
+                </Link>
+                <Link
+                  href="https://datacomnam.com/"
+                  className="text-headings z-[3] hover:text-headings/50"
+                  target="_blank"
+                >
+                  <Globe />
+                </Link>
+              </div>
+            </div>
+            <div className="relative flex items-center justify-center w-[250px] h-[250px] bg-white shadow-xl">
+              <Image
+                src="/exhibitors/loop-logo.png"
+                alt="Loop Logo"
+                className="z-[2] object-cover relative left-8"
+                width={250}
+                height={250}
+              />
+              <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
+                <Link
+                  href="https://www.facebook.com/loopnamibia/"
+                  className="text-headings z-[3] hover:text-headings/50"
+                  target="_blank"
+                >
+                  <Facebook />
+                </Link>
+                <Link
+                  href="https://www.loop.com.na/"
+                  className="text-headings z-[3] hover:text-headings/50"
+                  target="_blank"
+                >
+                  <Globe />
+                </Link>
+              </div>
+            </div>
+            <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl">
+              <Image
+                src="/exhibitors/nbc-logo.webp"
+                alt="NBC Logo"
+                className="z-[2] object-cover"
+                width={250}
+                height={250}
+              />
+              <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
+                <Link
+                  href="https://www.facebook.com/NBCNamibia1/"
+                  className="text-headings z-[3] hover:text-headings/50"
+                  target="_blank"
+                >
+                  <Facebook />
+                </Link>
+                <Link
+                  href="https://www.nbc.na/"
+                  className="text-headings z-[3] hover:text-headings/50"
+                  target="_blank"
+                >
+                  <Globe />
+                </Link>
+              </div>
+            </div>
+            <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl">
+              <Image
+                src="/exhibitors/nipdb-logo.png"
+                alt="NIPDB Logo"
+                className="z-[2] object-cover"
+                width={250}
+                height={250}
+              />
+
+              <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
+                <Link
+                  href="https://www.facebook.com/NIPDB/"
+                  className="text-headings z-[3] hover:text-headings/50"
+                  target="_blank"
+                >
+                  <Facebook />
+                </Link>
+                <Link
+                  href="https://nipdb.com/"
+                  className="text-headings z-[3] hover:text-headings/50"
+                  target="_blank"
+                >
+                  <Globe />
+                </Link>
+              </div>
+            </div>
+            <div className="relative flex items-center justify-center w-[250px] h-[250px] bg-white shadow-xl">
+              <Image
+                src="/exhibitors/yango-logo.png"
+                alt="Yango Logo"
+                className="z-[2] object-cover"
+                fill
+              />
+              <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
+                <Link
+                  href="https://www.facebook.com/yango.namibia/"
+                  className="text-headings z-[3] hover:text-headings/50"
+                  target="_blank"
+                >
+                  <Facebook />
+                </Link>
+                <Link
+                  href="https://yango.com/en_int/"
+                  className="text-headings z-[3] hover:text-headings/50"
+                  target="_blank"
+                >
+                  <Globe />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <Sponsors2023 />
+      <Form /> */}
+      <footer className="w-full h-fit pt-16 pb-8 bg-[#ECEFF8]">
+        {/* container */}
+        <div className="w-full max-w-[960px] px-4 md:px-8 mx-auto flex flex-col items-center justify-center gap-16">
+          <div className="w-full mx-auto flex flex-col items-center justify-center gap-8">
+            <h2 className="text-2xl md:text-4xl font-bold text-headings">
+              Contact Us
+            </h2>
+            <p className="text-lg md:text-2xl text-headings/70 w-full text-center">
+              For any queries or contributions please do not hesitate to reach
+              us:
+            </p>
+          </div>
+          <div className="w-full mx-auto text-xl md:text-3xl flex flex-col text-center items-center justify-center gap-8">
+            <h3 className=" font-semibold text-headings">
+              Contact Person: Ms Paulina Magongo / Ms Eva-Liisa Kafita
+            </h3>
+            <h3 className="font-semibold text-headings">
+              Tel:{" "}
+              <Link href="tel:+264-61-283-2375" className="hover:text-primary">
+                +264 61 283 2375
+              </Link>
+              /
+              <Link href="tel:+264-61-283-2065" className="hover:text-primary">
+                +264 61 283 2065
+              </Link>
+            </h3>
+            <h3 className=" font-semibold text-headings">
+              Email:{" "}
+              <Link
+                href="mailto:ICT.Summit@mict.gov.na"
+                className="hover:text-primary"
+              >
+                ICT.Summit@mict.gov.na
+              </Link>
+            </h3>
+          </div>
+          <p className="text-center">
+            © Copyright 2024, Government of the Republic of Namibia, MICT
+            <br />
+            Powered by{" "}
+            <Link
+              href="https://bi-dynamics.com/"
+              className="text-primary font-bold hover:text-headings"
+            >
+              BI Dynamics Pty Ltd.
+            </Link>
           </p>
-        </a>
-      </div>
-    </main>
+        </div>
+      </footer>
+    </>
   );
 }
