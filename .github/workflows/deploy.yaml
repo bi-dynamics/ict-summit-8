@@ -35,10 +35,7 @@ jobs:
           TARGET_DIR: /var/www/ict-summit-8
           APP_NAME: ict-summit-8 #should match the name of the server block
           PORT: 3000
-          #if multiple deploys are needed from different branches
-          #TARGET_DIR: ${{ github.ref == 'refs/heads/deploytest' && '/var/www/folder_name' || github.ref == 'refs/heads/deployprod' && '/var/www/another-location' }}
-          #APP_NAME: ${{ github.ref == 'refs/heads/deploytest' && 'folder_name' || github.ref == 'refs/heads/deployprod' && 'folder_name_2' }}
-          #PORT: ${{ github.ref == 'refs/heads/deploytest' && '3000' || github.ref == 'refs/heads/deployprod' && '3001' }}
+
         run: |
           ssh $USERNAME@$HOST << EOF
             export PATH=/usr/bin:$PATH
