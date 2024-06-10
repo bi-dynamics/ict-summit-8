@@ -31,9 +31,9 @@ jobs:
       - name: Deploy to BPIServer
         env:
           HOST: 192.168.178.21
-          USERNAME: root
+          USERNAME: bpi
           TARGET_DIR: /var/www/ict-summit-8
-          APP_NAME: ice-summit-8 #should match the name of the server block
+          APP_NAME: ict-summit-8 #should match the name of the server block
           PORT: 3000
           #if multiple deploys are needed from different branches
           #TARGET_DIR: ${{ github.ref == 'refs/heads/deploytest' && '/var/www/folder_name' || github.ref == 'refs/heads/deployprod' && '/var/www/another-location' }}
