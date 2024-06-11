@@ -20,7 +20,7 @@ import { Menu, X } from "lucide-react";
 
 let delta: number;
 export default function Nav() {
-  const [isOpenMenu, setOpenMenu] = useState(false);
+  const [isOpenMenu, setOpenMenu] = useState(true);
   const { scrollY } = useScroll();
   const [showNav, setShowNav] = useState(true);
   const [navAtTop, setNavAtTop] = useState(true);
@@ -47,8 +47,12 @@ export default function Nav() {
     { name: "Presenters", href: "presenters" },
     { name: "Presentations", href: "presentations" },
     { name: "Press Release", href: "press-release" },
-    { name: "Photo Gallery", href: "photo-gallery" },
-    { name: "Video Gallery", href: "video-gallery" },
+    { name: "Photos", href: "photo-gallery" },
+    { name: "Videos", href: "video-gallery" },
+    { name: "Youth Exhibition", href: "youth-exhibition" },
+    { name: "Exhibitors", href: "exhibitors" },
+    { name: "Sponsors 2023", href: "sponsors2023" },
+    { name: "Contact", href: "contact" },
   ];
 
   useEffect(() => {
@@ -61,6 +65,10 @@ export default function Nav() {
     let pressRelease = document.getElementById("press-release");
     let photoGallery = document.getElementById("photo-gallery");
     let videoGallery = document.getElementById("video-gallery");
+    let youthExhibition = document.getElementById("youth-exhibition");
+    let exhibitors = document.getElementById("exhibitors");
+    let sponsors2023 = document.getElementById("sponsors2023");
+    let contact = document.getElementById("contact");
 
     let sections = [
       home,
@@ -72,6 +80,10 @@ export default function Nav() {
       pressRelease,
       photoGallery,
       videoGallery,
+      youthExhibition,
+      exhibitors,
+      sponsors2023,
+      contact,
     ];
 
     const observerOptions = {
@@ -110,6 +122,18 @@ export default function Nav() {
           }
           if (entry.target.id == "video-gallery") {
             setActiveSection("video-gallery");
+          }
+          if (entry.target.id == "youth-exhibition") {
+            setActiveSection("youth-exhibition");
+          }
+          if (entry.target.id == "exhibitors") {
+            setActiveSection("exhibitors");
+          }
+          if (entry.target.id == "sponsors2023") {
+            setActiveSection("sponsors2023");
+          }
+          if (entry.target.id == "contact") {
+            setActiveSection("contact");
           }
         }
       });
@@ -160,18 +184,10 @@ export default function Nav() {
         </Button>
       </div>
       <motion.div
-        variants={{
-          open: {
-            x: "0px",
-          },
-          closed: {
-            x: "-100%",
-          },
-        }}
         animate={isOpenMenu ? "open" : "closed"}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={clsx(
-          "w-full max-h-screen h-fit lg:flex-wrap items-center justify-center pt-2",
+          "w-full max-h-screen h-fit flex flex-col lg:flex-row lg:flex-wrap items-start lg:items-center justify-center pt-2",
           isOpenMenu ? "visible" : "hidden lg:flex"
         )}
       >

@@ -147,14 +147,14 @@ export default function Sponsors2024() {
     }
 
     return controls?.stop;
-  }, [rerender, xTranslation, duration, width]);
+  }, [rerender, xTranslation, duration, width, mustFinish]);
 
   return (
     <main
       id="sponsors2024"
       className="py-16 overflow-hidden relative bg-[#ECEFF8] flex flex-col items-center justify-center space-y-4"
     >
-      <h2 className=" text-headings font-bold text-lg sm:text-2xl z-[12]">
+      <h2 className=" text-headings font-bold w-full text-center text-2xl sm:text-4xl z-[12]">
         Proudly welcoming our 2024 sponsors
       </h2>
       <p className="text-headings text-base sm:text-lg max-w-screen-md text-center z-[12] px-4 sm:px-8">
@@ -178,6 +178,7 @@ export default function Sponsors2024() {
           setMustFinish(true);
           setDuration(FAST_DURATION);
         }}
+        onClick={() => setShowModal(true)}
       >
         {[...images, ...images].map(
           ({ src, sponsorLevel, name, description }, idx) => (
@@ -230,14 +231,14 @@ const Modal = ({ onClose, heading, bodyText, sponsorLevel }: ModalProps) => {
   useEffect(() => {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
+  });
   return (
     <>
       <motion.div
         initial={{ opacity: 0, y: "50%" }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: "50%" }}
-        className="w-[60vw] mx-auto max-h-[40vh] overflow-y-auto fixed bottom-4 z-20 bg-white/95 border-4 border-primary/50 rounded-xl p-8 flex"
+        className="w-[95vw] md:w-[60vw] mx-auto max-h-[40vh] overflow-y-auto fixed bottom-4 z-20 bg-white/95 border-4 border-primary/50 rounded-xl p-8 flex"
         ref={modalRef}
       >
         <div className="w-full flex flex-col items-center justify-start gap-6">

@@ -8,9 +8,15 @@ interface CardProps {
   image: string;
   sponsorLevel: string;
   onShowModal: () => void;
+  onClick?: () => void;
 }
 
-const Card: React.FC<CardProps> = ({ image, sponsorLevel, onShowModal }) => {
+const Card: React.FC<CardProps> = ({
+  image,
+  sponsorLevel,
+  onShowModal,
+  onClick,
+}) => {
   const [showOverlay, setShowOverlay] = useState(false);
 
   return (
@@ -20,6 +26,7 @@ const Card: React.FC<CardProps> = ({ image, sponsorLevel, onShowModal }) => {
         key={image}
         onHoverStart={() => setShowOverlay(true)}
         onHoverEnd={() => setShowOverlay(false)}
+        onClick={onClick}
       >
         <p
           className={clsx(

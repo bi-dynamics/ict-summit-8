@@ -48,7 +48,7 @@ export default function VideoGallery() {
         <h2 className="text-headings font-semibold text-left w-full text-2xl sm:text-4xl">
           Video Gallery
         </h2>
-        <p className="text-headings/70 font-semibold text-left w-full text-xl md:text-3xl">Watch some videos of the previous sessions at the summit</p>
+        <p className="text-headings/70 text-left w-full text-base sm:text-lg">Watch a few videos from the previous sessions at the summit</p>
         </div>
 
         {/* container */}
@@ -99,7 +99,7 @@ export default function VideoGallery() {
           >
             {videos.map(({ src, alt }, index) => (
               <SwiperSlide key={index} className="w-full h-full">
-                <iframe preload="auto" className="w-full h-full object-contain" alt={alt} src={src} />
+                <iframe  className="w-full h-full object-contain" alt={alt} src={src} />
               </SwiperSlide>
             ))}
           </Swiper>

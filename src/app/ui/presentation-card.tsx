@@ -22,11 +22,20 @@ const Card: React.FC<CardProps> = ({ image, href }) => {
     >
       <motion.div className="absolute left-0 top-0 px-2 bottom-0 right-0 z-10 flex justify-center items-end">
         <div className="absolute bg-gradient-to-t from-primary to-transparent pointer-events-none opacity-50 h-1/2 w-full" />
-        <Button className="bg-primary font-semibold mb-2 text-sm z-10 w-full rounded-lg flex items-center justify-center gap-[0.5ch] hover:bg-white hover:border-2 hover:border-primary">
-          <Link href={href} target="_blank" referrerPolicy="no-referrer">
+        <Link
+          href={href}
+          className="w-fit h-fit z-10"
+          target="_blank"
+          referrerPolicy="no-referrer"
+        >
+          <Button
+            about="download presentation"
+            aria-label="Download Presentation"
+            className="bg-primary font-semibold mb-2 text-sm z-10 w-full rounded-lg flex items-center justify-center gap-[0.5ch] hover:bg-white hover:border-2 hover:border-primary"
+          >
             <span className="text-headings">Download Presentation</span>
-          </Link>
-        </Button>
+          </Button>
+        </Link>
       </motion.div>
 
       <Image

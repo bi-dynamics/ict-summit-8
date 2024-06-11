@@ -283,7 +283,8 @@ export default function Form() {
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <h2 className="text-base font-semibold leading-7 text-gray-900">
-                If your previous answer was "None of the above", please specify.
+                If your previous answer was &quot;None of the above&quot;,
+                please specify.
               </h2>
 
               <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
@@ -1012,7 +1013,8 @@ export default function Form() {
                 </div>
                 <div className="flex flex-col gap-4 items-start">
                   <p className="text-sm pb-2 border-b-2 border-b-slate-200">
-                    The extent to which the Summit meets your institution's need
+                    The extent to which the Summit meets your institution&apos;s
+                    need
                   </p>
                   <div className="flex h-fit items-center justify-center gap-4">
                     <input

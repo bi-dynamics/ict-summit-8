@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Nav from "./ui/nav";
+import { Metadata } from "next";
 import { Button } from "./ui/button";
 import {
   SquareArrowOutUpRight,
@@ -18,6 +19,28 @@ import VideoGallery from "./ui/video-gallery";
 import Link from "next/link";
 import Form from "./ui/form";
 import Sponsors2023 from "./ui/sponsors-2023";
+
+export const metadata: Metadata = {
+  title: "ICT Summit Namibia",
+
+  description:
+    "Join us for the 8th National ICT Summit, scheduled for 9 - 11 September, 2024. Located at Mercure Hotel Windhoek, Namibia.",
+  openGraph: {
+    type: "website",
+    url: "https://localhost:3000.com/",
+    title: "ICT Summit Namibia",
+    description:
+      "Join us for the 8th National ICT Summit, scheduled for 9 - 11 September, 2024. Located at Mercure Hotel Windhoek, Namibia.",
+    siteName: "ICT Summit Namibia",
+  },
+  twitter: {
+    card: "summary",
+    title: "ICT Summit Namibia",
+
+    description:
+      "Join us for the 8th National ICT Summit, scheduled for 9 - 11 September, 2024. Located at Mercure Hotel Windhoek, Namibia.",
+  },
+};
 
 export default function Home() {
   return (
@@ -46,14 +69,14 @@ export default function Home() {
               8th NATIONAL ICT SUMMIT
             </h1>
             <h2 className="text-xl sm:text-2xl text-center text-headings sm:leading-snug leading-relaxed font-medium italic py-2 bg-clip-text w-full ">
-              "Building resilience to <br />
+              &quot;Building resilience to <br />
               <span
                 className="font-bold text-[40px] px-4 sm:text-7xl bg-clip-text text-center text-transparent tracking-tight"
                 style={{
                   backgroundImage: "radial-gradient(circle, #0095FF , #0077CC)",
                 }}
               >
-                "ADAPT OR DIE"
+                &quot;ADAPT OR DIE&quot;
               </span>{" "}
               <br />
               in the era of <br />
@@ -65,12 +88,22 @@ export default function Home() {
               <span className="text-primary font-bold">
                 Artificial Intelligence (AI)
               </span>
-              "
+              &quot;
             </h2>
-            <Button className="text-base border rounded-2xl border-headings bg-transparent text-headings hover:bg-primary hover:border-white hover:text-white active:scale-[.99] group transition-all py-7 px-[18px]">
-              OPEN ICT SUMMIT INVITATION
-              <SquareArrowOutUpRight className="ml-2 h-5 w-5 group-active:scale-[.99]" />
-            </Button>
+            <Link
+              href="/Invitation-to-attend-the-7th-National-ICT-Summit-OMAs.pdf"
+              target="_blank"
+              referrerPolicy="no-referrer"
+              className="w-fit h-fit flex items-center justify-center"
+            >
+              <Button
+                about="ICT Summit invitation"
+                className="text-base border rounded-2xl border-headings bg-transparent text-headings hover:bg-primary hover:border-white hover:text-white active:scale-[.99] group transition-all py-7 px-[18px]"
+              >
+                OPEN ICT SUMMIT INVITATION
+                <SquareArrowOutUpRight className="ml-2 h-5 w-5 group-active:scale-[.99]" />
+              </Button>
+            </Link>
             <div className="flex flex-col items-center w-full justify- gap-4 sm:gap-8">
               <div className="text-headings textlg sm:text-2xl font-semibold flex items-center justify-center gap-4">
                 <LocateFixed className="text-primary" />
@@ -84,7 +117,7 @@ export default function Home() {
           </div>
         </main>
       </section>
-      <Sponsors2024 />
+      {/* <Sponsors2024 /> */}
       <section
         id="about"
         style={{
@@ -93,11 +126,11 @@ export default function Home() {
         }}
         className="w-full flex flex-col items-center justify-center h-fit bg-[#ECEFF8]"
       >
-        <div className="w-full absolute h-full z-[1] opacity-10">
+        <div className="w-full absolute h-full z-[1] opacity-10 overflow-hidden">
           <Image
             src="/brief-background.jpg"
             alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
-            className="object-cover"
+            className="object-cover sm:animate-move"
             fill
           />
         </div>
@@ -126,9 +159,9 @@ export default function Home() {
                 This Summit will define the roadmap for development and
                 effective integration of technology, as well as the agenda for
                 growing ICT for an inclusive society.It will position ICT as a
-                vital tool in achieving Government's main national priorities of
-                economic growth and development towards the goals of poverty
-                eradication and shared prosperity for all Namibians.
+                vital tool in achieving Government&apos;s main national
+                priorities of economic growth and development towards the goals
+                of poverty eradication and shared prosperity for all Namibians.
               </p>
             </div>
           </div>
@@ -173,28 +206,37 @@ export default function Home() {
         id="programme"
         className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-16 bg-[#ECEFF8]"
       >
-        <div className="border relative overflow-hidden rounded-xl w-full md:w-fit h-fit flex flex-col md:flex-row items-center sm:items-start md:items-center justify-between py-8 px-7 gap-8 md:gap-16">
+        <div className="border relative overflow-hidden rounded-xl w-full md:w-fit h-fit flex flex-col md:flex-row items-center sm:items-start md:items-center justify-between py-8 px-2 sm:px-7 gap-8 md:gap-16">
           <Image
             src="/ict-invitation-background.jpg"
             alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
-            className="object-cover z-[1]"
+            className="object-cover z-[1] animate-move"
             fill
           />
 
-          <div className="w-fit h-fit flex flex-col gap-4 md:gap-8 z-[2]">
+          <div className="w-fit h-fit flex flex-col items-start gap-4 md:gap-8 z-[2]">
             <h2 className="text-white font-semibold text-xl md:text-3xl text-center sm:text-left md:text-center">
               ICT SUMMIT PROGRAMME 2024
             </h2>
-            <h3 className="text-[#cceaff] text-center sm:text-left md:text-center font-semibold text-lg md:text-2xl">
+            <h3 className="text-[#cceaff] text-center sm:text-left md:text-center sm:font-semibold text-lg md:text-2xl">
               Download the ICT Summit programme PDF for 2024
             </h3>
           </div>
-          <Button
-            className="z-[2] rounded-xl text-headings border-2 border-primary hover:border-none font-medium bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
-            size={"lg"}
+          <Link
+            href="/ICT-SUMMIT-PROGRAMME-2023.pdf"
+            target="_blank"
+            referrerPolicy="no-referrer"
+            className="w-fit h-fit flex items-center justify-center"
           >
-            DOWNLOAD PROGRAMME
-          </Button>
+            <Button
+              className="z-[2] rounded-xl text-headings border-2 border-primary hover:border-none font-medium bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+              size={"lg"}
+              about="download programme"
+            >
+              {" "}
+              DOWNLOAD PROGRAMME
+            </Button>
+          </Link>
         </div>
       </section>
       <section
@@ -322,14 +364,15 @@ export default function Home() {
                 <h3 className="font-semibold text-headings text-left text-lg md:text-2xl">
                   Invitation: Industry Challenge for ICT Summit 2019
                 </h3>
-                <Button className="bg-transparent">
-                  <Link
-                    href="/press-release/Ict-summit-industry-challenge-2019.pdf"
-                    target="_blank"
-                  >
+                <Link
+                  href="/press-release/Ict-summit-industry-challenge-2019.pdf"
+                  target="_blank"
+                  className="w-fit h-fit flex items-center justify-center"
+                >
+                  <Button about="download document" className="bg-transparent">
                     <Download className="text-headings" />
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -346,14 +389,15 @@ export default function Home() {
                 <h3 className="font-semibold text-headings text-left text-lg md:text-2xl">
                   ICT Summit Press Ad 2019
                 </h3>
-                <Button className="bg-transparent">
-                  <Link
-                    href="/press-release/Ict-summit-press-ad-2019.pdf"
-                    target="_blank"
-                  >
+                <Link
+                  href="/press-release/Ict-summit-press-ad-2019.pdf"
+                  target="_blank"
+                  className="w-fit h-fit flex items-center justify-center"
+                >
+                  <Button about="download document" className="bg-transparent">
                     <Download className="text-headings" />
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </div>
             </div>
 
@@ -370,14 +414,15 @@ export default function Home() {
                 <h3 className="font-semibold text-headings text-left text-lg md:text-2xl">
                   ICT Summit Booklet 2023
                 </h3>
-                <Button className="bg-transparent">
-                  <Link
-                    href="/press-release/Ict-summit-booklet-2023.pdf"
-                    target="_blank"
-                  >
+                <Link
+                  href="/press-release/Ict-summit-booklet-2023.pdf"
+                  target="_blank"
+                  className="w-fit h-fit flex items-center justify-center"
+                >
+                  <Button about="download document" className="bg-transparent">
                     <Download className="text-headings" />
-                  </Link>
-                </Button>
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -389,30 +434,38 @@ export default function Home() {
         id="youth-exhibition"
         className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-8 bg-[#ECEFF8]"
       >
-        <div className=" max-w-[960px] border relative overflow-hidden rounded-xl w-fit h-[100vh] md:h-[80vh] flex flex-col-reverse md:flex-row items-center justify-between py-6 md:py-12 px-6 md:px-12 gap-8">
+        <div className=" max-w-[960px] border relative overflow-hidden rounded-xl w-fit h-[100vh] md:h-[80vh] flex flex-col-reverse md:flex-row items-center justify-between py-6 md:py-12 px-0 sm:px-6 md:px-12 gap-8">
           <Image
             src="/ict-invitation-background.jpg"
             alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
-            className="object-cover z-[1] brightness-50 md:brightness-100"
+            className="object-cover z-[1] brightness-50 md:brightness-100 animate-move"
             fill
           />
 
           <div className="w-full md:w-1/2 h-fit flex flex-col items-center md:items-start gap-8 z-[2]">
-            <div className="flex flex-col justify-center items-center md:items-start gap-4">
+            <div className="flex flex-col justify-center px-2 items-center md:items-start gap-4">
               <h2 className="text-white font-semibold text-xl md:text-3xl">
                 Youth Exhibition Program
               </h2>
-              <h3 className="text-white md:text-[#cceaff] font-semibold text-center md:text-left text-lg md:text-2xl w-full">
+              <h3 className="text-white md:text-[#cceaff] sm:font-semibold text-center md:text-left text-lg md:text-2xl w-full">
                 For the youth to register and present their ict projects during
                 the national ICT Summit youth day.
               </h3>
             </div>
-            <Button
-              className="z-[2] rounded-xl w-fit text-headings border-2 border-primary hover:border-none font-medium bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
-              size={"lg"}
+            <Link
+              href="https://forms.gle/oJSwotHDNxifShNy6"
+              target="_blank"
+              referrerPolicy="no-referrer"
+              className="w-fit h-fit flex items-center justify-center"
             >
-              Register for Youth Day
-            </Button>
+              <Button
+                className="z-[2] rounded-xl w-fit text-headings border-2 border-primary hover:border-none font-medium bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+                size={"lg"}
+                about="Register for youth day"
+              >
+                REGISTER FOR YOUTH DAY
+              </Button>
+            </Link>
           </div>
           <div className="relative w-full md:w-1/2 h-full ">
             <Image
@@ -425,6 +478,7 @@ export default function Home() {
         </div>
       </section>
       <section
+        id="exhibitors"
         style={{
           backgroundImage:
             "radial-gradient(circle, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 1) 50%)",
@@ -436,7 +490,7 @@ export default function Home() {
             <h2 className="text-headings font-semibold text-left w-full text-2xl md:text-4xl">
               Our Exhibitors
             </h2>
-            <p className="text-headings/70 font-semibold text-left w-full text-xl md:text-3xl">
+            <p className="text-headings/70 text-left w-full text-base sm:text-lg">
               A strong line-up of industry leaders and game changers will be
               exhibiting at this years’ summit. Visit their stands to learn more
               about their offerings
@@ -598,21 +652,21 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* <Sponsors2023 />
-      <Form /> */}
-      <footer className="w-full h-fit pt-16 pb-8 bg-[#ECEFF8]">
+      <Sponsors2023 />
+      {/* <Form /> */}
+      <footer id="contact" className="w-full h-fit pt-16 pb-8 bg-[#ECEFF8]">
         {/* container */}
         <div className="w-full max-w-[960px] px-4 md:px-8 mx-auto flex flex-col items-center justify-center gap-16">
           <div className="w-full mx-auto flex flex-col items-center justify-center gap-8">
-            <h2 className="text-2xl md:text-4xl font-bold text-headings">
+            <h2 className="text-2xl sm:text-4xl font-bold text-headings">
               Contact Us
             </h2>
-            <p className="text-lg md:text-2xl text-headings/70 w-full text-center">
+            <p className="text-base sm:text-lg text-headings/70 w-full text-center">
               For any queries or contributions please do not hesitate to reach
               us:
             </p>
           </div>
-          <div className="w-full mx-auto text-xl md:text-3xl flex flex-col text-center items-center justify-center gap-8">
+          <div className="w-full mx-auto text-lg md:text-xl flex flex-col text-center items-center justify-center gap-8">
             <h3 className=" font-semibold text-headings">
               Contact Person: Ms Paulina Magongo / Ms Eva-Liisa Kafita
             </h3>
