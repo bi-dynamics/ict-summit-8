@@ -20,7 +20,7 @@ import { Menu, X } from "lucide-react";
 
 let delta: number;
 export default function Nav() {
-  const [isOpenMenu, setOpenMenu] = useState(true);
+  const [isOpenMenu, setOpenMenu] = useState(false);
   const { scrollY } = useScroll();
   const [showNav, setShowNav] = useState(true);
   const [navAtTop, setNavAtTop] = useState(true);
@@ -41,7 +41,7 @@ export default function Nav() {
   const [activeSection, setActiveSection] = useState<string>("home");
   let links = [
     { name: "Home", href: "home" },
-    { name: "Sponsors 2024", href: "sponsors2024" },
+    // { name: "Sponsors 2024", href: "sponsors2024" },
     { name: "About", href: "about" },
     { name: "Programme", href: "programme" },
     { name: "Presenters", href: "presenters" },
@@ -155,9 +155,9 @@ export default function Nav() {
       }}
       animate={showNav ? "visible" : "hidden"}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="fixed bg-white/80 backdrop-blur-lg p-4 left-0 top-0 flex flex-col w-full items-center justify-center z-50"
+      className="fixed bg-white/80 max-h-screen overflow-y-scroll lg:overflow-y-hidden  backdrop-blur-lg p-4 left-0 top-0 flex flex-col w-full items-start justify-between md:justify-center z-50"
     >
-      <div className="w-fit flex flex-row gap-4">
+      <div className="w-fit flex flex-row gap-4 self-center">
         <Image
           src="/Coat_of_arms_of_Namibia.svg"
           alt="Namibian Coat of Arms"
@@ -171,24 +171,72 @@ export default function Nav() {
           alt="National ICT Summit Logo"
           width={navAtTop ? 100 : 50}
           height={navAtTop ? 80 : 40}
-          className="transition-all"
+          className="transition-all shrink-0"
           priority
         />
       </div>
-      <p className="text-xs md:text-lg font-bold text-[#455FBA]">
+      <p className="hidden md:flex text-lg self-center font-bold text-[#455FBA]">
         Ministry of information and Communication Technology
       </p>
-      <div className="w-full px-6 mt-2 flex lg:hidden items-center justify-start">
-        <Button onClick={() => setOpenMenu((prev) => !prev)}>
+      <div className="w-fit md:w-full sm:px-6 mt-2 flex lg:hidden items-center justify-start">
+        <Button name="Menu" onClick={() => setOpenMenu((prev) => !prev)}>
           {isOpenMenu ? <X /> : <Menu />}
         </Button>
       </div>
+      {isOpenMenu && (
+        <motion.div
+          animate={isOpenMenu ? "open" : "closed"}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          className={clsx(
+            "w-full max-h-screen h-fit flex flex-col items-start lg:items-center justify-center pt-2"
+          )}
+        >
+          {links.map((link, index) => {
+            const isActive = link.href === activeSection;
+
+            return (
+              <Link
+                onClick={() => setOpenMenu((prev) => !prev)}
+                key={index}
+                title={link.name}
+                href={`#${link.href}`}
+                className={clsx(
+                  "w-fit h-full overflow-hidden relative rounded-xl px-6 py-2 flex items-center justify-center hover:bg-slate-200"
+                )}
+              >
+                <p
+                  className={clsx(
+                    "w-full h-full text-headings transition-all text-base",
+                    isActive ? "font-bold" : "font-medium"
+                  )}
+                >
+                  {link.name}
+                </p>
+                <motion.div
+                  className=" z-[-1] absolute rounded-full  w-full h-full "
+                  variants={{
+                    active: {
+                      x: "0",
+                      opacity: "100%",
+                      backgroundColor: "rgb(226,232,240)",
+                      borderRadius: "0px",
+                    },
+                    inactive: {
+                      x: delta < 0 ? "-100%" : "100%",
+                      backgroundColor: "rgb(241,245,249)",
+                    },
+                  }}
+                  animate={isActive ? "active" : "inactive"}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                />
+              </Link>
+            );
+          })}
+        </motion.div>
+      )}
       <motion.div
-        animate={isOpenMenu ? "open" : "closed"}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
         className={clsx(
-          "w-full max-h-screen h-fit flex flex-col lg:flex-row lg:flex-wrap items-start lg:items-center justify-center pt-2",
-          isOpenMenu ? "visible" : "hidden lg:flex"
+          "w-full max-h-screen h- flex-col hidden lg:flex lg:flex-row lg:flex-wrap items-start lg:items-center justify-center pt-2"
         )}
       >
         {links.map((link, index) => {

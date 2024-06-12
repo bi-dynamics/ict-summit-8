@@ -13,8 +13,14 @@ import {
 } from "lucide-react";
 import Sponsors2024 from "./ui/sponsors-2024";
 import Presentations from "./ui/presentations";
-import PhotoGallery from "./ui/photo-gallery";
-import VideoGallery from "./ui/video-gallery";
+import dynamic from "next/dynamic";
+
+const PhotoGallery = dynamic(() => import("./ui/photo-gallery"), {
+  ssr: false,
+});
+const VideoGallery = dynamic(() => import("./ui/video-gallery"), {
+  ssr: false,
+});
 
 import Link from "next/link";
 import Form from "./ui/form";
@@ -54,24 +60,27 @@ export default function Home() {
           <Image
             src="/ict-summit-namibia.jpg"
             alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
-            className="object-cover relative animate-move blur-[2px] sm:blur-none"
+            className="object-cover relative animate-move blur-[2px] sm:blur-[4px] md:blur-none"
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
             quality={100}
             priority
           />
+          {/* gradient layer */}
+          <div className="absolute hidden md:block lg:hidden z-[5] h-full w-[70%] left-0 bg-gradient-to-l  from-transparent via-[#eceff8] via-20% to-transparent to-70%"></div>
         </div>
         {/* gradient layer */}
         <div className="absolute -z-[9] h-full w-full bg-gradient-to-b from-transparent via-[#eceff800] via-80% to-[#ECEFF8] to-100%"></div>
         {/* content container */}
-        <main className="h-full w-full mt-[172px] px-4 sm:px-8 md:px-[100px] flex flex-col items-start justify-center gap-8">
-          <div className="w-full md:w-1/2 h-full flex flex-col items-center justify-center gap-6 sm:gap-8 ">
-            <h1 className="text-xl text-headings text-left font-bold">
+        <main className="h-full w-full mt-[172px] md:pt-16 px-4 sm:px-8 lg:px-[100px] flex flex-col items-start justify-center gap-8">
+          <div className="w-full md:w-[60%] lg:w-1/2 h-full flex flex-col items-center justify-center gap-6 sm:gap-8 ">
+            <h1 className="text-2xl -mb-4 text-headings text-left font-black">
               8th NATIONAL ICT SUMMIT
             </h1>
-            <h2 className="text-xl sm:text-2xl text-center text-headings sm:leading-snug leading-relaxed font-medium italic py-2 bg-clip-text w-full ">
+            <h2 className="text-xl sm:text-2xl z-[20] text-center text-headings sm:leading-snug leading-relaxed font-medium italic py-2 bg-clip-text w-full ">
               &quot;Building resilience to <br />
               <span
-                className="font-bold text-[40px] px-4 sm:text-7xl bg-clip-text text-center text-transparent tracking-tight"
+                className="font-bold w-full text-[40px] px-4 sm:text-7xl bg-clip-text text-center text-transparent tracking-tight"
                 style={{
                   backgroundImage: "radial-gradient(circle, #0095FF , #0077CC)",
                 }}
@@ -94,9 +103,11 @@ export default function Home() {
               href="/Invitation-to-attend-the-7th-National-ICT-Summit-OMAs.pdf"
               target="_blank"
               referrerPolicy="no-referrer"
+              title="Summit Invitation"
               className="w-fit h-fit flex items-center justify-center"
             >
               <Button
+                name="ICT Summit Invitation"
                 about="ICT Summit invitation"
                 className="text-base border rounded-2xl border-headings bg-transparent text-headings hover:bg-primary hover:border-white hover:text-white active:scale-[.99] group transition-all py-7 px-[18px]"
               >
@@ -104,12 +115,12 @@ export default function Home() {
                 <SquareArrowOutUpRight className="ml-2 h-5 w-5 group-active:scale-[.99]" />
               </Button>
             </Link>
-            <div className="flex flex-col items-center w-full justify- gap-4 sm:gap-8">
-              <div className="text-headings textlg sm:text-2xl font-semibold flex items-center justify-center gap-4">
+            <div className="flex flex-col sm:flex-row md:flex-col items-center w-full justify-center sm:gap-10 md:gap-4 gap-4">
+              <div className="text-headings text-lg sm:text-xl font-medium flex items-center justify-center gap-4">
                 <LocateFixed className="text-primary" />
-                MERCURE HOTEL, WINDHOEK
+                Mercure Hotel, Windhoek
               </div>
-              <div className="text-headings textlg sm:text-2xl font-semibold flex items-center justify-center gap-4">
+              <div className="text-headings text-lg sm:text-xl font-medium flex items-center justify-center gap-4">
                 <Calendar className="text-primary" />
                 9-11 September 2024
               </div>
@@ -143,11 +154,11 @@ export default function Home() {
             <div className="flex flex-col md:flex-row gap-4">
               <p className="text-base md:text-lg text-headings">
                 Hundreds of Information and Communication Technology, (ICT)
-                experts and institutions will converge in Windhoek for the 7th
+                experts and institutions will converge in Windhoek for the 8th
                 National ICT Summit scheduled to take place from the 9th - 11th
-                October 2023. The Summit will be held under the brand
-                “Re-thinking cybersecurity investment to secure the digital
-                economy and its opportunities”. <br /> <br />
+                September 2024. The Summit will be held under the brand
+                “Building resilience to "Adapt or die" in the era of Digital
+                Transformation and Artificial Intelligence (AI)”. <br /> <br />
                 The Summit creates a platform for the ICT industry to discuss
                 trends and challenges facing the industry globally and in the
                 country. ICT industry players use this platform to showcase
@@ -226,9 +237,11 @@ export default function Home() {
             href="/ICT-SUMMIT-PROGRAMME-2023.pdf"
             target="_blank"
             referrerPolicy="no-referrer"
+            title="ICT Summit Programme"
             className="w-fit h-fit flex items-center justify-center"
           >
             <Button
+              name="Download Programme"
               className="z-[2] rounded-xl text-headings border-2 border-primary hover:border-none font-medium bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
               size={"lg"}
               about="download programme"
@@ -262,6 +275,7 @@ export default function Home() {
                     src="/elton-witbooi.jpeg"
                     alt="Presentation by Elton Witbooi"
                     fill
+                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
                     className=" object-contain"
                   />
                 </div>
@@ -279,8 +293,9 @@ export default function Home() {
                 <div className="w-full h-[200px] md:h-[400px] relative">
                   <Image
                     src="/nakale.jpeg"
-                    alt="Presentation by Elton Witbooi"
+                    alt="Presentation by Gervasius Nakale"
                     fill
+                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
                     className=" object-contain"
                   />
                 </div>
@@ -300,8 +315,9 @@ export default function Home() {
               <div className="w-full h-[300px] md:h-[600px] relative">
                 <Image
                   src="/panel-discussion.jpeg"
-                  alt="Presentation by Elton Witbooi"
+                  alt="Panel Discussion"
                   fill
+                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
                   className=" object-contain"
                 />
               </div>
@@ -367,9 +383,14 @@ export default function Home() {
                 <Link
                   href="/press-release/Ict-summit-industry-challenge-2019.pdf"
                   target="_blank"
+                  title="Download Document"
                   className="w-fit h-fit flex items-center justify-center"
                 >
-                  <Button about="download document" className="bg-transparent">
+                  <Button
+                    name="Download"
+                    about="download document"
+                    className="bg-transparent"
+                  >
                     <Download className="text-headings" />
                   </Button>
                 </Link>
@@ -392,9 +413,14 @@ export default function Home() {
                 <Link
                   href="/press-release/Ict-summit-press-ad-2019.pdf"
                   target="_blank"
+                  title="Download Document"
                   className="w-fit h-fit flex items-center justify-center"
                 >
-                  <Button about="download document" className="bg-transparent">
+                  <Button
+                    name="Download"
+                    about="download document"
+                    className="bg-transparent"
+                  >
                     <Download className="text-headings" />
                   </Button>
                 </Link>
@@ -417,9 +443,14 @@ export default function Home() {
                 <Link
                   href="/press-release/Ict-summit-booklet-2023.pdf"
                   target="_blank"
+                  title="Download Document"
                   className="w-fit h-fit flex items-center justify-center"
                 >
-                  <Button about="download document" className="bg-transparent">
+                  <Button
+                    name="Download"
+                    about="download document"
+                    className="bg-transparent"
+                  >
                     <Download className="text-headings" />
                   </Button>
                 </Link>
@@ -455,10 +486,12 @@ export default function Home() {
             <Link
               href="https://forms.gle/oJSwotHDNxifShNy6"
               target="_blank"
+              title="Register"
               referrerPolicy="no-referrer"
               className="w-fit h-fit flex items-center justify-center"
             >
               <Button
+                name="Register"
                 className="z-[2] rounded-xl w-fit text-headings border-2 border-primary hover:border-none font-medium bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
                 size={"lg"}
                 about="Register for youth day"
@@ -512,6 +545,7 @@ export default function Home() {
                   href="https://na.linkedin.com/company/altusictnamibia"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
+                  title="LinkedIn"
                 >
                   <Linkedin />
                 </Link>
@@ -519,6 +553,7 @@ export default function Home() {
                   href="https://www.altus.com.na/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
+                  title="Website"
                 >
                   <Globe />
                 </Link>
@@ -537,6 +572,7 @@ export default function Home() {
                   href="https://www.facebook.com/datacomcommunity/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
+                  title="Facebook"
                 >
                   <Facebook />
                 </Link>
@@ -544,6 +580,7 @@ export default function Home() {
                   href="https://datacomnam.com/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
+                  title="Website"
                 >
                   <Globe />
                 </Link>
@@ -562,6 +599,7 @@ export default function Home() {
                   href="https://www.facebook.com/loopnamibia/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
+                  title="Facebook"
                 >
                   <Facebook />
                 </Link>
@@ -569,6 +607,7 @@ export default function Home() {
                   href="https://www.loop.com.na/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
+                  title="Website"
                 >
                   <Globe />
                 </Link>
@@ -587,6 +626,7 @@ export default function Home() {
                   href="https://www.facebook.com/NBCNamibia1/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
+                  title="Facebook"
                 >
                   <Facebook />
                 </Link>
@@ -594,6 +634,7 @@ export default function Home() {
                   href="https://www.nbc.na/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
+                  title="Website"
                 >
                   <Globe />
                 </Link>
@@ -601,7 +642,7 @@ export default function Home() {
             </div>
             <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl">
               <Image
-                src="/exhibitors/nipdb-logo.png"
+                src="/exhibitors/NIPDB-logo.png"
                 alt="NIPDB Logo"
                 className="z-[2] object-cover"
                 width={250}
@@ -613,6 +654,7 @@ export default function Home() {
                   href="https://www.facebook.com/NIPDB/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
+                  title="Facebook"
                 >
                   <Facebook />
                 </Link>
@@ -620,6 +662,7 @@ export default function Home() {
                   href="https://nipdb.com/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
+                  title="Website"
                 >
                   <Globe />
                 </Link>
@@ -637,6 +680,7 @@ export default function Home() {
                   href="https://www.facebook.com/yango.namibia/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
+                  title="Facebook"
                 >
                   <Facebook />
                 </Link>
@@ -644,6 +688,7 @@ export default function Home() {
                   href="https://yango.com/en_int/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
+                  title="Website"
                 >
                   <Globe />
                 </Link>
@@ -672,11 +717,19 @@ export default function Home() {
             </h3>
             <h3 className="font-semibold text-headings">
               Tel:{" "}
-              <Link href="tel:+264-61-283-2375" className="hover:text-primary">
+              <Link
+                href="tel:+264-61-283-2375"
+                title="Phone Number"
+                className="hover:text-primary"
+              >
                 +264 61 283 2375
               </Link>
               /
-              <Link href="tel:+264-61-283-2065" className="hover:text-primary">
+              <Link
+                href="tel:+264-61-283-2065"
+                title="Phone Number"
+                className="hover:text-primary"
+              >
                 +264 61 283 2065
               </Link>
             </h3>
@@ -685,6 +738,7 @@ export default function Home() {
               <Link
                 href="mailto:ICT.Summit@mict.gov.na"
                 className="hover:text-primary"
+                title="Email Address"
               >
                 ICT.Summit@mict.gov.na
               </Link>
@@ -695,6 +749,7 @@ export default function Home() {
             <br />
             Powered by{" "}
             <Link
+              title="BI-Dynamics"
               href="https://bi-dynamics.com/"
               className="text-primary font-bold hover:text-headings"
             >

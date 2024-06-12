@@ -32,13 +32,13 @@ const Card: React.FC<CardProps> = ({
           className={clsx(
             " group-hover:translate-y-16 text-center transition-all absolute mt-8 bottom-0 p-2 pt-4 px-4 bg-headings w-full h-16 rounded-b-xl mx-auto font-bold text-md",
             {
-              " text-primary bg-gradient-to-t from-[#e5e4e2] to-[#ECEFF8]":
+              " text-primary bg-gradient-to-t from-[#e5e4e2] via-[#dbd7cd] to-[#ECEFF8]":
                 sponsorLevel === "Platinum",
               " text-primary bg-gradient-to-t from-[#FFD700] from-10% to-[#ECEFF8]":
                 sponsorLevel === "Gold",
               " text-primary bg-gradient-to-t from-[#b8f2ff] to-[#ECEFF8]":
                 sponsorLevel === "Diamond",
-              " text-primary bg-gradient-to-t from-[#c0c0c0] from-10% to-[#ECEFF8]":
+              " text-primary bg-gradient-to-t from-[#d0d0d0] from-10% to-[#ECEFF8]":
                 sponsorLevel === "Silver",
             }
           )}

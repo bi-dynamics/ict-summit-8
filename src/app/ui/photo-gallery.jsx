@@ -112,7 +112,7 @@ const images = [
           >
             {images.map(({ src, alt }, index) => (
               <SwiperSlide key={index} className="w-full h-full">
-                <Image src={src} alt={alt} fill className=" object-contain" />
+                <Image src={src} alt={alt} fill sizes="(max-width: 768px) 395px, (max-width: 1200px) 960px, 960px" className=" object-contain" />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -135,6 +135,7 @@ const images = [
                   src={src}
                   alt={alt}
                   fill
+                  sizes="(max-width: 768px) 33vw, (max-width: 1200px) 33vw, 25vw"
                   className="object-cover opacity-50 active:opacity-100 hover:opacity-100"
                 />
               </SwiperSlide>

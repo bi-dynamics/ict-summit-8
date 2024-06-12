@@ -76,6 +76,7 @@ export default function VideoGallery() {
                   className="w-full h-full  object-contain bg-transparent"
                   
                   title={alt}
+                  alt={alt}
                   src={src}
                   />
               </SwiperSlide>
@@ -99,7 +100,7 @@ export default function VideoGallery() {
           >
             {videos.map(({ src, alt }, index) => (
               <SwiperSlide key={index} className="w-full h-full">
-                <iframe  className="w-full h-full object-contain" alt={alt} src={src} />
+                <iframe  className="w-full h-full object-contain" title={alt} alt={alt} src={src} />
               </SwiperSlide>
             ))}
           </Swiper>
