@@ -157,8 +157,9 @@ export default function Home() {
                 experts and institutions will converge in Windhoek for the 8th
                 National ICT Summit scheduled to take place from the 9th - 11th
                 September 2024. The Summit will be held under the brand
-                “Building resilience to "Adapt or die" in the era of Digital
-                Transformation and Artificial Intelligence (AI)”. <br /> <br />
+                “Building resilience to &quot;Adapt or die&quot; in the era of
+                Digital Transformation and Artificial Intelligence (AI)”. <br />{" "}
+                <br />
                 The Summit creates a platform for the ICT industry to discuss
                 trends and challenges facing the industry globally and in the
                 country. ICT industry players use this platform to showcase
