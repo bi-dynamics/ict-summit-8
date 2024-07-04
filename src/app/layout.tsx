@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Join us for the 8th National ICT Summit, scheduled for 9 - 11 September, 2024. Located at Mercure Hotel Windhoek, Namibia.",
   openGraph: {
     type: "website",
-    url: "https://localhost:3000.com/",
+    url: "https://www.ictsummit.gov.na/",
     title: "ICT Summit Namibia",
     description:
       "Join us for the 8th National ICT Summit, scheduled for 9 - 11 September, 2024. Located at Mercure Hotel Windhoek, Namibia.",
