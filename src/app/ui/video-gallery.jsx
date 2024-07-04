@@ -38,28 +38,29 @@ export default function VideoGallery() {
     id="video-gallery"
       style={{
         backgroundImage:
-          "radial-gradient(circle at top right, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 1) 40%)",
+          "radial-gradient(circle at top right, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 1) 30%)",
       }}
-      className="w-full h-fit flex items-center justify-center px-4 sm:px-[32px] md:px-[100px] py-8 bg-[#ECEFF8]"
+      className="w-full h-fit flex items-center justify-center px-4 sm:px-[32px] md:px-[100px] py-16 bg-[#ECEFF8]"
     >
-      <div className="w-full h-full flex flex-col justify-center items-center gap-16">
+      <div className="w-full max-w-[960px] h-fit flex flex-col justify-center items-center gap-16">
         <div className="w-full h-fit flex flex-col justify-center items-center gap-4">
 
-        <h2 className="text-headings font-semibold text-left w-full text-2xl sm:text-4xl">
+        <h2 className="text-headings font-semibold text-center md:text-left w-full text-3xl sm:text-4xl">
           Video Gallery
         </h2>
-        <p className="text-headings/70 text-left w-full text-base sm:text-lg">Watch a few videos from the previous sessions at the summit</p>
+        <p className="text-headings/70 text-center md:text-left w-full text-base sm:text-lg">Watch a few videos from the previous sessions at the summit</p>
         </div>
 
         {/* container */}
-        <div className="flex flex-col md:flex-row w-full h-[80vh] xl:h-[75vh] mx-auto justify-center items-start gap-8">
+        <div className="flex flex-col md:flex-row w-full h-fit mx-auto justify-center items-start gap-8">
           <Swiper
             spaceBetween={10}
             loop
+            centeredSlides
             navigation={true}
             thumbs={{ swiper: thumbsSwiper }}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="w-full max-w-[960px] h-full md:rounded-l-lg shadow-none bg-transparent"
+            className="w-full md:w-[60vw] h-[30vh] sm:h-[45vh] max-w-[960px] md:rounded-l-lg shadow-none bg-transparent"
             style={{
               "--swiper-navigation-color": "#0095FF",
             }}
@@ -69,8 +70,6 @@ export default function VideoGallery() {
                 key={index}
                 className="w-full h-full flex bg-transparent items-center  justify-center group"
               >
-                <div className="bg-gradient-to-t from-primary hidden to-transparent absolute w-full h-1/4 bottom-0 md:flex items-center justify-end text-2xl font-bold px-16 text-white group-hover:translate-y-full transition-all">{alt}
-                </div>
                 <iframe
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
                   className="w-full h-full  object-contain bg-transparent"
@@ -96,11 +95,11 @@ export default function VideoGallery() {
              } }
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="h-full w-full md:w-2/5 flex max-w-[960px] md:rounded-r-lg"
+            className="h-[10vh] sm:h-[20vh] md:h-[43vh] w-full md:w-[20vw] overflow-y-hidden flex max-w-[960px] md:rounded-r-lg"
           >
             {videos.map(({ src, alt }, index) => (
               <SwiperSlide key={index} className="w-full h-full">
-                <iframe  className="w-full h-full object-contain" title={alt} alt={alt} src={src} />
+                <iframe  className="w-full h-full object-contain overflow-y-hidden" title={alt} alt={alt} src={src} />
               </SwiperSlide>
             ))}
           </Swiper>

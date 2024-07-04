@@ -3,7 +3,6 @@ import Nav from "./ui/nav";
 import { Metadata } from "next";
 import { Button } from "./ui/button";
 import {
-  SquareArrowOutUpRight,
   LocateFixed,
   Calendar,
   Download,
@@ -70,7 +69,7 @@ export default function Home() {
           <div className="absolute hidden md:block lg:hidden z-[5] h-full w-[70%] left-0 bg-gradient-to-l  from-transparent via-[#eceff8] via-20% to-transparent to-70%"></div>
         </div>
         {/* gradient layer */}
-        <div className="absolute -z-[9] h-full w-full bg-gradient-to-b from-transparent via-[#eceff800] via-80% to-[#ECEFF8] to-100%"></div>
+        <div className="absolute -z-[9] h-full w-full bg-gradient-to-b from-transparent via-[#eceff800] via-80% to-[#ECEFF8] to-95%"></div>
         {/* content container */}
         <main className="h-full w-full mt-[172px] md:pt-16 px-4 sm:px-8 lg:px-[100px] flex flex-col items-start justify-center gap-8">
           <div className="w-full md:w-[60%] lg:w-1/2 h-full flex flex-col items-center justify-center gap-6 sm:gap-8 ">
@@ -99,7 +98,7 @@ export default function Home() {
               </span>
               &quot;
             </h2>
-            <Link
+            {/* <Link
               href="/Invitation-to-attend-the-7th-National-ICT-Summit-OMAs.pdf"
               target="_blank"
               referrerPolicy="no-referrer"
@@ -114,11 +113,11 @@ export default function Home() {
                 OPEN ICT SUMMIT INVITATION
                 <SquareArrowOutUpRight className="ml-2 h-5 w-5 group-active:scale-[.99]" />
               </Button>
-            </Link>
+            </Link> */}
             <div className="flex flex-col sm:flex-row md:flex-col items-center w-full justify-center sm:gap-10 md:gap-4 gap-4">
               <div className="text-headings text-lg sm:text-xl font-medium flex items-center justify-center gap-4">
                 <LocateFixed className="text-primary" />
-                Mercure Hotel, Windhoek
+                Venue to be announced
               </div>
               <div className="text-headings text-lg sm:text-xl font-medium flex items-center justify-center gap-4">
                 <Calendar className="text-primary" />
@@ -131,17 +130,13 @@ export default function Home() {
       {/* <Sponsors2024 /> */}
       <section
         id="about"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(0, 149, 255, 0.2) , rgba(236, 239, 248, 0.2) 50%)",
-        }}
-        className="w-full flex flex-col items-center justify-center h-fit bg-[#ECEFF8]"
+        className="w-full overflow-hidden flex flex-col items-center justify-center h-fit bg-[#ECEFF8]"
       >
-        <div className="w-full absolute h-full z-[1] opacity-10 overflow-hidden">
+        <div className="w-full absolute h-[80%] z-[1] opacity-10 overflow-hidden">
           <Image
             src="/brief-background.jpg"
             alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
-            className="object-cover sm:animate-move"
+            className="object-cover"
             fill
           />
         </div>
@@ -216,21 +211,21 @@ export default function Home() {
       </section>
       <section
         id="programme"
-        className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-16 bg-[#ECEFF8]"
+        className="w-full h-fit flex items-center justify-center sm:px-8 lg:px-[100px] py-16 bg-[#ECEFF8]"
       >
-        <div className="border relative overflow-hidden rounded-xl w-full md:w-fit h-fit flex flex-col md:flex-row items-center sm:items-start md:items-center justify-between py-8 px-2 sm:px-7 gap-8 md:gap-16">
+        <div className="border relative overflow-hidden rounded-xl w-full lg:w-fit h-fit flex flex-col md:flex-row items-center sm:items-start md:items-center justify-between py-8 px-1 sm:px-7 gap-8 md:gap-16">
           <Image
             src="/ict-invitation-background.jpg"
             alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
-            className="object-cover z-[1] animate-move"
+            className="object-cover z-[1] lg:animate-move"
             fill
           />
 
-          <div className="w-fit h-fit flex flex-col items-start gap-4 md:gap-8 z-[2]">
+          <div className="w-fit h-fit flex flex-col items-center p-2 sm:items-start gap-4 md:gap-8 z-[2]">
             <h2 className="text-white font-semibold text-xl md:text-3xl text-center sm:text-left md:text-center">
               ICT SUMMIT PROGRAMME 2024
             </h2>
-            <h3 className="text-[#cceaff] text-center sm:text-left md:text-center sm:font-semibold text-lg md:text-2xl">
+            <h3 className="text-[#cceaff] text-center sm:text-left md:text-center sm:font-semibold text-base md:text-2xl">
               Download the ICT Summit programme PDF for 2024
             </h3>
           </div>
@@ -243,7 +238,7 @@ export default function Home() {
           >
             <Button
               name="Download Programme"
-              className="z-[2] rounded-xl text-headings border-2 border-primary hover:border-none font-medium bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+              className="z-[2] rounded-xl text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary font-bold bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
               size={"lg"}
               about="download programme"
             >
@@ -257,12 +252,12 @@ export default function Home() {
         id="presenters"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(0, 149, 255, 0.2) , rgba(236, 239, 248, 0.2) 50%)",
+            "radial-gradient(circle, rgba(0, 149, 255, 0.4) , rgba(236, 239, 248, 0.2) 50%)",
         }}
         className="w-full h-fit flex items-center justify-center px-4 sm:px-[64px] md:px-[100px] py-8 bg-[#ECEFF8]"
       >
         <div className="w-full h-full flex flex-col justify-center items-center gap-16">
-          <h2 className="text-headings font-bold text-2xl sm:text-4xl">
+          <h2 className="text-headings font-bold text-3xl sm:text-4xl">
             Presenters
           </h2>
           {/* container */}
@@ -270,7 +265,7 @@ export default function Home() {
             {/* top part */}
             <div className="w-full h-fit flex flex-col md:flex-row items-center md:items-start justify-center gap-8">
               {/* presenter 1 */}
-              <div className="flex flex-col items-center justify-center w-full sm:w-2/3 gap-4 sm:gap-8">
+              <div className="flex flex-col items-center justify-center w-full sm:w-2/3 gap-4">
                 <div className="w-full h-[200px] md:h-[400px] relative">
                   <Image
                     src="/elton-witbooi.jpeg"
@@ -284,13 +279,13 @@ export default function Home() {
                   <h3 className="font-semibold text-headings text-lg sm:text-2xl">
                     Elton Witbooi
                   </h3>
-                  <p className="text-base sm:text-lg">
+                  <p className="text-base">
                     Executive: Cyber Security & ICT: CRAN
                   </p>
                 </div>
               </div>
               {/* presenter 2 */}
-              <div className="flex flex-col items-center justify-center w-full sm:w-2/3 gap-4 sm:gap-8">
+              <div className="flex flex-col items-center justify-center w-full sm:w-2/3 gap-4">
                 <div className="w-full h-[200px] md:h-[400px] relative">
                   <Image
                     src="/nakale.jpeg"
@@ -304,7 +299,7 @@ export default function Home() {
                   <h3 className="font-semibold text-headings text-lg sm:text-2xl">
                     Nashilongo Gervasius Nakale
                   </h3>
-                  <p className="text-base sm:text-lg">
+                  <p className="text-base">
                     Executive Director and Founder: Namtshuew Digital cc
                   </p>
                 </div>
@@ -327,7 +322,7 @@ export default function Home() {
                   Panel Discussion
                 </h3>
 
-                <p className="text-base sm:text-lg text-center md:text-left">
+                <p className="text-base text-center md:text-left">
                   <span className="text-headings text-lg font-semibold">
                     Dr. Becky Ndjoze-Ojo:
                   </span>
@@ -335,14 +330,14 @@ export default function Home() {
                   Member of parliament and a member of Parliamentary Standing
                   Committee on ICT and Innovation.
                 </p>
-                <p className="text-base sm:text-lg text-center md:text-left">
+                <p className="text-base text-center md:text-left">
                   <span className="text-headings text-lg font-semibold">
                     Mrs. Emilia Nghikembua:
                   </span>
                   <br />
                   CEO: CRAN
                 </p>
-                <p className="text-base sm:text-lg text-center md:text-left">
+                <p className="text-base text-center md:text-left">
                   <span className="text-headings text-lg font-semibold">
                     Prof Heike Winschiers - Theophilus
                   </span>
@@ -359,12 +354,12 @@ export default function Home() {
         id="press-release"
         style={{
           backgroundImage:
-            "radial-gradient(circle, rgba(0, 149, 255, 0.2) , rgba(236, 239, 248, 0.2) 50%)",
+            "radial-gradient(circle, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 0.2) 30%)",
         }}
         className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-16 bg-[#ECEFF8]"
       >
         <div className="w-full h-full flex flex-col justify-center items-center md:items-start gap-16">
-          <h2 className="text-headings font-semibold text-2xl sm:text-4xl">
+          <h2 className="text-headings font-semibold text-3xl sm:text-4xl">
             Press Release
           </h2>
           <div className="w-full h-fit flex flex-col md:flex-row items-center md:items-start justify-center gap-8">
@@ -372,13 +367,13 @@ export default function Home() {
               <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg">
                 <Image
                   src="/press-release/ict-industry-challenge-2019.jpg"
-                  alt="Presentation by Elton Witbooi"
+                  alt="Industry challenge for ICT Summit 2019"
                   fill
                   className=" object-contain"
                 />
               </div>
               <div className="w-full h-fit flex items-start justify-start gap-4">
-                <h3 className="font-semibold text-headings text-left text-lg md:text-2xl">
+                <h3 className="font-semibold text-headings text-left text-lg md:text-xl">
                   Invitation: Industry Challenge for ICT Summit 2019
                 </h3>
                 <Link
@@ -402,13 +397,13 @@ export default function Home() {
               <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg">
                 <Image
                   src="/press-release/ict-summit-press-ad-2019.png"
-                  alt="Presentation by Elton Witbooi"
+                  alt="ICT Summit Press Ad 2019"
                   fill
                   className=" object-contain"
                 />
               </div>
-              <div className="w-full h-fit flex items-center sm:items-start justify-start gap-4">
-                <h3 className="font-semibold text-headings text-left text-lg md:text-2xl">
+              <div className="w-full h-fit flex items-center justify-start gap-4">
+                <h3 className="font-semibold text-headings text-left text-lg md:text-xl">
                   ICT Summit Press Ad 2019
                 </h3>
                 <Link
@@ -432,13 +427,13 @@ export default function Home() {
               <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg">
                 <Image
                   src="/press-release/ict-summit-logo.png"
-                  alt="Presentation by Elton Witbooi"
+                  alt="ICT Summit Booklet 2023"
                   fill
                   className=" object-contain scale-90"
                 />
               </div>
-              <div className="w-full h-fit flex items-center sm:items-start justify-start gap-4">
-                <h3 className="font-semibold text-headings text-left text-lg md:text-2xl">
+              <div className="w-full h-fit flex items-center justify-start gap-4">
+                <h3 className="font-semibold text-headings text-left text-lg md:text-xl">
                   ICT Summit Booklet 2023
                 </h3>
                 <Link
@@ -464,22 +459,22 @@ export default function Home() {
       <VideoGallery />
       <section
         id="youth-exhibition"
-        className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-8 bg-[#ECEFF8]"
+        className="w-full h-fit flex items-center justify-center sm:px-8 md:px-[100px] py-8 bg-[#ECEFF8]"
       >
-        <div className=" max-w-[960px] border relative overflow-hidden rounded-xl w-fit h-[100vh] md:h-[80vh] flex flex-col-reverse md:flex-row items-center justify-between py-6 md:py-12 px-0 sm:px-6 md:px-12 gap-8">
+        <div className=" max-w-[960px] border relative overflow-hidden rounded-xl w-fit h-[100vh] md:h-[80vh] flex flex-col-reverse md:flex-row items-center justify-between py-12 md:py-12 px-0 sm:px-6 md:px-12 gap-8">
           <Image
             src="/ict-invitation-background.jpg"
             alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
-            className="object-cover z-[1] brightness-50 md:brightness-100 animate-move"
+            className="object-cover blur-[2px] sm:blur-0 z-[1] brightness-50 md:brightness-100 sm:animate-move"
             fill
           />
 
           <div className="w-full md:w-1/2 h-fit flex flex-col items-center md:items-start gap-8 z-[2]">
-            <div className="flex flex-col justify-center px-2 items-center md:items-start gap-4">
-              <h2 className="text-white font-semibold text-xl md:text-3xl">
+            <div className="flex flex-col px-2 justify-center items-center md:items-start gap-4">
+              <h2 className="text-white font-semibold text-center md:text-left text-3xl md:text-4xl">
                 Youth Exhibition Program
               </h2>
-              <h3 className="text-white md:text-[#cceaff] sm:font-semibold text-center md:text-left text-lg md:text-2xl w-full">
+              <h3 className="text-white md:text-[#cceaff] text-center md:text-left text-lg md:text-2xl w-full">
                 For the youth to register and present their ict projects during
                 the national ICT Summit youth day.
               </h3>
@@ -493,7 +488,7 @@ export default function Home() {
             >
               <Button
                 name="Register"
-                className="z-[2] rounded-xl w-fit text-headings border-2 border-primary hover:border-none font-medium bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+                className="z-[2] rounded-xl font-bold w-fit text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
                 size={"lg"}
                 about="Register for youth day"
               >
@@ -504,8 +499,8 @@ export default function Home() {
           <div className="relative w-full md:w-1/2 h-full ">
             <Image
               src="/youthday.jpg"
-              alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
-              className="z-[2] object-contain"
+              alt="Youth Exhibition 2024"
+              className="z-[2] object-contain lg:object-cover sm:rounded-md"
               fill
             />
           </div>
@@ -513,18 +508,14 @@ export default function Home() {
       </section>
       <section
         id="exhibitors"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 1) 50%)",
-        }}
-        className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-16 bg-[#ECEFF8]"
+        className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-16"
       >
         <div className="w-full max-w-[960px] h-full flex flex-col justify-center items-center gap-16">
           <div className="w-full h-fit flex flex-col justify-center items-center gap-4">
-            <h2 className="text-headings font-semibold text-left w-full text-2xl md:text-4xl">
+            <h2 className="text-headings font-semibold text-center md:text-left w-full text-3xl md:text-4xl">
               Our Exhibitors
             </h2>
-            <p className="text-headings/70 text-left w-full text-base sm:text-lg">
+            <p className="text-headings/70 text-center md:text-left w-full text-base sm:text-lg">
               A strong line-up of industry leaders and game changers will be
               exhibiting at this years’ summit. Visit their stands to learn more
               about their offerings
@@ -704,7 +695,7 @@ export default function Home() {
         {/* container */}
         <div className="w-full max-w-[960px] px-4 md:px-8 mx-auto flex flex-col items-center justify-center gap-16">
           <div className="w-full mx-auto flex flex-col items-center justify-center gap-8">
-            <h2 className="text-2xl sm:text-4xl font-bold text-headings">
+            <h2 className="text-3xl sm:text-4xl font-bold text-headings">
               Contact Us
             </h2>
             <p className="text-base sm:text-lg text-headings/70 w-full text-center">

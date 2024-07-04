@@ -185,7 +185,7 @@ export default function Sponsors2023() {
       id="sponsors2023"
       className="py-16 overflow-hidden relative bg-[#ECEFF8] flex flex-col items-center justify-center space-y-4"
     >
-      <h2 className=" text-headings w-full text-center font-bold text-2xl sm:text-4xl z-[12]">
+      <h2 className=" text-headings px-2 w-full text-center font-bold text-2xl sm:text-4xl z-[12]">
         Without forgetting our 2023 sponsors
       </h2>
       <p className="text-headings/70 text-base sm:text-lg max-w-screen-md text-center z-[12] px-4 sm:px-8">

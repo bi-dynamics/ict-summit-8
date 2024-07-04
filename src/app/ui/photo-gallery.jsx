@@ -89,12 +89,12 @@ const images = [
     id="photo-gallery"
       style={{
         backgroundImage:
-          "radial-gradient(circle at bottom right, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 1) 40%)",
+          "radial-gradient(circle at bottom right, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 1) 30%)",
       }}
       className="w-full h-fit flex items-center justify-center px-4 sm:px-[32px] md:px-[100px] py-16 bg-[#ECEFF8]"
     >
       <div className="w-full max-w-[960px] h-full flex flex-col justify-center items-center gap-16">
-        <h2 className="text-headings font-semibold text-center md:text-right w-full text-2xl sm:text-4xl">
+        <h2 className="text-headings font-semibold text-center md:text-left w-full text-3xl sm:text-4xl">
           Photo Gallery
         </h2>
         {/* container */}
@@ -105,14 +105,14 @@ const images = [
             navigation={true}
             thumbs={{ swiper: thumbsSwiper }}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="w-full max-w-[960px] h-[60vh] rounded-t-lg"
+            className="w-full max-w-[960px] h-[30vh] sm:h-[60vh] rounded-t-lg"
             style={{
               "--swiper-navigation-color": "#0095FF",
             }}
           >
             {images.map(({ src, alt }, index) => (
               <SwiperSlide key={index} className="w-full h-full">
-                <Image src={src} alt={alt} fill sizes="(max-width: 768px) 395px, (max-width: 1200px) 960px, 960px" className=" object-contain" />
+                <Image src={src} alt={alt} fill sizes="(max-width: 768px) 395px, (max-width: 1200px) 960px, 960px" className=" object-contain md:object-cover" />
               </SwiperSlide>
             ))}
           </Swiper>

@@ -1,22 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import {
-  motion,
-  useScroll,
-  useMotionValueEvent,
-  useCycle,
-} from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import { Button } from "./button";
 import { Menu, X } from "lucide-react";
-
-// interface Section {
-//   id: string;
-//   ref: React.RefObject<HTMLElement> | ((instance: HTMLElement) => void); // Can be a ref or a callback function
-// }
 
 let delta: number;
 export default function Nav() {
@@ -188,15 +178,16 @@ export default function Nav() {
           animate={isOpenMenu ? "open" : "closed"}
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className={clsx(
-            "w-full max-h-screen h-fit flex flex-col items-start lg:items-center justify-center pt-2"
+            "w-full max-h-screen h-fit flex lg:hidden flex-col items-start lg:items-center justify-center pt-2"
           )}
         >
           {links.map((link, index) => {
             const isActive = link.href === activeSection;
 
             return (
+              // Mobile Nav
               <Link
-                onClick={() => setOpenMenu((prev) => !prev)}
+                onClick={() => setOpenMenu(false)}
                 key={index}
                 title={link.name}
                 href={`#${link.href}`}
@@ -206,7 +197,7 @@ export default function Nav() {
               >
                 <p
                   className={clsx(
-                    "w-full h-full text-headings transition-all text-base",
+                    "w-full h-full text-headings transition-all text-sm sm:text-base",
                     isActive ? "font-bold" : "font-medium"
                   )}
                 >
@@ -253,7 +244,7 @@ export default function Nav() {
             >
               <p
                 className={clsx(
-                  "w-full h-full text-headings transition-all text-base",
+                  "w-full h-full text-headings transition-all text-xs",
                   isActive ? "font-bold" : "font-medium"
                 )}
               >

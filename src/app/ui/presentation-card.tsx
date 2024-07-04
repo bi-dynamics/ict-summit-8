@@ -31,9 +31,9 @@ const Card: React.FC<CardProps> = ({ image, href }) => {
           <Button
             about="download presentation"
             aria-label="Download Presentation"
-            className="bg-primary font-semibold mb-2 text-sm z-10 w-full rounded-lg flex items-center justify-center gap-[0.5ch] hover:bg-white hover:border-2 hover:border-primary"
+            className="bg-transparent text-headings active:scale-[.99] transition-all hover:scale-105 hover:text-white font-semibold mb-2 text-sm z-10 w-full rounded-lg flex items-center justify-center gap-[0.5ch] hover:border hover:border-primary"
           >
-            <span className="text-headings">Download Presentation</span>
+            Download Presentation
           </Button>
         </Link>
       </motion.div>
