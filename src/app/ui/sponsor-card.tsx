@@ -73,7 +73,7 @@ const Card: React.FC<CardProps> = ({
         </AnimatePresence>
         <Image
           src={image}
-          alt={image.split(".")[0]}
+          alt={image.split(".")[0].split("/")[2].split("-")[0]}
           fill
           style={{ objectFit: "fill" }}
           className="p-8"

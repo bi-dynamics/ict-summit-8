@@ -127,7 +127,7 @@ export default function Home() {
           </div>
         </main>
       </section>
-      {/* <Sponsors2024 /> */}
+      <Sponsors2024 />
       <section
         id="about"
         className="w-full overflow-hidden flex flex-col items-center justify-center h-fit bg-[#ECEFF8]"
@@ -526,23 +526,23 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:flex-wrap w-full mx-auto justify-between items-center md:items-start gap-8">
             <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl">
               <Image
-                src="/exhibitors/altus-logo.jpeg"
-                alt="Altus Logo"
+                src="/exhibitors/nust-logo.png"
+                alt="NUST Logo"
                 className="z-[2] object-cover"
                 width={250}
                 height={250}
               />
               <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
                 <Link
-                  href="https://na.linkedin.com/company/altusictnamibia"
+                  href="https://www.linkedin.com/school/nust-namibia/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
-                  title="LinkedIn"
+                  title="LinkedIn Profile"
                 >
                   <Linkedin />
                 </Link>
                 <Link
-                  href="https://www.altus.com.na/"
+                  href="https://www.nust.na/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
                   title="Website"
@@ -553,23 +553,23 @@ export default function Home() {
             </div>
             <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl">
               <Image
-                src="/exhibitors/datacom-logo.png"
-                alt="Datacom Logo"
+                src="/exhibitors/unam-logo.png"
+                alt="UNAM Logo"
                 className="z-[2] object-cover"
                 width={250}
                 height={250}
               />
               <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
                 <Link
-                  href="https://www.facebook.com/datacomcommunity/"
+                  href="https://www.linkedin.com/school/university-of-namibia/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
-                  title="Facebook"
+                  title="LinkedIn Profile"
                 >
-                  <Facebook />
+                  <Linkedin />
                 </Link>
                 <Link
-                  href="https://datacomnam.com/"
+                  href="https://www.unam.edu.na/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
                   title="Website"
@@ -580,104 +580,23 @@ export default function Home() {
             </div>
             <div className="relative flex items-center justify-center w-[250px] h-[250px] bg-white shadow-xl">
               <Image
-                src="/exhibitors/loop-logo.png"
-                alt="Loop Logo"
-                className="z-[2] object-cover relative left-8"
+                src="/exhibitors/ium-logo.png"
+                alt="IUM Logo"
+                className="z-[2] object-cover p-10"
                 width={250}
                 height={250}
               />
               <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
                 <Link
-                  href="https://www.facebook.com/loopnamibia/"
+                  href="https://www.linkedin.com/company/the-international-university-of-management-ium-/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
-                  title="Facebook"
+                  title="LinkedIn Profile"
                 >
-                  <Facebook />
+                  <Linkedin />
                 </Link>
                 <Link
-                  href="https://www.loop.com.na/"
-                  className="text-headings z-[3] hover:text-headings/50"
-                  target="_blank"
-                  title="Website"
-                >
-                  <Globe />
-                </Link>
-              </div>
-            </div>
-            <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl">
-              <Image
-                src="/exhibitors/nbc-logo.webp"
-                alt="NBC Logo"
-                className="z-[2] object-cover"
-                width={250}
-                height={250}
-              />
-              <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
-                <Link
-                  href="https://www.facebook.com/NBCNamibia1/"
-                  className="text-headings z-[3] hover:text-headings/50"
-                  target="_blank"
-                  title="Facebook"
-                >
-                  <Facebook />
-                </Link>
-                <Link
-                  href="https://www.nbc.na/"
-                  className="text-headings z-[3] hover:text-headings/50"
-                  target="_blank"
-                  title="Website"
-                >
-                  <Globe />
-                </Link>
-              </div>
-            </div>
-            <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl">
-              <Image
-                src="/exhibitors/NIPDB-logo.png"
-                alt="NIPDB Logo"
-                className="z-[2] object-cover"
-                width={250}
-                height={250}
-              />
-
-              <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
-                <Link
-                  href="https://www.facebook.com/NIPDB/"
-                  className="text-headings z-[3] hover:text-headings/50"
-                  target="_blank"
-                  title="Facebook"
-                >
-                  <Facebook />
-                </Link>
-                <Link
-                  href="https://nipdb.com/"
-                  className="text-headings z-[3] hover:text-headings/50"
-                  target="_blank"
-                  title="Website"
-                >
-                  <Globe />
-                </Link>
-              </div>
-            </div>
-            <div className="relative flex items-center justify-center w-[250px] h-[250px] bg-white shadow-xl">
-              <Image
-                src="/exhibitors/yango-logo.png"
-                alt="Yango Logo"
-                className="z-[2] object-cover"
-                fill
-              />
-              <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
-                <Link
-                  href="https://www.facebook.com/yango.namibia/"
-                  className="text-headings z-[3] hover:text-headings/50"
-                  target="_blank"
-                  title="Facebook"
-                >
-                  <Facebook />
-                </Link>
-                <Link
-                  href="https://yango.com/en_int/"
+                  href="https://ium.edu.na/"
                   className="text-headings z-[3] hover:text-headings/50"
                   target="_blank"
                   title="Website"
