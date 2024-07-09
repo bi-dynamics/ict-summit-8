@@ -5,13 +5,13 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ictsummit.gov.na"),
   title: "ICT Summit Namibia",
-
   description:
     "Join us for the 8th National ICT Summit, scheduled for 9 - 11 September, 2024. Located at Mercure Hotel Windhoek, Namibia.",
   openGraph: {
     type: "website",
-    url: "https://www.ictsummit.gov.na/",
+    url: "https://ictsummit.gov.na",
     title: "ICT Summit Namibia",
     description:
       "Join us for the 8th National ICT Summit, scheduled for 9 - 11 September, 2024. Located at Mercure Hotel Windhoek, Namibia.",
