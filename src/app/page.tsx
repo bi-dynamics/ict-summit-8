@@ -173,7 +173,7 @@ export default function Home() {
             </div>
           </div>
           <div className="w-full h-fit flex flex-col md:flex-row items-start justify-center gap-16">
-            <div className="w-full flex flex-col justify-center items-start gap-8">
+            <div className="w-full flex flex-col justify-center items-start gap-4 md:gap-8">
               <h2 className="text-headings font-semibold text-xl md:text-3xl">
                 Mandate
               </h2>
@@ -185,7 +185,7 @@ export default function Home() {
                 to expose the youth to latest ICT trends.
               </p>
             </div>
-            <div className="w-full flex flex-col justify-center items-start gap-8">
+            <div className="w-full flex flex-col justify-center items-start gap-4 md:gap-8">
               <h2 className="text-headings font-semibold text-xl md:text-3xl">
                 Our Vision
               </h2>
@@ -194,7 +194,7 @@ export default function Home() {
                 to the image of ICT for all Namibians.
               </p>
             </div>
-            <div className="w-full flex flex-col justify-center items-start gap-8">
+            <div className="w-full flex flex-col justify-center items-start gap-4 md:gap-8">
               <h2 className="text-headings font-semibold text-xl md:text-3xl">
                 Our Mission
               </h2>
