@@ -705,24 +705,24 @@ export default function Home() {
           </div>
           <div className="w-full mx-auto text-lg md:text-xl flex flex-col text-center items-center justify-center gap-8">
             <h3 className=" font-semibold text-headings">
-              Contact Person: Ms Paulina Magongo / Ms Eva-Liisa Kafita
+              Contact Person: Mr. Fillemon Johannes / Ms Johanna Nashipili
             </h3>
             <h3 className="font-semibold text-headings">
               Tel:{" "}
               <Link
-                href="tel:+264-61-283-2375"
-                title="Phone Number"
+                href="tel:+264-81-286-6223"
+                title="Mr Fillemon Johannes phone number"
                 className="hover:text-primary"
               >
-                +264 61 283 2375
+                +264 81 286 6223
               </Link>
               /
               <Link
-                href="tel:+264-61-283-2065"
-                title="Phone Number"
+                href="tel:+264-81-259-8216"
+                title="Ms Johanna Nashipili phone number"
                 className="hover:text-primary"
               >
-                +264 61 283 2065
+                +264 81 259 8216
               </Link>
             </h3>
             <h3 className=" font-semibold text-headings">
