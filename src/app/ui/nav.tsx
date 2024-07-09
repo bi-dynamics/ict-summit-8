@@ -31,7 +31,7 @@ export default function Nav() {
   const [activeSection, setActiveSection] = useState<string>("home");
   let links = [
     { name: "Home", href: "home" },
-    // { name: "Sponsors 2024", href: "sponsors2024" },
+    { name: "Sponsors 2024", href: "sponsors2024" },
     { name: "About", href: "about" },
     { name: "Programme", href: "programme" },
     { name: "Presenters", href: "presenters" },
@@ -149,11 +149,11 @@ export default function Nav() {
     >
       <div className="w-fit flex flex-row gap-4 self-center">
         <Image
-          src="/Coat_of_arms_of_Namibia.svg"
+          src="/namibian-coat-of-arms.svg"
           alt="Namibian Coat of Arms"
           width={navAtTop ? 80 : 40}
           height={navAtTop ? 80 : 40}
-          className="transition-all"
+          className="transition-all object-contain"
           priority
         />
         <Image
@@ -161,11 +161,11 @@ export default function Nav() {
           alt="National ICT Summit Logo"
           width={navAtTop ? 100 : 50}
           height={navAtTop ? 80 : 40}
-          className="transition-all shrink-0"
+          className="transition-all shrink-0 object-contain"
           priority
         />
       </div>
-      <p className="hidden md:flex text-lg self-center font-bold text-[#455FBA]">
+      <p className="hidden md:flex text-sm self-center font-bold text-[#455FBA]">
         Ministry of information and Communication Technology
       </p>
       <div className="w-fit md:w-full sm:px-6 mt-2 flex lg:hidden items-center justify-start">
