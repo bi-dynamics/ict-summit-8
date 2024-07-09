@@ -149,7 +149,7 @@ export default function Nav() {
     >
       <div className="w-fit flex flex-row gap-4 self-center">
         <Image
-          src="/namibian-coat-of-arms.svg"
+          src="/namibian-coat-of-arms.png"
           alt="Namibian Coat of Arms"
           width={navAtTop ? 80 : 40}
           height={navAtTop ? 80 : 40}
