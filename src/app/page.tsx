@@ -127,6 +127,39 @@ export default function Home() {
           </div>
         </main>
       </section>
+      <section
+        id="launch"
+        className="w-full overflow-hidden flex flex-col items-center justify-center h-fit bg-[#ECEFF8]"
+      >
+        {/* container */}
+        <div className="flex flex-col md:flex-row gap-4 z-10 pt-8  pb-16 px-4 sm:px-8 md:px-[100px]">
+          <div className="w-full relative h-[350px] overflow-hidden">
+            <Image
+              src="/summit-launch.jpeg"
+              alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
+              className="object-contain"
+              fill
+            />
+          </div>
+          <div className="flex flex-col justify-center items-start sm:items-center md:items-start gap-4 md:gap-8">
+            <h2 className=" text-2xl md:text-4xl font-bold text-headings">
+              NATIONAL ICT SUMMIT
+            </h2>
+            <p className="sm:text-center md:text-left">
+              The 8th National ICT Summit launch will be live-streamed on the
+              Ministry of Information and Communication Technology’s Facebook
+              page.
+            </p>
+            <Link
+              className="flex mt-4 gap-2 bg-headings px-[16px] py-[8px] w-full md:w-fit items-center justify-center rounded-lg text-white hover:bg-headings/80"
+              href={"https://www.facebook.com/MICTNamibia/"}
+              target="_blank"
+            >
+              <Facebook /> View MICT Facebook
+            </Link>
+          </div>
+        </div>
+      </section>
       <Sponsors2024 />
       <section
         id="about"
@@ -147,7 +180,7 @@ export default function Home() {
               THE NATIONAL ICT SUMMIT IN BRIEF
             </h2>
             <div className="flex flex-col md:flex-row gap-4">
-              <p className="text-base md:text-lg text-headings">
+              <p className="text-base md:text-lg">
                 Hundreds of Information and Communication Technology, (ICT)
                 experts and institutions will converge in Windhoek for the 8th
                 National ICT Summit scheduled to take place from the 9th - 11th
@@ -162,7 +195,7 @@ export default function Home() {
                 youth to latest ICT trends and affords them the opportunity to
                 also present their latest innovations and inventions.
               </p>
-              <p className="text-base md:text-lg text-headings">
+              <p className="text-base md:text-lg">
                 This Summit will define the roadmap for development and
                 effective integration of technology, as well as the agenda for
                 growing ICT for an inclusive society.It will position ICT as a
@@ -177,7 +210,7 @@ export default function Home() {
               <h2 className="text-headings font-semibold text-xl md:text-3xl">
                 Mandate
               </h2>
-              <p className="text-base md:text-lg text-headings">
+              <p className="text-base md:text-lg">
                 To create a platform for the Information and Communication
                 Technology ( ICT) industry to discuss the trends and challenges
                 facing the industry globally and in the country. To encourage
@@ -189,7 +222,7 @@ export default function Home() {
               <h2 className="text-headings font-semibold text-xl md:text-3xl">
                 Our Vision
               </h2>
-              <p className="text-base md:text-lg text-headings">
+              <p className="text-base md:text-lg">
                 To be the ICT Summit for all Namibians joining hands and live up
                 to the image of ICT for all Namibians.
               </p>
@@ -198,7 +231,7 @@ export default function Home() {
               <h2 className="text-headings font-semibold text-xl md:text-3xl">
                 Our Mission
               </h2>
-              <p className="text-base md:text-lg text-headings">
+              <p className="text-base md:text-lg">
                 To be the main catalyst in empowering Namibians to be ICT
                 professionals to be able to unlock the full potential of
                 technology and human capital and deliver value to the citizens,
