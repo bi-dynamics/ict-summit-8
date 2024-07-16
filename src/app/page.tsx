@@ -133,7 +133,7 @@ export default function Home() {
       >
         {/* container */}
         <div className="flex flex-col md:flex-row gap-4 z-10 pt-8  pb-16 px-4 sm:px-8 md:px-[100px]">
-          <div className="w-full relative h-[350px] overflow-hidden">
+          <div className="w-full relative h-[350px] md:h-[450px] overflow-hidden">
             <Image
               src="/summit-launch.jpeg"
               alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
@@ -246,7 +246,7 @@ export default function Home() {
         id="programme"
         className="w-full h-fit flex items-center justify-center sm:px-8 lg:px-[100px] py-16 bg-[#ECEFF8]"
       >
-        <div className="border relative overflow-hidden rounded-xl w-full lg:w-fit h-fit flex flex-col md:flex-row items-center sm:items-start md:items-center justify-between py-8 px-1 sm:px-7 gap-8 md:gap-16">
+        <div className="border relative overflow-hidden rounded-xl w-full lg:w-fit h-fit flex flex-col md:flex-row items-center sm:items-start md:items-center justify-between py-8 px-4 sm:px-8 gap-8 md:gap-16">
           <Image
             src="/ict-invitation-background.jpg"
             alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
@@ -258,7 +258,7 @@ export default function Home() {
             <h2 className="text-white font-semibold text-xl md:text-3xl text-center sm:text-left md:text-center">
               ICT SUMMIT PROGRAMME 2024
             </h2>
-            <h3 className="text-[#cceaff] text-center sm:text-left md:text-center sm:font-semibold text-base md:text-2xl">
+            <h3 className="text-[#cceaff] text-center sm:text-left lg:text-center text-base md:text-2xl">
               Download the ICT Summit programme PDF for 2024
             </h3>
           </div>
@@ -267,11 +267,11 @@ export default function Home() {
             target="_blank"
             referrerPolicy="no-referrer"
             title="ICT Summit Programme"
-            className="w-fit h-fit flex items-center justify-center"
+            className="w-full md:w-fit h-fit flex items-center justify-center"
           >
             <Button
               name="Download Programme"
-              className="z-[2] rounded-xl text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary font-bold bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+              className="z-[2] w-full rounded-xl text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary font-bold bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
               size={"lg"}
               about="download programme"
             >
@@ -309,10 +309,10 @@ export default function Home() {
                   />
                 </div>
                 <div className="w-full h-fit flex flex-col items-start justify-start gap-0 sm:gap-4">
-                  <h3 className="font-semibold text-headings text-lg sm:text-2xl">
+                  <h3 className="font-semibold text-headings text-lg sm:text-2xl w-full text-center md:text-left">
                     Elton Witbooi
                   </h3>
-                  <p className="text-base">
+                  <p className="text-base text-center md:text-left w-full">
                     Executive: Cyber Security & ICT: CRAN
                   </p>
                 </div>
@@ -329,10 +329,10 @@ export default function Home() {
                   />
                 </div>
                 <div className="w-full h-fit flex flex-col items-start justify-start gap-0 sm:gap-4">
-                  <h3 className="font-semibold text-headings text-lg sm:text-2xl">
+                  <h3 className="font-semibold text-headings text-lg sm:text-2xl w-full text-center md:text-left">
                     Nashilongo Gervasius Nakale
                   </h3>
-                  <p className="text-base">
+                  <p className="text-base w-full text-center md:text-left">
                     Executive Director and Founder: Namtshuew Digital cc
                   </p>
                 </div>
@@ -498,11 +498,11 @@ export default function Home() {
           <Image
             src="/ict-invitation-background.jpg"
             alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
-            className="object-cover blur-[2px] sm:blur-0 z-[1] brightness-50 md:brightness-100 sm:animate-move"
+            className="object-cover blur-[2px] sm:blur-0 z-[1] brightness-50 md:brightness-80 sm:animate-move"
             fill
           />
 
-          <div className="w-full md:w-1/2 h-fit flex flex-col items-center md:items-start gap-8 z-[2]">
+          <div className="w-full md:w-1/2 h-fit flex flex-col items-center md:items-start gap-8 z-[2] px-4 sm:px-8">
             <div className="flex flex-col px-2 justify-center items-center md:items-start gap-4">
               <h2 className="text-white font-semibold text-center md:text-left text-3xl md:text-4xl">
                 Youth Exhibition Program
@@ -517,11 +517,11 @@ export default function Home() {
               target="_blank"
               title="Register"
               referrerPolicy="no-referrer"
-              className="w-fit h-fit flex items-center justify-center"
+              className="w-full md:w-fit h-fit flex items-center justify-center"
             >
               <Button
                 name="Register"
-                className="z-[2] rounded-xl font-bold w-fit text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+                className="z-[2] rounded-xl font-bold w-full text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
                 size={"lg"}
                 about="Register for youth day"
               >
