@@ -61,13 +61,13 @@ const images = [
     src: "/sponsors/namibian-sponsor.svg",
     sponsorLevel: "Platinum",
   },
-  // {
-  //   name: "New Era Publication Corporation",
-  //   description:
-  //     "As one of the leading national news and information institutions, New Era Publication Corporation, a wholly-owned publishing corporation of the Government of the Republic of Namibia, is committed to providing an objective and factual information service to various readership groups, within its authorising environment. The Corporation, established in terms of the New Era Publication Corporation Act, No1 of 1992, publishes newspapers as well as providing content online and on various mobile platforms. New Era is the flagship English daily national newspaper, and Kundana, a weekly national national newspaper published in the indigenous language of Oshiwambo.",
-  //   src: "/sponsors/nepc-sponsor.svg",
-  //   sponsorLevel: "Platinum",
-  // },
+  {
+    name: "New Era Publication Corporation",
+    description:
+      "As one of the leading national news and information institutions, New Era Publication Corporation, a wholly-owned publishing corporation of the Government of the Republic of Namibia, is committed to providing an objective and factual information service to various readership groups, within its authorising environment. The Corporation, established in terms of the New Era Publication Corporation Act, No1 of 1992, publishes newspapers as well as providing content online and on various mobile platforms. New Era is the flagship English daily national newspaper, and Kundana, a weekly national national newspaper published in the indigenous language of Oshiwambo.",
+    src: "/sponsors/nepc-sponsor.svg",
+    sponsorLevel: "Platinum",
+  },
   {
     name: "FNB Namibia",
     description:
@@ -164,6 +164,13 @@ const images = [
     description:
       "TwinRain Solutions is a technology company that provides end-to-end mission-critical solutions for businesses that want to grow and scale their organisations. We have a geographical footprint in Namibia, South Africa, the Democratic Republic of Congo and the United Arab Emirates.Our Mission​: We strives to be the best technology partner possible. We provide innovative solutions and aim to make a difference in the world. We are constantly looking for new ways to improve our services and products. Our goal is to be a trusted resource for our clients, providing them with the tools they need to succeed.",
     src: "/sponsors/twinrain-sponsor.svg",
+    sponsorLevel: "Silver",
+  },
+  {
+    name: "TMU Supplies Pty Ltd",
+    description:
+      "At TMU SDS Pty Ltd, we are committed to delivering exceptional ICT supplies.",
+    src: "/sponsors/tmu-sds-sponsor.svg",
     sponsorLevel: "Silver",
   },
   // {
