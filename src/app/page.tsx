@@ -136,7 +136,7 @@ export default function Home() {
           <div className="w-full relative h-[350px] md:h-[450px] overflow-hidden">
             <Image
               src="/summit-launch.jpeg"
-              alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
+              alt="8th National ICT SUMMIT NAMIBIA Launch"
               className="object-contain"
               fill
             />
@@ -154,6 +154,7 @@ export default function Home() {
               className="flex mt-4 gap-2 bg-headings px-[16px] py-[8px] w-full md:w-fit items-center justify-center rounded-lg text-white hover:bg-headings/80"
               href={"https://www.facebook.com/MICTNamibia/"}
               target="_blank"
+              title="MICT Facebook page"
             >
               <Facebook /> View MICT Facebook
             </Link>
