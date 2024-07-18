@@ -135,7 +135,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row gap-4 z-10 pt-8  pb-16 px-4 sm:px-8 md:px-[100px]">
           <div className="w-full relative h-[350px] md:h-[450px] overflow-hidden">
             <Image
-              src="/summit-launch.jpeg"
+              src="/ict-summit-launch.jpeg"
               alt="8th National ICT SUMMIT Launch"
               className="object-contain"
               fill
