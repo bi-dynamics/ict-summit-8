@@ -79,7 +79,7 @@ const images = [
     name: "Green Enterprise Solutions",
     description:
       "OUR HISTORY - Our company was launched in 2010 as a simple Infrastructure department. During the founding phase, we expanded rapidly, introducing a Software division and a Network and Security department within the first five years. Today we stand as one of the largest ICT solution providers to corporate Namibia. OUR SOLUTIONS -  We are a 360-degree ICT solutions provider. We help clients with custom software, cloud storage, infrastructure, networking, printing and a multitude of other business needs. We have a proven track record of satisfied clients and over forty-five projects completed in the past six years. Our Software solutions focus on a range of different areas covering productivity, enterprise resource planning (ERP) solutions, mobile apps and tailor-made software. These software applications are aimed to facilitate the running of businesses, connect people, increase productivity and efficiency, and improve operations and communications between stakeholders in any business. OUR PRODUCTS - Our range of products, which include Attendance Tracker, Tap A Meal, Mobile World Online, Sendit, MetroGrid and EstApp serve a number of functions and aim to facilitate the running of everyday life more efficiently.",
-    src: "/sponsors/green-sponsor.svg",
+    src: "/sponsors/green-enterprise-sponsor.svg",
     sponsorLevel: "Gold",
   },
   {
@@ -121,7 +121,7 @@ const images = [
     name: "Demshi Investments Holdings (Pty) Ltd",
     description:
       "At Demshi Investments Holdings (Pty) Ltd, we believe that access to high-speed, reliable internet is not just a service; it's a fundamental right. Our mission is to bridge the digital divide, ensuring that every individual and community has the opportunity to thrive in the digital age. We take pride in our open access philosophy. Unlike traditional models, we believe in providing a platform for multiple service providers to offer their services over our robust fiber-optic infrastructure. This open ecosystem promotes healthy competition, innovation, and diverse options for our users.",
-    src: "/sponsors/dih-sponsor.svg",
+    src: "/sponsors/demshi-sponsor.svg",
     sponsorLevel: "Diamond",
   },
   {
@@ -142,7 +142,7 @@ const images = [
     name: "Datacom Technologies - Namibia",
     description:
       "DATACOM TECHNOLOGIES is an IT company providing Information and Communication Technology (ICT) services to corporate Namibia. The company is a 100% Namibian company owned and managed by previously disadvantaged Namibians who are ambitious and focused on corroborating a finer ICT industry. Our services make potential and existing clients happy and worry less about their technological solutions.",
-    src: "/sponsors/datacom-sponsor.svg",
+    src: "/sponsors/datacom-technologies-sponsor.svg",
     sponsorLevel: "Silver",
   },
   {
@@ -156,14 +156,14 @@ const images = [
     name: "Collexia Payments Pty Ltd",
     description:
       "Collexia was founded in 2016 to fill the void of a truly Namibian payments service provider in the market. At our disposal is a vast pool of expertise in the payments and loans landscape, as well as the enabling technology, thanks to many years of experience and collaborations in the field. Collexia is a PISP (Payments Intermediary Service Provider) registered with the Payments Association of Namibia (PAN), and most of its shareholders are locals to Namibia. Over time, we intend to expand our product offering by including support for other payment options in Namibia and by going global.",
-    src: "/sponsors/collexia-sponsor.svg",
+    src: "/sponsors/collexia-payments-sponsor.svg",
     sponsorLevel: "Silver",
   },
   {
     name: "Twinrain Technologies Solutions (PTY) Ltd",
     description:
       "TwinRain Solutions is a technology company that provides end-to-end mission-critical solutions for businesses that want to grow and scale their organisations. We have a geographical footprint in Namibia, South Africa, the Democratic Republic of Congo and the United Arab Emirates.Our Mission​: We strives to be the best technology partner possible. We provide innovative solutions and aim to make a difference in the world. We are constantly looking for new ways to improve our services and products. Our goal is to be a trusted resource for our clients, providing them with the tools they need to succeed.",
-    src: "/sponsors/twinrain-sponsor.svg",
+    src: "/sponsors/twinrain-technologies-solutions-sponsor.svg",
     sponsorLevel: "Silver",
   },
   {
