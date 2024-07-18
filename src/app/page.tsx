@@ -136,7 +136,7 @@ export default function Home() {
           <div className="w-full relative h-[350px] md:h-[450px] overflow-hidden">
             <Image
               src="/summit-launch.jpeg"
-              alt="8th National ICT SUMMIT NAMIBIA Launch"
+              alt="8th National ICT SUMMIT Launch"
               className="object-contain"
               fill
             />
