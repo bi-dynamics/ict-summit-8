@@ -69,6 +69,13 @@ const images = [
     sponsorLevel: "Platinum",
   },
   {
+    name: "Onix Business Solutions",
+    description:
+      "A metamorphosis requires a striking change to appearance and character. ONIX is this change. Not only did our appearance change, but also the way in which we do business. ONIX is a business solutions company focused on wholistic, value-orientated solutions. Technology is no longer our point of departure for our engagements. Your strategy is. We focus on the strategy you as a business should implement and roll that up into a strategic roadmap. Our unique ability to think strategically, understand business strategy and thread together enterprise infrastructure, compliance, digital business solutions and enhanced cybersecurity ensures your technological landscape enhances the value of your business. ONIX will always remain true to its historic roots meaning that Passion, Focus, Significance and Integrity will continue embedded in our core values as will the relentless pursuit of excellence in all that we do.",
+    src: "/sponsors/onix-sponsor.svg",
+    sponsorLevel: "Platinum",
+  },
+  {
     name: "FNB Namibia",
     description:
       "FNB Namibia Ltd. provides a full range of banking services to individuals, while our Business and Corporate Divisions offer services and solutions that meet the needs of enterprises - both large and small - throughout the country. Our extensive countrywide branch and automated teller machine (ATM) networks, as well as FNB Namibia Online Banking, ensure that you have access to your accounts around the clock. Investing in the community and future of our country is a priority. The FNB Namibia Foundation is the vehicle through which we support non-profit organisations and institutions working towards the development and empowerment of the broader community.",
@@ -132,6 +139,20 @@ const images = [
     sponsorLevel: "Diamond",
   },
   {
+    name: "Q-KON",
+    description:
+      "We are a South African privately employee-owned company that was formed in 1988. Today we have 30+ years experience in delivering tomorrow what we promised yesterday. We service Africa through developing long-term sustainable business value and trusted relationships. We are an 'off-grid' telco solutions and service provider. We are focused on the financial enterprise markets. We 'design for sales' and unlock value through the integration of markets, technology and business models.",
+    src: "/sponsors/q-kon-sponsor.svg",
+    sponsorLevel: "Diamond",
+  },
+  {
+    name: "Energy100 FM",
+    description:
+      "Energy 100 FM is a commercial radio station in Windhoek, Namibia. It is the most tuned-in station in Namibia with an estimated figure of 100,000. The station was founded in 1996 and has a listening frequency across Namibia.",
+    src: "/sponsors/energy-100-sponsor.svg",
+    sponsorLevel: "Diamond",
+  },
+  {
     name: "Dimension Data",
     description:
       "Dimension Data is a leader in providing specialized IT infrastructure solutions and services, driven by the belief in the transformative power of technology, to ensure digital transformation and support your organisation in your journey towards a software-defined future. With the majority ownership by the Ohlthaver & List Group of Companies (O&L) and a strategic partnership with NTT, the largest telecommunications company globally, Dimension Data shares a common vision for the evolution of the ICT industry. We have access to the very best technology and cutting-edge insights into global best practices. At the core of Dimension Data's mission is our passion for utilizing ICT to improve our client's businesses, turning ambitions into achievements. Dimension Data offers targeted, relevant IT services and solutions to help organizations address current challenges. Our expertise extends to robust networking platforms, optimizing system performance, and ensuring secure infrastructure, including data centers and cloud computing deployments. Dimension Data Namibia collaborates with expert companies within the Dimension Data & NTT group, providing solutions for leading organizations. Accredited as Cisco Gold, Microsoft Gold, Dell EMC Platinum, HPE Enterprise and FortiNet Platinum partner, we support clients across Namibia with headquarters in Windhoek and a regional office in Walvis Bay. Dimension Data emphasizes delivering solutions rather than just products. Our focus is on striking a balance between reducing operational costs and improving reliability, flexibility, and service quality. We aid organizations in enhancing collaboration, employee productivity, information sharing, knowledge management, and risk reduction against internal and external threats. With a sustainable approach, Dimension Data helps clients reduce their environmental impact while maximizing returns on investment. We specialize in six Lines of Business, including Network Integration, Security, Converged Communications, Customer Interactive Solutions, Microsoft Solutions, and Data Centre Solutions, covering all essential technology areas addressing market trends. Dimension Data takes a partner-oriented approach, assisting clients throughout their IT journey. Our services span across professional services, support, managed services, IT outsourcing, and global procurement. By aligning our people, systems, and processes through ITIL, we deliver standardized services and effectively support and manage IT environments. Understanding that one size does not fit all, Dimension Data offers a suite of support services tailored to clients' multi-geography, multi-vendor needs. These services range from maintenance tasks with agreed service levels to proactive IT issue resolution and scheduled activities. Our managed services teams focus on anticipating client requirements, extracting maximum business value from IT investments, and managing the convergence between technology layers. By outsourcing IT infrastructure operations, clients benefit from comprehensive management reports and performance recommendations. In summary, Dimension Data's comprehensive approach, global reach, expertise across various technologies, and strategic partnerships makes us a preferred choice for organizations seeking to harness the full potential of technology in achieving their business objectives",
@@ -184,7 +205,7 @@ const images = [
 
 export default function Sponsors2023() {
   const FAST_DURATION = 25;
-  const SLOW_DURATION = 75;
+  const SLOW_DURATION = 999;
 
   const [duration, setDuration] = useState(FAST_DURATION);
   let [ref, { width }] = useMeasure();
