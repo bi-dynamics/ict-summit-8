@@ -24,7 +24,7 @@ const VideoGallery = dynamic(() => import("./ui/video-gallery"), {
 import Link from "next/link";
 import Form from "./ui/form";
 import Sponsors2023 from "./ui/sponsors-2023";
-import SponsorshipPackages from "./ui/sponsorship-packages";
+// import SponsorshipPackages from "./ui/sponsorship-packages";
 
 export const metadata: Metadata = {
   title: "ICT Summit Namibia",
