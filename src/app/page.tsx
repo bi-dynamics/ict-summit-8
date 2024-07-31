@@ -24,6 +24,7 @@ const VideoGallery = dynamic(() => import("./ui/video-gallery"), {
 import Link from "next/link";
 import Form from "./ui/form";
 import Sponsors2023 from "./ui/sponsors-2023";
+import SponsorshipPackages from "./ui/sponsorship-packages";
 
 export const metadata: Metadata = {
   title: "ICT Summit Namibia",
@@ -243,7 +244,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section
+      {/* <section
         id="programme"
         className="w-full h-fit flex items-center justify-center sm:px-8 lg:px-[100px] py-16 bg-[#ECEFF8]"
       >
@@ -261,6 +262,45 @@ export default function Home() {
             </h2>
             <h3 className="text-[#cceaff] text-center sm:text-left lg:text-center text-base md:text-2xl">
               Download the ICT Summit programme PDF for 2024
+            </h3>
+          </div>
+          <Link
+            href="/ICT-SUMMIT-PROGRAMME-2023.pdf"
+            target="_blank"
+            referrerPolicy="no-referrer"
+            title="ICT Summit Programme"
+            className="w-full md:w-fit h-fit flex items-center justify-center"
+          >
+            <Button
+              name="Download Programme"
+              className="z-[2] w-full rounded-xl text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary font-bold bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+              size={"lg"}
+              about="download programme"
+            >
+              {" "}
+              DOWNLOAD PROGRAMME
+            </Button>
+          </Link>
+        </div>
+      </section> */}
+      <section
+        id="programme"
+        className="w-full h-fit flex items-center justify-center sm:px-8 lg:px-[100px] py-16 bg-[#ECEFF8]"
+      >
+        <div className="border relative overflow-hidden rounded-xl w-full lg:w-fit h-fit flex flex-col md:flex-row items-center sm:items-start md:items-center justify-between py-8 px-4 sm:px-8 gap-8 md:gap-16">
+          <Image
+            src="/ict-invitation-background.jpg"
+            alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
+            className="object-cover z-[1] lg:animate-move"
+            fill
+          />
+
+          <div className="w-fit h-fit flex flex-col items-center p-2 sm:items-start gap-4 md:gap-8 z-[2]">
+            <h2 className="text-white font-semibold text-xl md:text-3xl text-center sm:text-left md:text-center">
+              ICT SUMMIT PROGRAMME 2023
+            </h2>
+            <h3 className="text-[#cceaff] text-center sm:text-left lg:text-center text-base md:text-2xl">
+              Download the ICT Summit programme PDF for 2023
             </h3>
           </div>
           <Link

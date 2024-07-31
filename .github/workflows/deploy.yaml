@@ -1,54 +1,54 @@
-# Update to match your values: branch_name, app_name, SSH key name on GitHub from previous step if changed, server ip, username, port, and server Node pathname (using 'which pm2' on server to get path)
+# # Update to match your values: branch_name, app_name, SSH key name on GitHub from previous step if changed, server ip, username, port, and server Node pathname (using 'which pm2' on server to get path)
 
-name: Deploy Next.js App
+# name: Deploy Next.js App
 
-on:
-  push:
-    branches:
-      - main # Change to your specific branch
-      # - deployprod  # Additional branch for deployment
+# on:
+#   push:
+#     branches:
+#       - main # Change to your specific branch
+#       # - deployprod  # Additional branch for deployment
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+# jobs:
+#   deploy:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
+#       - name: Setup Node.js
+#         uses: actions/setup-node@v4
+#         with:
+#           node-version: "20"
 
-      - name: Check Node.js version
-        run: node -v
+#       - name: Check Node.js version
+#         run: node -v
 
-      - name: Set up SSH
-        uses: webfactory/ssh-agent@v0.9.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+#       - name: Set up SSH
+#         uses: webfactory/ssh-agent@v0.9.0
+#         with:
+#           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Deploy to BPIServer
-        env:
-          HOST: 197.188.233.112
-          USERNAME: bpi
-          TARGET_DIR: /var/www/ict-summit-8
-          APP_NAME: ict-summit-8 #should match the name of the server block
-          PORT: 3000
+#       - name: Deploy to BPIServer
+#         env:
+#           HOST: 197.188.233.112
+#           USERNAME: bpi
+#           TARGET_DIR: /var/www/ict-summit-8
+#           APP_NAME: ict-summit-8 #should match the name of the server block
+#           PORT: 3000
 
-        run: |
-          ssh $USERNAME@$HOST << EOF
-            export PATH=/usr/bin:$PATH
-            cd $TARGET_DIR
-            git pull origin ${GITHUB_REF#refs/heads/}
-            npm install
-            npm run build
-            if pm2 list | grep -q $APP_NAME; then
-              echo "Restarting application: $APP_NAME"
-              pm2 restart $APP_NAME
-            else
-              echo "Starting application: $APP_NAME"
-              pm2 start npm --name $APP_NAME -- start -- --port=$PORT
-            fi            
-            pm2 save
-          EOF
+#         run: |
+#           ssh $USERNAME@$HOST << EOF
+#             export PATH=/usr/bin:$PATH
+#             cd $TARGET_DIR
+#             git pull origin ${GITHUB_REF#refs/heads/}
+#             npm install
+#             npm run build
+#             if pm2 list | grep -q $APP_NAME; then
+#               echo "Restarting application: $APP_NAME"
+#               pm2 restart $APP_NAME
+#             else
+#               echo "Starting application: $APP_NAME"
+#               pm2 start npm --name $APP_NAME -- start -- --port=$PORT
+#             fi
+#             pm2 save
+#           EOF
