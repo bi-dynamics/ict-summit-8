@@ -76,7 +76,7 @@ export default function Presentations() {
       id="presentations"
       className="py-16 relative overflow-hidden bg-[#ECEFF8] flex flex-col items-center justify-center space-y-4"
     >
-      <h2 className=" text-headings font-bold text-3xl sm:text-4xl">
+      <h2 className=" text-headings font-bold text-3xl sm:text-4xl z-[12]">
         2023 Presentations
       </h2>
       {/* gradient layer */}
