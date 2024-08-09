@@ -20,9 +20,11 @@ const PhotoGallery = dynamic(() => import("./ui/photo-gallery"), {
 const VideoGallery = dynamic(() => import("./ui/video-gallery"), {
   ssr: false,
 });
+const RegForm = dynamic(() => import("./ui/registration-form"), {
+  ssr: false,
+});
 
 import Link from "next/link";
-import Form from "./ui/form";
 import Sponsors2023 from "./ui/sponsors-2023";
 // import SponsorshipPackages from "./ui/sponsorship-packages";
 
@@ -423,6 +425,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <RegForm />
+
       <Presentations />
       <section
         id="press-release"
