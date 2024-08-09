@@ -11,11 +11,10 @@ function RegForm() {
           src="https://form.jotform.com/242134684491055"
           className=" min-h-[120vh] min-w-full"
         ></iframe>
-        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
-        <script>
-          window.jotformEmbedHandler("iframe[id='JotFormIFrame-242134684491055']",
-          "https://form.jotform.com/")
-        </script>
+        <script
+          async
+          src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"
+        ></script>
       </div>
     </section>
   );
