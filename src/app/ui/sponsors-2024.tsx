@@ -76,6 +76,13 @@ const images = [
     sponsorLevel: "Platinum",
   },
   {
+    name: "Co-Creating Hub Namibia",
+    description:
+      "CcHUB is Nigeria's first open living lab and pre-incubation space designed to be a multi-functional, multi-purpose space where work to catalyze creative social tech ventures take place. The HUB is a place for technologists, social entrepreneurs, government, tech companies, impact investors and hackers in and around Lagos to co-create new solutions to the many social problems in Nigeria. CcHUB has officially launched its Namibia office, and we couldn't be more excited about this new chapter. The launch event, which took place on Thursday, June 29th, was a remarkable success.",
+    src: "/sponsors/cchub-sponsor.svg",
+    sponsorLevel: "Platinum",
+  },
+  {
     name: "FNB Namibia",
     description:
       "FNB Namibia Ltd. provides a full range of banking services to individuals, while our Business and Corporate Divisions offer services and solutions that meet the needs of enterprises - both large and small - throughout the country. Our extensive countrywide branch and automated teller machine (ATM) networks, as well as FNB Namibia Online Banking, ensure that you have access to your accounts around the clock. Investing in the community and future of our country is a priority. The FNB Namibia Foundation is the vehicle through which we support non-profit organisations and institutions working towards the development and empowerment of the broader community.",
