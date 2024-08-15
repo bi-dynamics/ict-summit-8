@@ -16,23 +16,16 @@ const images = [
     name: "MTC Namibia",
     description:
       "Mobile Telecommunications Limited is a mobile telecommunications company in Namibia providing cellular access. It is the largest mobile operator in Namibia with over two million active subscribers. MTC was established in 1994 and was the only cellular provider in Namibia at that time.",
-    src: "/sponsors/mtc-sponsor.svg",
+    src: "/sponsors/mtc-namibia-sponsor.svg",
     sponsorLevel: "Platinum",
   },
-  // {
-  //   name: "Inclusive And Collaborative Local Tech Innovation Hub",
-  //   description:
-  //     "Inclusive and Collaborative Local Tech Innovation Hub is a project by the Faculty of Computing and Informatics at the Namibia University of Science and technology (NUST). The Hub has been fully funded from November 2017 to October 2019 by the Finnish Embassy in Namibia. Our goal is to become a self-sustaining entity, which will keep on providing inclusive innovation services in Namibia and beyond. To achieve this goal, we work together with partners - private sector companies, parastatals, government entities, NGOs, communities and innovators - who share our vision of a prosperous and inclusive Namibia. What do we offer? Unlike many other innovation Hubs in the world, we are not a physical working space but a network, which brings together people, organisations and resources. Our work includes and empowers those who are usually excluded when new solutions are developed. We are specialised in developing IT innovations, but our approach is people-centric. We understand that technologies in themselves do not solve problems. That is done with people, with help from technologies.",
-  //   src: "/sponsors/techhub-sponsor.svg",
-  //   sponsorLevel: "Platinum",
-  // },
-  // {
-  //   name: "NUST",
-  //   description:
-  //     "NUST is at the forefront of higher education in Namibia. The University offers various Certificates (under- and post-graduate), Diplomas, Bachelor, Bachelor Honours, Master's and Doctoral degrees in more than 60 programmes. NUST is the first Namibian higher education institution to have established a dedicated Quality Assurance Unit; its programmes are accredited by, among others, the Namibia Qualifications Authority (NQA). The University enjoys a cherished partnership with industry, public sector and civic society through various initiatives such as curriculum advisory boards, work intergrated learning and joint research. Students are equipped with a blend of contemporary knowledge, skills and competence acquired in classrooms, simulation laboratories, through field work and job attachments, to drive competitiveness in the knowledge economy. NUST graduates are sought after in the Namibian labour market and beyond, and are accepted for further studies in other universities internationally.",
-  //   src: "/sponsors/nust-sponsor.svg",
-  //   sponsorLevel: "Platinum",
-  // },
+  {
+    name: "Yango Namibia",
+    description:
+      "Yango is a tech company that transforms global technologies into everyday services for local enrichment. With an unwavering commitment to innovation, we reshape and enhance leading cutting-edge technologies from around the world into seamlessly integrated daily services for diverse regions.Our mission is to bridge the gap between leading world innovations and local communities, fostering connections and enhancing everyday living experiences.",
+    src: "/sponsors/yango-sponsor.svg",
+    sponsorLevel: "Platinum",
+  },
   {
     name: "Schoemans",
     description:
@@ -199,6 +192,13 @@ const images = [
     description:
       "At TMU SDS Pty Ltd, we are committed to delivering exceptional ICT supplies.",
     src: "/sponsors/tmu-sds-sponsor.svg",
+    sponsorLevel: "Silver",
+  },
+  {
+    name: "National Commission on Research, Science and Technology",
+    description:
+      "VISION: To be a coordinating agency that facilitates the development of Research, Science, Technology and Innovation towards socio-economic advancement for Namibia by 2022. The vision attempts to galvanize the various stakeholders and mechanisms/means that make up the funnel towards the creation of Research, Science, Technology and Innovation deliverables into an Research and Development commitment and spend that as a lead indicator will further socio-economic development in the context of a knowledge-based economy. MISSION: To establish and strengthen a national system that promotes, develops and informs Research, Science, Technology and Innovation through effective coordination to realize a knowledge-based society. The emphasis is on creating a systematic approach that links and coordinates stakeholders in a delivery funnel towards achieving optimal RSTI relevant deliverables and in that process furthers meaningful progress towards a knowledge based society (socio-economic system/society). ",
+    src: "/sponsors/ncrst-sponsor.svg",
     sponsorLevel: "Silver",
   },
   // {
