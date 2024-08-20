@@ -120,7 +120,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row md:flex-col items-center w-full justify-center sm:gap-10 md:gap-4 gap-4">
               <div className="text-headings text-lg sm:text-xl font-medium flex items-center justify-center gap-4">
                 <LocateFixed className="text-primary" />
-                Venue to be announced
+                Mercure (Safari) Hotel, Windhoek
               </div>
               <div className="text-headings text-lg sm:text-xl font-medium flex items-center justify-center gap-4">
                 <Calendar className="text-primary" />
@@ -135,32 +135,25 @@ export default function Home() {
         className="w-full overflow-hidden flex flex-col items-center justify-center h-fit bg-[#ECEFF8]"
       >
         {/* container */}
-        <div className="flex flex-col md:flex-row gap-4 z-10 pt-8  pb-16 px-4 sm:px-8 md:px-[100px]">
-          <div className="w-full relative h-[350px] md:h-[450px] overflow-hidden">
+        <div className="flex flex-col md:flex-row gap-4 z-10 pt-8  pb-16 px-4 sm:px-8 md:px-[100px] w-full">
+          <div className="flex flex-col justify-center items-start sm:items-center md:items-start gap-8 md:gap-16 w-full h-[40dvh] sm:h-[70dvh]">
+            <h2 className=" text-2xl md:text-4xl text-center sm:text-left font-bold text-headings w-full">
+              NATIONAL ICT SUMMIT
+            </h2>
+            <iframe
+              src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FMICTNamibia%2Fvideos%2F1008002704192375%2F&show_text=false&width=560&t=0"
+              className="overflow-hidden w-full h-[600px] border-none"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className="w-full relative h-[70dvh] overflow-hidden">
             <Image
-              src="/ict-summit-launch.jpeg"
+              src="/ict-launch.jpg"
               alt="8th National ICT SUMMIT Launch"
               className="object-contain"
               fill
             />
-          </div>
-          <div className="flex flex-col justify-center items-start sm:items-center md:items-start gap-4 md:gap-8">
-            <h2 className=" text-2xl md:text-4xl font-bold text-headings">
-              NATIONAL ICT SUMMIT
-            </h2>
-            <p className="sm:text-center md:text-left">
-              The 8th National ICT Summit launch will be live-streamed on the
-              Ministry of Information and Communication Technology’s Facebook
-              page.
-            </p>
-            <Link
-              className="flex mt-4 gap-2 bg-headings px-[16px] py-[8px] w-full md:w-fit items-center justify-center rounded-lg text-white hover:bg-headings/80"
-              href={"https://www.facebook.com/MICTNamibia/"}
-              target="_blank"
-              title="MICT Facebook page"
-            >
-              <Facebook /> View MICT Facebook
-            </Link>
           </div>
         </div>
       </section>
@@ -539,7 +532,7 @@ export default function Home() {
         id="youth-exhibition"
         className="w-full h-fit flex items-center justify-center sm:px-8 md:px-[100px] py-8 bg-[#ECEFF8]"
       >
-        <div className=" max-w-[960px] border relative overflow-hidden rounded-xl w-fit h-[100vh] md:h-[80vh] flex flex-col-reverse md:flex-row items-center justify-between py-12 md:py-12 px-0 sm:px-6 md:px-12 gap-8">
+        <div className="relative overflow-hidden rounded-xl w-full h-[100vh] md:h-[80vh] flex flex-col-reverse md:flex-row items-center justify-between py-12 md:py-12 px-0 sm:px-6 md:px-12 gap-8">
           <Image
             src="/ict-invitation-background.jpg"
             alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
@@ -558,7 +551,7 @@ export default function Home() {
               </h3>
             </div>
             <Link
-              href="https://forms.gle/oJSwotHDNxifShNy6"
+              href="https://bit.ly/ICT_summit2024"
               target="_blank"
               title="Register"
               referrerPolicy="no-referrer"
@@ -574,11 +567,11 @@ export default function Home() {
               </Button>
             </Link>
           </div>
-          <div className="relative w-full md:w-1/2 h-full ">
+          <div className="relative w-full md:w-1/2 h-full rounded-xl ">
             <Image
-              src="/youthday.jpg"
+              src="/ict-youth.jpg"
               alt="Youth Exhibition 2024"
-              className="z-[2] object-contain lg:object-cover sm:rounded-md"
+              className="z-[2] object-contain sm:rounded-xl"
               fill
             />
           </div>
