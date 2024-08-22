@@ -290,12 +290,12 @@ export default function Home() {
             fill
           />
 
-          <div className="w-fit h-fit flex flex-col items-center p-2 sm:items-start gap-4 md:gap-8 z-[2]">
+          <div className="w-fit h-fit flex flex-col items-center p-2 sm:items-start gap-4 md:gap-2 z-[2]">
             <h2 className="text-white font-semibold text-xl md:text-3xl text-center sm:text-left md:text-center">
               ICT SUMMIT PROGRAMME 2023
             </h2>
-            <h3 className="text-[#cceaff] text-center sm:text-left lg:text-center text-base md:text-2xl">
-              Download the ICT Summit programme PDF for 2023
+            <h3 className="text-[#cceaff] text-center sm:text-left lg:text-center text-lg">
+              Download the ICT Summit programme PDF
             </h3>
           </div>
           <Link
@@ -421,6 +421,7 @@ export default function Home() {
       <RegForm />
 
       <Presentations />
+      {/* PRESS RELEASE */}
       <section
         id="press-release"
         style={{
@@ -435,7 +436,7 @@ export default function Home() {
           </h2>
           <div className="w-full h-fit flex flex-col md:flex-row items-center md:items-start justify-center gap-8">
             <div className="flex flex-col items-center justify-center w-full sm:w-2/3 gap-8">
-              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg">
+              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
                 <Image
                   src="/press-release/ict-industry-challenge-2019.jpg"
                   alt="Industry challenge for ICT Summit 2019"
@@ -465,7 +466,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-center sm:items-start justify-center  w-full sm:w-2/3 gap-8">
-              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg">
+              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
                 <Image
                   src="/press-release/ict-summit-press-ad-2019.png"
                   alt="ICT Summit Press Ad 2019"
@@ -495,12 +496,12 @@ export default function Home() {
             </div>
 
             <div className="flex flex-col items-start justify-center  w-full sm:w-2/3 gap-8">
-              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg">
+              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
                 <Image
                   src="/press-release/ict-summit-logo.png"
                   alt="ICT Summit Booklet 2023"
                   fill
-                  className=" object-contain scale-90"
+                  className=" object-contain scale-50"
                 />
               </div>
               <div className="w-full h-fit flex items-center justify-start gap-4">
@@ -509,6 +510,82 @@ export default function Home() {
                 </h3>
                 <Link
                   href="/press-release/Ict-summit-booklet-2023.pdf"
+                  target="_blank"
+                  title="Download Document"
+                  className="w-fit h-fit flex items-center justify-center"
+                >
+                  <Button
+                    name="Download"
+                    about="download document"
+                    className="bg-transparent"
+                  >
+                    <Download className="text-headings" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* REPORTS */}
+      <section
+        id="reports"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 0.2) 30%)",
+        }}
+        className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-16 bg-[#ECEFF8]"
+      >
+        <div className="w-full h-full flex flex-col justify-center items-center md:items-start gap-16">
+          <h2 className="text-headings font-semibold text-3xl sm:text-4xl">
+            Summit Reports
+          </h2>
+          <div className="w-full h-fit flex flex-col md:flex-row items-center md:items-start justify-center gap-8">
+            <div className="flex flex-col items-center sm:items-start justify-center  w-full sm:w-2/3 gap-8">
+              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
+                <Image
+                  src="/reports/ICT-Summit-Report-2023-thumb.webp"
+                  alt="ICT Summit Report 2023"
+                  fill
+                  className=" object-contain"
+                />
+              </div>
+              <div className="w-full h-fit flex items-center justify-start gap-4">
+                <h3 className="font-semibold text-headings text-left text-lg md:text-xl">
+                  ICT Summit Report 2023
+                </h3>
+                <Link
+                  href="/reports/ICT-Summit-Report-2023.pdf"
+                  target="_blank"
+                  title="Download Document"
+                  className="w-fit h-fit flex items-center justify-center"
+                >
+                  <Button
+                    name="Download"
+                    about="download document"
+                    className="bg-transparent"
+                  >
+                    <Download className="text-headings" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-start justify-center  w-full sm:w-2/3 gap-8">
+              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
+                <Image
+                  src="/reports/Sponsor-Feedback-Report-thumb.webp"
+                  alt="ICT Summit Sponsor Survey Report 2023"
+                  fill
+                  className=" object-contain"
+                />
+              </div>
+              <div className="w-full h-fit flex items-center justify-start gap-4">
+                <h3 className="font-semibold text-headings text-left text-lg md:text-xl">
+                  ICT Summit Sponsor Survey Analysis Report 2023
+                </h3>
+                <Link
+                  href="/reports/Sponsor-Feedback-Report.pdf"
                   target="_blank"
                   title="Download Document"
                   className="w-fit h-fit flex items-center justify-center"
@@ -541,12 +618,12 @@ export default function Home() {
           />
 
           <div className="w-full md:w-1/2 h-fit flex flex-col items-center md:items-start gap-8 z-[2] px-4 sm:px-8">
-            <div className="flex flex-col px-2 justify-center items-center md:items-start gap-4">
+            <div className="flex flex-col px-2 justify-center items-center md:items-start gap-2">
               <h2 className="text-white font-semibold text-center md:text-left text-3xl md:text-4xl">
                 Youth Exhibition Program
               </h2>
-              <h3 className="text-white md:text-[#cceaff] text-center md:text-left text-lg md:text-2xl w-full">
-                For the youth to register and present their ict projects during
+              <h3 className="text-white md:text-[#cceaff] text-center md:text-left text-lg w-full">
+                For the youth to register and present their ICT projects during
                 the national ICT Summit youth day.
               </h3>
             </div>
@@ -595,7 +672,7 @@ export default function Home() {
 
           {/* container */}
           <div className="flex flex-col md:flex-row md:flex-wrap w-full mx-auto justify-between items-center md:items-start gap-8">
-            <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl">
+            <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl rounded-xl">
               <Image
                 src="/exhibitors/nust-logo.png"
                 alt="NUST Logo"
@@ -622,7 +699,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl">
+            <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl rounded-xl">
               <Image
                 src="/exhibitors/unam-logo.png"
                 alt="UNAM Logo"
@@ -649,7 +726,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="relative flex items-center justify-center w-[250px] h-[250px] bg-white shadow-xl">
+            <div className="relative flex items-center justify-center w-[250px] h-[250px] bg-white shadow-xl rounded-xl">
               <Image
                 src="/exhibitors/ium-logo.png"
                 alt="IUM Logo"
