@@ -102,7 +102,7 @@ export default function SponsorshipPackages() {
                 <th colSpan={3} className="content-start px-6">
                   <Link
                     className="flex mx-auto mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                    href={"https://www.facebook.com/MICTNamibia/"}
+                    href="/pledge-form.pdf"
                     target="_blank"
                     title="Choose Silver"
                   >
@@ -222,7 +222,7 @@ export default function SponsorshipPackages() {
                 <th className="px-6" colSpan={3}>
                   <Link
                     className="mx-auto flex mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                    href={"https://www.facebook.com/MICTNamibia/"}
+                    href="/pledge-form.pdf"
                     target="_blank"
                     title="Choose Silver"
                   >
@@ -258,7 +258,7 @@ export default function SponsorshipPackages() {
                 <th className="content-start px-6">
                   <Link
                     className="flex mx-auto mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                    href={"https://www.facebook.com/MICTNamibia/"}
+                    href="/pledge-form.pdf"
                     target="_blank"
                     title="Choose Diamond"
                   >
@@ -390,7 +390,7 @@ export default function SponsorshipPackages() {
                 <th className="px-6">
                   <Link
                     className="mx-auto flex mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                    href={"https://www.facebook.com/MICTNamibia/"}
+                    href="/pledge-form.pdf"
                     target="_blank"
                     title="Choose Diamond"
                   >
@@ -426,7 +426,7 @@ export default function SponsorshipPackages() {
                 <th className="content-start px-6">
                   <Link
                     className="flex mx-auto mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                    href={"https://www.facebook.com/MICTNamibia/"}
+                    href="/pledge-form.pdf"
                     target="_blank"
                     title="Choose Gold"
                   >
@@ -567,7 +567,7 @@ export default function SponsorshipPackages() {
                 <th className="px-6">
                   <Link
                     className="mx-auto flex mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                    href={"https://www.facebook.com/MICTNamibia/"}
+                    href="/pledge-form.pdf"
                     target="_blank"
                     title="Choose Gold"
                   >
@@ -603,7 +603,7 @@ export default function SponsorshipPackages() {
                 <th className="content-start px-6">
                   <Link
                     className="flex mx-auto mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                    href={"https://www.facebook.com/MICTNamibia/"}
+                    href="/pledge-form.pdf"
                     target="_blank"
                     title="Choose Platinum"
                   >
@@ -752,7 +752,7 @@ export default function SponsorshipPackages() {
                 <th className="px-6">
                   <Link
                     className="mx-auto flex mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                    href={"https://www.facebook.com/MICTNamibia/"}
+                    href="/pledge-form.pdf"
                     target="_blank"
                     title="Choose Platinum"
                   >
@@ -804,7 +804,7 @@ export default function SponsorshipPackages() {
               <th className="content-start px-6">
                 <Link
                   className="flex mx-auto mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                  href={"https://www.facebook.com/MICTNamibia/"}
+                  href="/pledge-form.pdf"
                   target="_blank"
                   title="Choose Silver"
                 >
@@ -815,7 +815,7 @@ export default function SponsorshipPackages() {
               <th className="content-start px-6">
                 <Link
                   className="flex mx-auto mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                  href={"https://www.facebook.com/MICTNamibia/"}
+                  href="/pledge-form.pdf"
                   target="_blank"
                   title="Choose Diamond"
                 >
@@ -826,7 +826,7 @@ export default function SponsorshipPackages() {
               <th className="content-start px-6">
                 <Link
                   className="flex mx-auto mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                  href={"https://www.facebook.com/MICTNamibia/"}
+                  href="/pledge-form.pdf"
                   target="_blank"
                   title="Choose Gold"
                 >
@@ -837,7 +837,7 @@ export default function SponsorshipPackages() {
               <th className="content-start px-6">
                 <Link
                   className="flex mx-auto mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                  href={"https://www.facebook.com/MICTNamibia/"}
+                  href="/pledge-form.pdf"
                   target="_blank"
                   title="Choose Platinum"
                 >
@@ -1107,7 +1107,7 @@ export default function SponsorshipPackages() {
               <th className="px-6">
                 <Link
                   className="mx-auto flex mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                  href={"https://www.facebook.com/MICTNamibia/"}
+                  href="/pledge-form.pdf"
                   target="_blank"
                   title="Choose Silver"
                 >
@@ -1118,7 +1118,7 @@ export default function SponsorshipPackages() {
               <th className="px-6">
                 <Link
                   className="mx-auto flex mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                  href={"https://www.facebook.com/MICTNamibia/"}
+                  href="/pledge-form.pdf"
                   target="_blank"
                   title="Choose Diamond"
                 >
@@ -1129,7 +1129,7 @@ export default function SponsorshipPackages() {
               <th className="px-6">
                 <Link
                   className="mx-auto flex mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                  href={"https://www.facebook.com/MICTNamibia/"}
+                  href="/pledge-form.pdf"
                   target="_blank"
                   title="Choose Gold"
                 >
@@ -1140,7 +1140,7 @@ export default function SponsorshipPackages() {
               <th className="px-6">
                 <Link
                   className="mx-auto flex mt-4 gap-2 transition-all bg-primary hover:bg-headings text-white hover:text-primary px-[16px] py-[8px] w-full items-center justify-center rounded-lg"
-                  href={"https://www.facebook.com/MICTNamibia/"}
+                  href="/pledge-form.pdf"
                   target="_blank"
                   title="Choose Platinum"
                 >
