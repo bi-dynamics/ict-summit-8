@@ -35,12 +35,14 @@ export default function Nav() {
     { name: "About", href: "about" },
     { name: "Programme", href: "programme" },
     { name: "Presenters", href: "presenters" },
+    { name: "Registration", href: "registration" },
     { name: "Presentations", href: "presentations" },
     { name: "Press Release", href: "press-release" },
     { name: "Photos", href: "photo-gallery" },
     { name: "Videos", href: "video-gallery" },
     { name: "Youth Exhibition", href: "youth-exhibition" },
     { name: "Exhibitors", href: "exhibitors" },
+    { name: "Packages", href: "sponsorship-packages" },
     { name: "Sponsors 2023", href: "sponsors2023" },
     { name: "Contact", href: "contact" },
   ];
@@ -51,12 +53,14 @@ export default function Nav() {
     let about = document.getElementById("about");
     let programme = document.getElementById("programme");
     let presenters = document.getElementById("presenters");
+    let registration = document.getElementById("registration");
     let presentations = document.getElementById("presentations");
     let pressRelease = document.getElementById("press-release");
     let photoGallery = document.getElementById("photo-gallery");
     let videoGallery = document.getElementById("video-gallery");
     let youthExhibition = document.getElementById("youth-exhibition");
     let exhibitors = document.getElementById("exhibitors");
+    let packages = document.getElementById("sponsorship-packages");
     let sponsors2023 = document.getElementById("sponsors2023");
     let contact = document.getElementById("contact");
 
@@ -66,12 +70,14 @@ export default function Nav() {
       about,
       programme,
       presenters,
+      registration,
       presentations,
       pressRelease,
       photoGallery,
       videoGallery,
       youthExhibition,
       exhibitors,
+      packages,
       sponsors2023,
       contact,
     ];
@@ -101,6 +107,9 @@ export default function Nav() {
           if (entry.target.id == "presenters") {
             setActiveSection("presenters");
           }
+          if (entry.target.id == "registration") {
+            setActiveSection("registration");
+          }
           if (entry.target.id == "presentations") {
             setActiveSection("presentations");
           }
@@ -118,6 +127,9 @@ export default function Nav() {
           }
           if (entry.target.id == "exhibitors") {
             setActiveSection("exhibitors");
+          }
+          if (entry.target.id == "sponsorship-packages") {
+            setActiveSection("sponsorship-packages");
           }
           if (entry.target.id == "sponsors2023") {
             setActiveSection("sponsors2023");

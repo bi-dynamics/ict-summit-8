@@ -2,7 +2,10 @@
 
 function RegForm() {
   return (
-    <section className="h-fit w-full flex items-center justify-center sm:px-[32px] md:px-[100px] py-16 bg-[#ECEFF8]">
+    <section
+      id="registration"
+      className="h-fit w-full flex items-center justify-center sm:px-[32px] md:px-[100px] py-16 bg-[#ECEFF8]"
+    >
       <div className="w-full h-full flex items-center justify-center rounded-xl">
         <iframe
           id="JotFormIFrame-242134684491055"
