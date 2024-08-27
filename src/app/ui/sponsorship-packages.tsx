@@ -203,7 +203,7 @@ export default function SponsorshipPackages() {
               </tr>
 
               <tr className="h-20">
-                <td className="font-medium">Presenters' Topics</td>
+                <td className="font-medium">Presenters Topics</td>
 
                 <td className="text-center p-6">-</td>
               </tr>
@@ -372,7 +372,7 @@ export default function SponsorshipPackages() {
               </tr>
 
               <tr className="h-20">
-                <td className="font-medium">Presenters' Topics</td>
+                <td className="font-medium">Presenters Topics</td>
 
                 <td className="text-center p-6">-</td>
               </tr>
@@ -544,10 +544,10 @@ export default function SponsorshipPackages() {
               </tr>
 
               <tr className="h-20">
-                <td className="font-medium">Presenters' Topics</td>
+                <td className="font-medium">Presenters Topics</td>
 
                 <td className="text-center p-6">
-                  Presenters' topics and synopsis (200 words maximum)
+                  Presenters topics and synopsis (200 words maximum)
                 </td>
               </tr>
 
@@ -729,10 +729,10 @@ export default function SponsorshipPackages() {
               </tr>
 
               <tr className="h-20">
-                <td className="font-medium">Presenters' Topics</td>
+                <td className="font-medium">Presenters Topics</td>
 
                 <td className="text-center p-6">
-                  Presenters' topics and synopsis (200 words maximum)
+                  Presenters topics and synopsis (200 words maximum)
                 </td>
               </tr>
 
@@ -1072,16 +1072,16 @@ export default function SponsorshipPackages() {
             </tr>
 
             <tr className="h-20">
-              <td className="font-medium">Presenters' Topics</td>
+              <td className="font-medium">Presenters Topics</td>
               <td className="text-center p-6">-</td>
               <td className="text-center p-6">-</td>
 
               <td className="text-center p-6">
-                Presenters' topics and synopsis (200 words maximum)
+                Presenters topics and synopsis (200 words maximum)
               </td>
 
               <td className="text-center p-6">
-                Presenters' topics and synopsis (200 words maximum)
+                Presenters topics and synopsis (200 words maximum)
               </td>
             </tr>
 
