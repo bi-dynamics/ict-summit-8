@@ -418,7 +418,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <RegForm />
+      {/* <RegForm /> */}
 
       <Presentations />
       {/* PRESS RELEASE */}

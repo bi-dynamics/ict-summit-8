@@ -35,7 +35,7 @@ export default function Nav() {
     { name: "About", href: "about" },
     { name: "Programme", href: "programme" },
     { name: "Presenters", href: "presenters" },
-    { name: "Registration", href: "registration" },
+    // { name: "Registration", href: "registration" },
     { name: "Presentations", href: "presentations" },
     { name: "Press Release", href: "press-release" },
     { name: "Photos", href: "photo-gallery" },
