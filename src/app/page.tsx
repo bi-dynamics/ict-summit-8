@@ -418,7 +418,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* <RegForm /> */}
+      <RegForm />
 
       <Presentations />
       {/* PRESS RELEASE */}
@@ -434,8 +434,38 @@ export default function Home() {
           <h2 className="text-headings font-semibold text-3xl sm:text-4xl">
             Press Release
           </h2>
-          <div className="w-full h-fit flex flex-col md:flex-row items-center md:items-start justify-center gap-8">
-            <div className="flex flex-col items-center justify-center w-full sm:w-2/3 gap-8">
+          <div className="w-full h-fit flex flex-col md:flex-row md:flex-wrap  items-center md:items-start justify-center gap-8">
+            <div className="flex flex-col items-center justify-center w-full md:w-[45%] gap-8">
+              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
+                <Image
+                  src="/press-release/media-release-ict-summit-2024.png"
+                  alt="Media Release for ICT Summit 2024"
+                  fill
+                  className=" object-contain"
+                />
+              </div>
+              <div className="w-full h-fit flex items-start justify-start gap-4">
+                <h3 className="font-semibold text-headings text-left text-lg md:text-xl">
+                  Media Release for ICT Summit 2024
+                </h3>
+                <Link
+                  href="/press-release/media-release-ict-summit-2024.pdf"
+                  target="_blank"
+                  title="Download Document"
+                  className="w-fit h-fit flex items-center justify-center"
+                >
+                  <Button
+                    name="Download"
+                    about="download document"
+                    className="bg-transparent"
+                  >
+                    <Download className="text-headings" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-center w-full md:w-[45%] gap-8">
               <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
                 <Image
                   src="/press-release/ict-industry-challenge-2019.jpg"
@@ -465,7 +495,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center sm:items-start justify-center  w-full sm:w-2/3 gap-8">
+            <div className="flex flex-col items-center sm:items-start justify-center  w-full md:w-[45%] gap-8">
               <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
                 <Image
                   src="/press-release/ict-summit-press-ad-2019.png"
@@ -495,7 +525,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col items-start justify-center  w-full sm:w-2/3 gap-8">
+            <div className="flex flex-col items-start justify-center  w-full md:w-[45%] gap-8">
               <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
                 <Image
                   src="/press-release/ict-summit-logo.png"
@@ -541,7 +571,7 @@ export default function Home() {
             Summit Reports
           </h2>
           <div className="w-full h-fit flex flex-col md:flex-row items-center md:items-start justify-center gap-8">
-            <div className="flex flex-col items-center sm:items-start justify-center  w-full sm:w-2/3 gap-8">
+            <div className="flex flex-col items-center sm:items-start justify-center  w-full md:w-2/3 gap-8">
               <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
                 <Image
                   src="/reports/ICT-Summit-Report-2023-thumb.webp"
@@ -571,7 +601,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-col items-start justify-center  w-full sm:w-2/3 gap-8">
+            <div className="flex flex-col items-start justify-center  w-full md:w-2/3 gap-8">
               <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
                 <Image
                   src="/reports/Sponsor-Feedback-Report-thumb.webp"
