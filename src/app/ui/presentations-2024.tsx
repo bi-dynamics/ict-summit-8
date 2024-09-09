@@ -3,21 +3,9 @@
 import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
-import Card from "./presentation-card";
 import { Button } from "./button";
 import clsx from "clsx";
 import Card_2024 from "./presentation-card-2024";
-
-// const images = [
-//   {
-//     image: "/presentations/presentation-ixpnam.svg",
-//     presentation: "presentations/IXP-Namibia-Presentation-ICT-Summit-2023.pdf",
-//   },
-//   {
-//     image: "/presentations/presentation-unodc.svg",
-//     presentation: "presentations/Navigating-the-Cybersecurity-Landscape.pdf",
-//   },
-// ];
 
 const day1Presentations = [
   {
@@ -34,46 +22,46 @@ const day1Presentations = [
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
-      "presentations/day_1/8th-ICT-National-Summit-Presentation-H.Mouton.pptx",
+      "presentations/day_1/8th-ICT-National-Summit-Presentation-H.Mouton.pdf",
     title:
       "Preparing Namibian Businesses For AI Adoption Amidst IT Infrastructure Challenges by Mr. Hubert Mouton",
   },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
-      "presentations/day_1/DIGITAL-STRATEGY-PRESENTATION-ICT-SUMMIT.pptx",
+      "presentations/day_1/DIGITAL-STRATEGY-PRESENTATION-ICT-SUMMIT.pdf",
     title:
       "The Framework for Digital Transformation by Ms. Llinda Aipinge-Nakale",
   },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
-      "presentations/day_1/Education-4.0-Building-Resilient-Learners-in-the-Digital-Age.pptx",
+      "presentations/day_1/Education-4.0-Building-Resilient-Learners-in-the-Digital-Age.pdf",
     title:
       "Education 4.0: Building Resilient Learners in the Digital Age by Mr. Barthromeus Shileka",
   },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
-      "presentations/day_1/High-performance-computing-ICT-SUMMIT.pptx",
+      "presentations/day_1/High-performance-computing-ICT-SUMMIT.pdf",
     title:
       "Role of High-Performance Computing in Digital Transformation, Data Science and Artificial Intelligence by Mr. Arpit Jain",
   },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
-      "presentations/day_1/Leveraging-Open-Source-Software-in-the-age-of-AI.pptx",
+      "presentations/day_1/Leveraging-Open-Source-Software-in-the-age-of-AI.pdf",
     title:
       "Leveraging Open Source Software in the age of AI by Mr. Sakaria Ndadi",
   },
   {
     image: "/press-release/ict-summit-logo.png",
-    presentation: "presentations/day_1/Peters_ICT_Summit_2024.pptx",
+    presentation: "presentations/day_1/Peters_ICT_Summit_2024.pdf",
     title: "Namibia AI Readiness by Prof. Anicia Peters",
   },
   {
     image: "/press-release/ict-summit-logo.png",
-    presentation: "presentations/day_1/The-Noise-Before-Defeat.pptx",
+    presentation: "presentations/day_1/The-Noise-Before-Defeat.pdf",
     title: "The Noise Before Defeat by Mr. Nithen Naidoo",
   },
 ];
@@ -144,7 +132,7 @@ export default function Presentations_2024() {
   return (
     <main
       id="presentations"
-      className="py-16 relative overflow-hidden bg-[#ECEFF8] flex flex-col items-center justify-center space-y-4"
+      className="py-16 relative overflow-hidden bg-[#ECEFF8] flex flex-col items-center justify-center space-y-16"
     >
       <h2 className=" text-headings font-bold text-3xl sm:text-4xl z-[12]">
         Presentations
