@@ -63,7 +63,7 @@ const day1Presentations = [
   {
     image: "/press-release/ict-summit-logo.png",
     presentation: "presentations/day_1/Peters_ICT_Summit_2024.pptx",
-    title: "Peters Presentation",
+    title: "AI Readiness Presentation",
   },
   {
     image: "/press-release/ict-summit-logo.png",
