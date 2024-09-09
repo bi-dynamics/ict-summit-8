@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Nav from "./ui/nav";
 import { Metadata } from "next";
 import { Button } from "./ui/button";
 import {
@@ -11,7 +10,6 @@ import {
   Linkedin,
 } from "lucide-react";
 import Sponsors2024 from "./ui/sponsors-2024";
-import Presentations from "./ui/presentations";
 import dynamic from "next/dynamic";
 
 const PhotoGallery = dynamic(() => import("./ui/photo-gallery"), {
@@ -25,8 +23,6 @@ const RegForm = dynamic(() => import("./ui/registration-form"), {
 });
 
 import Link from "next/link";
-import Sponsors2023 from "./ui/sponsors-2023";
-import SponsorshipPackages from "./ui/sponsorship-packages";
 import Presentations_2024 from "./ui/presentations-2024";
 
 export const metadata: Metadata = {
@@ -479,7 +475,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <SponsorshipPackages />
 
       <footer id="contact" className="w-full h-fit pt-16 pb-8 bg-[#ECEFF8]">
         {/* container */}
