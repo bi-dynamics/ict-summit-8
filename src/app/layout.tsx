@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { GoogleTagManager } from "@next/third-parties/google";
+import Nav from "./ui/nav";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -35,7 +36,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleTagManager gtmId="G-Z5TFLQX8GP" />
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+
+      <body className={`${inter.variable} antialiased`}>
+        <Nav />
+        {children}
+      </body>
     </html>
   );
 }

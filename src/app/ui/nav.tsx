@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import clsx from "clsx";
 import Link from "next/link";
 import { Button } from "./button";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
 
 let delta: number;
 export default function Nav() {
@@ -31,19 +31,29 @@ export default function Nav() {
   const [activeSection, setActiveSection] = useState<string>("home");
   let links = [
     { name: "Home", href: "home" },
+    {
+      name: "Previous Summits",
+      years: [
+        {
+          year: "2023",
+          href: "/ict-summit-2023",
+          sections: [
+            { name: "Home", href: "#home" },
+            { name: "About", href: "#about" },
+          ],
+        },
+      ],
+    },
     { name: "Sponsors 2024", href: "sponsors2024" },
     { name: "About", href: "about" },
     { name: "Programme", href: "programme" },
-    { name: "Presenters", href: "presenters" },
     { name: "Registration", href: "registration" },
-    { name: "Presentations", href: "presentations" },
     { name: "Press Release", href: "press-release" },
     { name: "Photos", href: "photo-gallery" },
     { name: "Videos", href: "video-gallery" },
     { name: "Youth Exhibition", href: "youth-exhibition" },
     { name: "Exhibitors", href: "exhibitors" },
-    { name: "Packages", href: "sponsorship-packages" },
-    { name: "Sponsors 2023", href: "sponsors2023" },
+    { name: "Sponsorship Packages", href: "sponsorship-packages" },
     { name: "Contact", href: "contact" },
   ];
 
@@ -85,7 +95,7 @@ export default function Nav() {
     const observerOptions = {
       root: null,
       rootMargin: "0px 0px 0px 0px",
-      threshold: 0.2,
+      threshold: 0,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -157,7 +167,7 @@ export default function Nav() {
       }}
       animate={showNav ? "visible" : "hidden"}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="fixed bg-white/80 max-h-screen overflow-y-scroll lg:overflow-y-hidden  backdrop-blur-lg p-4 left-0 top-0 flex flex-col w-full items-start justify-between md:justify-center z-50"
+      className="fixed bg-white/80 max-h-screen overflow-y-scroll lg:overflow-y-visible  backdrop-blur-lg p-4 left-0 top-0 flex flex-col w-full items-start justify-between md:justify-center z-50"
     >
       <div className="w-fit flex flex-row gap-4 self-center">
         <Image
@@ -245,11 +255,43 @@ export default function Nav() {
         {links.map((link, index) => {
           const isActive = link.href === activeSection;
 
-          return (
+          //add drop down menu to links with year fields
+          return link.years ? (
+            <div className="hover:bg-headings/10 group/outer rounded-xl px-6 py-1 relative flex justify-center items-center">
+              <p className="flex flex-row gap-2 items-center justify-center text-headings text-xs">
+                Previous Summits <ChevronDown />
+              </p>
+              {/* Add hover drop-down */}
+              {/* Drop-down container */}
+              <div className="items-center justify-center z-10 absolute hidden group-hover/outer:flex top-8 bg-white w-fit py-2 rounded-xl h-20 text-headings">
+                {link.years.map((year, index) => (
+                  <div className="relative flex items-start justify-center">
+                    <Link
+                      href={year.href}
+                      className="flex flex-row gap-2 peer/inner px-6 w-full"
+                      key={index}
+                    >
+                      {year.year}
+                      {/* <ChevronRight /> */}
+                    </Link>
+                    {/* Nested Drop-down */}
+                    {/* CONTINUE LATER */}
+                    {/* <div className="absolute left-28 peer-hover/inner:flex peer-hover/inner:flex-col peer-hover/inner:gap-2 hidden bg-white rounded-xl px-6 py-2">
+                      {year.sections.map((section, index) => (
+                        <Link key={index} href={section.href} className="">
+                          {section.name}
+                        </Link>
+                      ))}
+                    </div> */}
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : (
             <Link
               onClick={() => setOpenMenu((prev) => !prev)}
               key={index}
-              href={`#${link.href}`}
+              href={`/#${link.href}`}
               className={clsx(
                 "w-fit h-full overflow-hidden relative rounded-xl px-6 py-2 flex items-center justify-center hover:bg-slate-200"
               )}

@@ -53,7 +53,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Nav />
       <section
         id="home"
         className="relative w-full min-h-screen flex items-center justify-center"
@@ -131,7 +130,7 @@ export default function Home() {
         </main>
       </section>
       <section
-        id="launch"
+        id="home"
         className="w-full overflow-hidden flex flex-col items-center justify-center h-fit bg-[#ECEFF8]"
       >
         {/* container */}
@@ -239,45 +238,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* <section
-        id="programme"
-        className="w-full h-fit flex items-center justify-center sm:px-8 lg:px-[100px] py-16 bg-[#ECEFF8]"
-      >
-        <div className="border relative overflow-hidden rounded-xl w-full lg:w-fit h-fit flex flex-col md:flex-row items-center sm:items-start md:items-center justify-between py-8 px-4 sm:px-8 gap-8 md:gap-16">
-          <Image
-            src="/ict-invitation-background.jpg"
-            alt="8th National ICT SUMMIT NAMIBIA BACKGROUND"
-            className="object-cover z-[1] lg:animate-move"
-            fill
-          />
-
-          <div className="w-fit h-fit flex flex-col items-center p-2 sm:items-start gap-4 md:gap-8 z-[2]">
-            <h2 className="text-white font-semibold text-xl md:text-3xl text-center sm:text-left md:text-center">
-              ICT SUMMIT PROGRAMME 2024
-            </h2>
-            <h3 className="text-[#cceaff] text-center sm:text-left lg:text-center text-base md:text-2xl">
-              Download the ICT Summit programme PDF for 2024
-            </h3>
-          </div>
-          <Link
-            href="/ICT-SUMMIT-PROGRAMME-2023.pdf"
-            target="_blank"
-            referrerPolicy="no-referrer"
-            title="ICT Summit Programme"
-            className="w-full md:w-fit h-fit flex items-center justify-center"
-          >
-            <Button
-              name="Download Programme"
-              className="z-[2] w-full rounded-xl text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary font-bold bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
-              size={"lg"}
-              about="download programme"
-            >
-              {" "}
-              DOWNLOAD PROGRAMME
-            </Button>
-          </Link>
-        </div>
-      </section> */}
       <section
         id="programme"
         className="w-full h-fit flex items-center justify-center sm:px-8 lg:px-[100px] py-16 bg-[#ECEFF8]"
@@ -292,135 +252,32 @@ export default function Home() {
 
           <div className="w-fit h-fit flex flex-col items-center p-2 sm:items-start gap-4 md:gap-2 z-[2]">
             <h2 className="text-white font-semibold text-xl md:text-3xl text-center sm:text-left md:text-center">
-              ICT SUMMIT PROGRAMME 2023
+              ICT SUMMIT PROGRAMME & BOOKLET 2024
             </h2>
             <h3 className="text-[#cceaff] text-center sm:text-left lg:text-center text-lg">
-              Download the ICT Summit programme PDF
+              Download the ICT Summit Programme & Booklet
             </h3>
           </div>
           <Link
-            href="/ICT-SUMMIT-PROGRAMME-2023.pdf"
+            href="/ICT-SUMMIT-PROGRAMME-&-BOOKLET-2024.pdf"
             target="_blank"
             referrerPolicy="no-referrer"
-            title="ICT Summit Programme"
+            title="ICT Summit Programme & Booklet 2024"
             className="w-full md:w-fit h-fit flex items-center justify-center"
           >
             <Button
-              name="Download Programme"
+              name="Download Programme & Booklet"
               className="z-[2] w-full rounded-xl text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary font-bold bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
               size={"lg"}
-              about="download programme"
+              about="download programme & booklet"
             >
               {" "}
-              DOWNLOAD PROGRAMME
+              DOWNLOAD
             </Button>
           </Link>
         </div>
       </section>
-      <section
-        id="presenters"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(0, 149, 255, 0.4) , rgba(236, 239, 248, 0.2) 50%)",
-        }}
-        className="w-full h-fit flex items-center justify-center px-4 sm:px-[64px] md:px-[100px] py-8 bg-[#ECEFF8]"
-      >
-        <div className="w-full h-full flex flex-col justify-center items-center gap-16">
-          <h2 className="text-headings font-bold text-3xl sm:text-4xl">
-            Presenters
-          </h2>
-          {/* container */}
-          <div className="flex flex-col max-w-screen-lg mx-auto justify-center items-start gap-8">
-            {/* top part */}
-            <div className="w-full h-fit flex flex-col md:flex-row items-center md:items-start justify-center gap-8">
-              {/* presenter 1 */}
-              <div className="flex flex-col items-center justify-center w-full sm:w-2/3 gap-4">
-                <div className="w-full h-[200px] md:h-[400px] relative">
-                  <Image
-                    src="/elton-witbooi.jpeg"
-                    alt="Presentation by Elton Witbooi"
-                    fill
-                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
-                    className=" object-contain"
-                  />
-                </div>
-                <div className="w-full h-fit flex flex-col items-start justify-start gap-0 sm:gap-4">
-                  <h3 className="font-semibold text-headings text-lg sm:text-2xl w-full text-center md:text-left">
-                    Elton Witbooi
-                  </h3>
-                  <p className="text-base text-center md:text-left w-full">
-                    Executive: Cyber Security & ICT: CRAN
-                  </p>
-                </div>
-              </div>
-              {/* presenter 2 */}
-              <div className="flex flex-col items-center justify-center w-full sm:w-2/3 gap-4">
-                <div className="w-full h-[200px] md:h-[400px] relative">
-                  <Image
-                    src="/nakale.jpeg"
-                    alt="Presentation by Gervasius Nakale"
-                    fill
-                    sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
-                    className=" object-contain"
-                  />
-                </div>
-                <div className="w-full h-fit flex flex-col items-start justify-start gap-0 sm:gap-4">
-                  <h3 className="font-semibold text-headings text-lg sm:text-2xl w-full text-center md:text-left">
-                    Nashilongo Gervasius Nakale
-                  </h3>
-                  <p className="text-base w-full text-center md:text-left">
-                    Executive Director and Founder: Namtshuew Digital cc
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* panel discussion */}
-            <div className="flex flex-col md:flex-row items-center justify-center w-full gap-8">
-              <div className="w-full h-[300px] md:h-[600px] relative">
-                <Image
-                  src="/panel-discussion.jpeg"
-                  alt="Panel Discussion"
-                  fill
-                  sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
-                  className=" object-contain"
-                />
-              </div>
-              <div className="w-full h-fit flex flex-col items-center md:items-start justify-start gap-4">
-                <h3 className="font-semibold text-headings text-2xl">
-                  Panel Discussion
-                </h3>
-
-                <p className="text-base text-center md:text-left">
-                  <span className="text-headings text-lg font-semibold">
-                    Dr. Becky Ndjoze-Ojo:
-                  </span>
-                  <br />
-                  Member of parliament and a member of Parliamentary Standing
-                  Committee on ICT and Innovation.
-                </p>
-                <p className="text-base text-center md:text-left">
-                  <span className="text-headings text-lg font-semibold">
-                    Mrs. Emilia Nghikembua:
-                  </span>
-                  <br />
-                  CEO: CRAN
-                </p>
-                <p className="text-base text-center md:text-left">
-                  <span className="text-headings text-lg font-semibold">
-                    Prof Heike Winschiers - Theophilus
-                  </span>
-                  <br />
-                  Professor, Department: Software Engineering NUST
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <RegForm />
-
-      <Presentations />
       {/* PRESS RELEASE */}
       <section
         id="press-release"
@@ -435,8 +292,8 @@ export default function Home() {
             Press Release
           </h2>
           <div className="w-full h-fit flex flex-col md:flex-row md:flex-wrap  items-center md:items-start justify-center gap-8">
-            <div className="flex flex-col items-center justify-center w-full md:w-[45%] gap-8">
-              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
+            <div className="flex flex-col items-center justify-center w-full md:w-full gap-8">
+              <div className="w-full h-[700px] relative bg-white/50 backdrop-blur-lg rounded-xl">
                 <Image
                   src="/press-release/media-release-ict-summit-2024.png"
                   alt="Media Release for ICT Summit 2024"
@@ -464,175 +321,10 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-
-            <div className="flex flex-col items-center justify-center w-full md:w-[45%] gap-8">
-              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
-                <Image
-                  src="/press-release/ict-industry-challenge-2019.jpg"
-                  alt="Industry challenge for ICT Summit 2019"
-                  fill
-                  className=" object-contain"
-                />
-              </div>
-              <div className="w-full h-fit flex items-start justify-start gap-4">
-                <h3 className="font-semibold text-headings text-left text-lg md:text-xl">
-                  Invitation: Industry Challenge for ICT Summit 2019
-                </h3>
-                <Link
-                  href="/press-release/Ict-summit-industry-challenge-2019.pdf"
-                  target="_blank"
-                  title="Download Document"
-                  className="w-fit h-fit flex items-center justify-center"
-                >
-                  <Button
-                    name="Download"
-                    about="download document"
-                    className="bg-transparent"
-                  >
-                    <Download className="text-headings" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-center sm:items-start justify-center  w-full md:w-[45%] gap-8">
-              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
-                <Image
-                  src="/press-release/ict-summit-press-ad-2019.png"
-                  alt="ICT Summit Press Ad 2019"
-                  fill
-                  className=" object-contain"
-                />
-              </div>
-              <div className="w-full h-fit flex items-center justify-start gap-4">
-                <h3 className="font-semibold text-headings text-left text-lg md:text-xl">
-                  ICT Summit Press Ad 2019
-                </h3>
-                <Link
-                  href="/press-release/Ict-summit-press-ad-2019.pdf"
-                  target="_blank"
-                  title="Download Document"
-                  className="w-fit h-fit flex items-center justify-center"
-                >
-                  <Button
-                    name="Download"
-                    about="download document"
-                    className="bg-transparent"
-                  >
-                    <Download className="text-headings" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            <div className="flex flex-col items-start justify-center  w-full md:w-[45%] gap-8">
-              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
-                <Image
-                  src="/press-release/ict-summit-logo.png"
-                  alt="ICT Summit Booklet 2023"
-                  fill
-                  className=" object-contain scale-50"
-                />
-              </div>
-              <div className="w-full h-fit flex items-center justify-start gap-4">
-                <h3 className="font-semibold text-headings text-left text-lg md:text-xl">
-                  ICT Summit Booklet 2023
-                </h3>
-                <Link
-                  href="/press-release/Ict-summit-booklet-2023.pdf"
-                  target="_blank"
-                  title="Download Document"
-                  className="w-fit h-fit flex items-center justify-center"
-                >
-                  <Button
-                    name="Download"
-                    about="download document"
-                    className="bg-transparent"
-                  >
-                    <Download className="text-headings" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </section>
-      {/* REPORTS */}
-      <section
-        id="reports"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 0.2) 30%)",
-        }}
-        className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-16 bg-[#ECEFF8]"
-      >
-        <div className="w-full h-full flex flex-col justify-center items-center md:items-start gap-16">
-          <h2 className="text-headings font-semibold text-3xl sm:text-4xl">
-            Summit Reports
-          </h2>
-          <div className="w-full h-fit flex flex-col md:flex-row items-center md:items-start justify-center gap-8">
-            <div className="flex flex-col items-center sm:items-start justify-center  w-full md:w-2/3 gap-8">
-              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
-                <Image
-                  src="/reports/ICT-Summit-Report-2023-thumb.webp"
-                  alt="ICT Summit Report 2023"
-                  fill
-                  className=" object-contain"
-                />
-              </div>
-              <div className="w-full h-fit flex items-center justify-start gap-4">
-                <h3 className="font-semibold text-headings text-left text-lg md:text-xl">
-                  ICT Summit Report 2023
-                </h3>
-                <Link
-                  href="/reports/ICT-Summit-Report-2023.pdf"
-                  target="_blank"
-                  title="Download Document"
-                  className="w-fit h-fit flex items-center justify-center"
-                >
-                  <Button
-                    name="Download"
-                    about="download document"
-                    className="bg-transparent"
-                  >
-                    <Download className="text-headings" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
 
-            <div className="flex flex-col items-start justify-center  w-full md:w-2/3 gap-8">
-              <div className="w-full h-[350px] relative bg-white/50 backdrop-blur-lg rounded-xl">
-                <Image
-                  src="/reports/Sponsor-Feedback-Report-thumb.webp"
-                  alt="ICT Summit Sponsor Survey Report 2023"
-                  fill
-                  className=" object-contain"
-                />
-              </div>
-              <div className="w-full h-fit flex items-center justify-start gap-4">
-                <h3 className="font-semibold text-headings text-left text-lg md:text-xl">
-                  ICT Summit Sponsor Survey Analysis Report 2023
-                </h3>
-                <Link
-                  href="/reports/Sponsor-Feedback-Report.pdf"
-                  target="_blank"
-                  title="Download Document"
-                  className="w-fit h-fit flex items-center justify-center"
-                >
-                  <Button
-                    name="Download"
-                    about="download document"
-                    className="bg-transparent"
-                  >
-                    <Download className="text-headings" />
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
       <PhotoGallery />
       <VideoGallery />
       <section
@@ -787,8 +479,7 @@ export default function Home() {
         </div>
       </section>
       <SponsorshipPackages />
-      <Sponsors2023 />
-      {/* <Form /> */}
+
       <footer id="contact" className="w-full h-fit pt-16 pb-8 bg-[#ECEFF8]">
         {/* container */}
         <div className="w-full max-w-[960px] px-4 md:px-8 mx-auto flex flex-col items-center justify-center gap-16">
