@@ -52,7 +52,7 @@ export default function Nav() {
     { name: "Presentations", href: "presentations" },
     { name: "Photos", href: "photo-gallery" },
     // { name: "Videos", href: "video-gallery" },
-    { name: "Youth Exhibition", href: "youth-exhibition" },
+    // { name: "Youth Exhibition", href: "youth-exhibition" },
     { name: "Exhibitors", href: "exhibitors" },
     // { name: "Sponsorship Packages", href: "sponsorship-packages" },
     { name: "Contact", href: "contact" },

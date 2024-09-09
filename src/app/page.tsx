@@ -323,7 +323,8 @@ export default function Home() {
       </section>
       <Presentations_2024 />
       <PhotoGallery />
-      <section
+      {/* Youth Day */}
+      {/* <section
         id="youth-exhibition"
         className="w-full h-fit flex items-center justify-center sm:px-8 md:px-[100px] py-8 bg-[#ECEFF8]"
       >
@@ -371,7 +372,7 @@ export default function Home() {
             />
           </div>
         </div>
-      </section>
+      </section> */}
       <section
         id="exhibitors"
         className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-16"
