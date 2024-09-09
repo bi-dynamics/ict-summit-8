@@ -107,7 +107,8 @@ export default function Presentations_2024() {
         <Button
           name="Register"
           className={clsx(
-            "z-[2] rounded-xl font-bold w-full text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+            "z-[2] rounded-xl font-bold w-full text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105",
+            { "bg-primary border-primary": day === 1 }
           )}
           size={"lg"}
           about="Day 1 Presentations"
@@ -117,7 +118,10 @@ export default function Presentations_2024() {
         </Button>
         <Button
           name="Register"
-          className="z-[2] rounded-xl font-bold w-full text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+          className={clsx(
+            "z-[2] rounded-xl font-bold w-full text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105",
+            { "bg-primary border-primary": day === 2 }
+          )}
           size={"lg"}
           about="Day 2 Presentations"
           onClick={() => setDay(2)}
@@ -126,7 +130,10 @@ export default function Presentations_2024() {
         </Button>
         <Button
           name="Register"
-          className="z-[2] rounded-xl font-bold w-full text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+          className={clsx(
+            "z-[2] rounded-xl font-bold w-full text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105",
+            { "bg-primary border-primary": day === 3 }
+          )}
           size={"lg"}
           about="Day 3 Presentations"
           onClick={() => setDay(3)}
