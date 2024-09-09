@@ -42,7 +42,7 @@ const Card: React.FC<CardProps> = ({ image, href }) => {
         src={image}
         alt={image}
         fill
-        style={{ objectFit: "fill" }}
+        style={{ objectFit: "contain" }}
         className="p-8"
       />
     </motion.div>

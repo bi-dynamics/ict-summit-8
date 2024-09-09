@@ -27,6 +27,7 @@ const RegForm = dynamic(() => import("./ui/registration-form"), {
 import Link from "next/link";
 import Sponsors2023 from "./ui/sponsors-2023";
 import SponsorshipPackages from "./ui/sponsorship-packages";
+import Presentations_2024 from "./ui/presentations-2024";
 
 export const metadata: Metadata = {
   title: "ICT Summit Namibia",
@@ -324,7 +325,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <Presentations_2024 />
       <PhotoGallery />
       <VideoGallery />
       <section
