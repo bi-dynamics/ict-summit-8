@@ -8,9 +8,10 @@ import Link from "next/link";
 interface CardProps {
   image: string;
   href: string;
+  title: string;
 }
 
-const Card: React.FC<CardProps> = ({ image, href }) => {
+const Card: React.FC<CardProps> = ({ image, href, title }) => {
   const [showOverlay, setShowOverlay] = useState(false);
 
   return (
@@ -33,7 +34,7 @@ const Card: React.FC<CardProps> = ({ image, href }) => {
             aria-label="Download Presentation"
             className="bg-transparent text-headings active:scale-[.99] transition-all hover:scale-105 hover:text-white font-semibold mb-2 text-sm z-10 w-full rounded-lg flex items-center justify-center gap-[0.5ch] hover:border hover:border-primary"
           >
-            Download Presentation
+            Download {title}
           </Button>
         </Link>
       </motion.div>

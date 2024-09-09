@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
 import Card from "./presentation-card";
 import { Button } from "./button";
+import clsx from "clsx";
 
 // const images = [
 //   {
@@ -17,15 +18,41 @@ import { Button } from "./button";
 //   },
 // ];
 
-const images = [
+const day1Presentations = [
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
       "presentations/Ministers-Speech-National-ICT-Official-Opening-2024.pdf",
+    title: "Ministers Speech",
   },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation: "presentations/VOTE-OF-THANKS-8th-ICT-Summit.pdf",
+    title: "Vote of Thanks",
+  },
+];
+const day2Presentations = [
+  {
+    image: "",
+    presentation: "",
+    title: "",
+  },
+  {
+    image: "",
+    presentation: "",
+    title: "",
+  },
+];
+const day3Presentations = [
+  {
+    image: "",
+    presentation: "",
+    title: "",
+  },
+  {
+    image: "",
+    presentation: "",
+    title: "",
   },
 ];
 
@@ -76,10 +103,12 @@ export default function Presentations_2024() {
       <h2 className=" text-headings font-bold text-3xl sm:text-4xl z-[12]">
         Presentations
       </h2>
-      {/* <div className="w-full h-fit flex flex-row gap-4 z-[12] max-w-screen-lg">
+      <div className="w-full h-fit flex flex-row gap-4 z-[12] max-w-screen-lg">
         <Button
           name="Register"
-          className="z-[2] rounded-xl font-bold w-full text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+          className={clsx(
+            "z-[2] rounded-xl font-bold w-full text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105"
+          )}
           size={"lg"}
           about="Day 1 Presentations"
           onClick={() => setDay(1)}
@@ -104,28 +133,83 @@ export default function Presentations_2024() {
         >
           Day 3
         </Button>
-      </div> */}
+      </div>
       {/* gradient layer */}
       <div className="absolute left-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-r from-[#ECEFF8] to-transparent"></div>
       {/* gradient layer */}
       <div className="absolute right-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-l from-[#ECEFF8] to-transparent"></div>
-      <motion.div
-        className="relative left-0 z-10 flex gap-4 overflow-hidden"
-        style={{ x: xTranslation, width: "max-content" }}
-        ref={ref}
-        onHoverStart={() => {
-          setMustFinish(true);
-          setDuration(SLOW_DURATION);
-        }}
-        onHoverEnd={() => {
-          setMustFinish(true);
-          setDuration(FAST_DURATION);
-        }}
-      >
-        {[...images].map(({ image, presentation }, idx) => (
-          <Card image={`${image}`} href={presentation} key={idx} />
-        ))}
-      </motion.div>
+      {day === 1 && (
+        <motion.div
+          className="relative left-0 z-10 flex gap-4 overflow-hidden"
+          style={{ x: xTranslation, width: "max-content" }}
+          ref={ref}
+          onHoverStart={() => {
+            setMustFinish(true);
+            setDuration(SLOW_DURATION);
+          }}
+          onHoverEnd={() => {
+            setMustFinish(true);
+            setDuration(FAST_DURATION);
+          }}
+        >
+          {[...day1Presentations].map(({ image, presentation, title }, idx) => (
+            <Card
+              image={`${image}`}
+              href={presentation}
+              title={title}
+              key={idx}
+            />
+          ))}
+        </motion.div>
+      )}
+      {/* {day === 2 && (
+        <motion.div
+          className="relative left-0 z-10 flex gap-4 overflow-hidden"
+          style={{ x: xTranslation, width: "max-content" }}
+          ref={ref}
+          onHoverStart={() => {
+            setMustFinish(true);
+            setDuration(SLOW_DURATION);
+          }}
+          onHoverEnd={() => {
+            setMustFinish(true);
+            setDuration(FAST_DURATION);
+          }}
+        >
+          {[...day2Presentations].map(({ image, presentation, title }, idx) => (
+            <Card
+              image={`${image}`}
+              href={presentation}
+              title={title}
+              key={idx}
+            />
+          ))}
+        </motion.div>
+      )}
+      {day === 3 && (
+        <motion.div
+          className="relative left-0 z-10 flex gap-4 overflow-hidden"
+          style={{ x: xTranslation, width: "max-content" }}
+          ref={ref}
+          onHoverStart={() => {
+            setMustFinish(true);
+            setDuration(SLOW_DURATION);
+          }}
+          onHoverEnd={() => {
+            setMustFinish(true);
+            setDuration(FAST_DURATION);
+          }}
+        >
+          {[...day3Presentations].map(({ image, presentation, title }, idx) => (
+            <Card
+              image={`${image}`}
+              href={presentation}
+              title={title}
+              key={idx}
+            />
+          ))}
+        </motion.div>
+      )} */}
     </main>
   );
 }
