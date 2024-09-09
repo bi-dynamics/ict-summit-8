@@ -97,7 +97,7 @@ export default function Presentations() {
         }}
       >
         {[...images, ...images].map(({ image, presentation }, idx) => (
-          <Card image={`${image}`} href={presentation} key={idx} />
+          <Card image={`${image}`} href={presentation} key={idx} title={""} />
         ))}
       </motion.div>
     </main>
