@@ -54,7 +54,7 @@ export default function Nav() {
     { name: "Videos", href: "video-gallery" },
     { name: "Youth Exhibition", href: "youth-exhibition" },
     { name: "Exhibitors", href: "exhibitors" },
-    { name: "Sponsorship Packages", href: "sponsorship-packages" },
+    // { name: "Sponsorship Packages", href: "sponsorship-packages" },
     { name: "Contact", href: "contact" },
   ];
 
