@@ -6,6 +6,7 @@ import { Download } from "lucide-react";
 import Sponsors2023 from "../ui/sponsors-2023";
 import PhotoGallery2023 from "../ui/photo-gallery_2023";
 import dynamic from "next/dynamic";
+import VideoGallery from "../ui/video-gallery";
 
 export default function page() {
   return (
@@ -350,6 +351,7 @@ export default function page() {
         </div>
       </section>
       <PhotoGallery2023 />
+      <VideoGallery />
       <Sponsors2023 />
       <footer
         id="contact-2023"

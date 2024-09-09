@@ -322,8 +322,7 @@ export default function Home() {
         </div>
       </section>
       <Presentations_2024 />
-      {/* <PhotoGallery /> */}
-      <VideoGallery />
+      <PhotoGallery />
       <section
         id="youth-exhibition"
         className="w-full h-fit flex items-center justify-center sm:px-8 md:px-[100px] py-8 bg-[#ECEFF8]"

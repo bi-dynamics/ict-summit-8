@@ -51,7 +51,7 @@ export default function Nav() {
     { name: "Press Release", href: "press-release" },
     { name: "Presentations", href: "presentations" },
     { name: "Photos", href: "photo-gallery" },
-    { name: "Videos", href: "video-gallery" },
+    // { name: "Videos", href: "video-gallery" },
     { name: "Youth Exhibition", href: "youth-exhibition" },
     { name: "Exhibitors", href: "exhibitors" },
     // { name: "Sponsorship Packages", href: "sponsorship-packages" },
@@ -258,7 +258,10 @@ export default function Nav() {
 
           //add drop down menu to links with year fields
           return link.years ? (
-            <div className="hover:bg-headings/10 group/outer rounded-xl px-6 py-1 relative flex justify-center items-center">
+            <div
+              key={index}
+              className="hover:bg-headings/10 group/outer rounded-xl px-6 py-1 relative flex justify-center items-center"
+            >
               <p className="flex flex-row gap-2 items-center justify-center text-headings text-xs">
                 Previous Summits <ChevronDown />
               </p>
