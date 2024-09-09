@@ -7,6 +7,7 @@ import clsx from "clsx";
 interface CardProps {
   image: string;
   sponsorLevel: string;
+  title: string;
   onShowModal: () => void;
   onClick?: () => void;
 }
