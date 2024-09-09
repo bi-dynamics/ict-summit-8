@@ -231,6 +231,7 @@ export default function Sponsors2023() {
                     sponsorLevel: sponsorLevel,
                   });
               }}
+              title={""}
             />
           )
         )}
