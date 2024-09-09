@@ -35,7 +35,7 @@ export default function VideoGallery() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <section
-    id="video-gallery"
+    id="video-gallery-2023"
       style={{
         backgroundImage:
           "radial-gradient(circle at top right, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 1) 30%)",
