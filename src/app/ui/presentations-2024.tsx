@@ -22,13 +22,53 @@ const day1Presentations = [
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
-      "presentations/Ministers-Speech-National-ICT-Official-Opening-2024.pdf",
+      "presentations/day_1/Ministers-Speech-National-ICT-Official-Opening-2024.pdf",
     title: "Ministers Speech",
   },
   {
     image: "/press-release/ict-summit-logo.png",
-    presentation: "presentations/VOTE-OF-THANKS-8th-ICT-Summit.pdf",
+    presentation: "presentations/day_1/VOTE-OF-THANKS-8th-ICT-Summit.pdf",
     title: "Vote of Thanks",
+  },
+  {
+    image: "/press-release/ict-summit-logo.png",
+    presentation:
+      "presentations/day_1/8th-ICT-National-Summit-Presentation-H.Mouton.pptx",
+    title: "Presentation by H.Mouton",
+  },
+  {
+    image: "/press-release/ict-summit-logo.png",
+    presentation:
+      "presentations/day_1/DIGITAL-STRATEGY-PRESENTATION-ICT-SUMMIT.pptx",
+    title: "Digital Strategy",
+  },
+  {
+    image: "/press-release/ict-summit-logo.png",
+    presentation:
+      "presentations/day_1/Education-4.0-Building-Resilient-Learners-in-the-Digital-Age.pptx",
+    title: "Education 4.0",
+  },
+  {
+    image: "/press-release/ict-summit-logo.png",
+    presentation:
+      "presentations/day_1/High-performance-computing-ICT-SUMMIT.pptx",
+    title: "HPC Presentation",
+  },
+  {
+    image: "/press-release/ict-summit-logo.png",
+    presentation:
+      "presentations/day_1/Leveraging-Open-Source-Software-in-the-age-of-AI.pptx",
+    title: "Open-Source Presentation",
+  },
+  {
+    image: "/press-release/ict-summit-logo.png",
+    presentation: "presentations/day_1/Peters_ICT_Summit_2024.pptx",
+    title: "Peters Presentation",
+  },
+  {
+    image: "/press-release/ict-summit-logo.png",
+    presentation: "presentations/day_1/The-Noise-Before-Defeat.pptx",
+    title: "The Noise Before Defeat",
   },
 ];
 const day2Presentations = [
