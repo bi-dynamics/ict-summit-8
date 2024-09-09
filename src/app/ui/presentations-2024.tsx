@@ -6,6 +6,7 @@ import useMeasure from "react-use-measure";
 import Card from "./presentation-card";
 import { Button } from "./button";
 import clsx from "clsx";
+import Card_2024 from "./presentation-card-2024";
 
 // const images = [
 //   {
@@ -23,52 +24,57 @@ const day1Presentations = [
     image: "/press-release/ict-summit-logo.png",
     presentation:
       "presentations/day_1/Ministers-Speech-National-ICT-Official-Opening-2024.pdf",
-    title: "Ministers Speech",
+    title: "Ministers Speech by Hon. Emma Thoefelus",
   },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation: "presentations/day_1/VOTE-OF-THANKS-8th-ICT-Summit.pdf",
-    title: "Vote of Thanks",
+    title: "Vote of Thanks by Mr. Gernot Piepmeyer",
   },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
       "presentations/day_1/8th-ICT-National-Summit-Presentation-H.Mouton.pptx",
-    title: "Presentation by H.Mouton",
+    title:
+      "Preparing Namibian Businesses For AI Adoption Amidst IT Infrastructure Challenges by Mr. Hubert Mouton",
   },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
       "presentations/day_1/DIGITAL-STRATEGY-PRESENTATION-ICT-SUMMIT.pptx",
-    title: "Digital Strategy",
+    title:
+      "The Framework for Digital Transformation by Ms. Llinda Aipinge-Nakale",
   },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
       "presentations/day_1/Education-4.0-Building-Resilient-Learners-in-the-Digital-Age.pptx",
-    title: "Education 4.0",
+    title:
+      "Education 4.0: Building Resilient Learners in the Digital Age by Mr. Barthromeus Shileka",
   },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
       "presentations/day_1/High-performance-computing-ICT-SUMMIT.pptx",
-    title: "HPC Presentation",
+    title:
+      "Role of High-Performance Computing in Digital Transformation, Data Science and Artificial Intelligence by Mr. Arpit Jain",
   },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
       "presentations/day_1/Leveraging-Open-Source-Software-in-the-age-of-AI.pptx",
-    title: "Open-Source Presentation",
+    title:
+      "Leveraging Open Source Software in the age of AI by Mr. Sakaria Ndadi",
   },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation: "presentations/day_1/Peters_ICT_Summit_2024.pptx",
-    title: "AI Readiness Presentation",
+    title: "Namibia AI Readiness by Prof. Anicia Peters",
   },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation: "presentations/day_1/The-Noise-Before-Defeat.pptx",
-    title: "The Noise Before Defeat",
+    title: "The Noise Before Defeat by Mr. Nithen Naidoo",
   },
 ];
 const day2Presentations = [
@@ -199,14 +205,16 @@ export default function Presentations_2024() {
             setDuration(FAST_DURATION);
           }}
         >
-          {[...day1Presentations].map(({ image, presentation, title }, idx) => (
-            <Card
-              image={`${image}`}
-              href={presentation}
-              title={title}
-              key={idx}
-            />
-          ))}
+          {[...day1Presentations, ...day1Presentations].map(
+            ({ image, presentation, title }, idx) => (
+              <Card_2024
+                image={`${image}`}
+                href={presentation}
+                title={title}
+                key={idx}
+              />
+            )
+          )}
         </motion.div>
       )}
       {/* {day === 2 && (

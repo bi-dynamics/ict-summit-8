@@ -4,6 +4,8 @@ import Image from "next/image";
 import Presentations from "../ui/presentations";
 import { Download } from "lucide-react";
 import Sponsors2023 from "../ui/sponsors-2023";
+import PhotoGallery2023 from "../ui/photo-gallery_2023";
+import dynamic from "next/dynamic";
 
 export default function page() {
   return (
@@ -347,6 +349,7 @@ export default function page() {
           </div>
         </div>
       </section>
+      <PhotoGallery2023 />
       <Sponsors2023 />
       <footer
         id="contact-2023"

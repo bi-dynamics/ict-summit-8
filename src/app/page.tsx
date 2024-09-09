@@ -326,7 +326,7 @@ export default function Home() {
         </div>
       </section>
       <Presentations_2024 />
-      <PhotoGallery />
+      {/* <PhotoGallery /> */}
       <VideoGallery />
       <section
         id="youth-exhibition"
