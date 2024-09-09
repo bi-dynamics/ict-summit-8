@@ -265,7 +265,10 @@ export default function Nav() {
               {/* Drop-down container */}
               <div className="items-center justify-center z-10 absolute hidden group-hover/outer:flex top-8 bg-white w-fit py-2 rounded-xl h-20 text-headings">
                 {link.years.map((year, index) => (
-                  <div className="relative flex items-start justify-center">
+                  <div
+                    key={index}
+                    className="relative flex items-start justify-center"
+                  >
                     <Link
                       href={year.href}
                       className="flex flex-row gap-2 peer/inner px-6 w-full"
