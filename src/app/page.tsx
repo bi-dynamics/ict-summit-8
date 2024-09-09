@@ -259,7 +259,7 @@ export default function Home() {
             </h3>
           </div>
           <Link
-            href="/ICT-SUMMIT-PROGRAMME-&-BOOKLET-2024.pdf"
+            href="/ICT-SUMMIT-BOOKLET-&-PROGRAMME-2024.pdf"
             target="_blank"
             referrerPolicy="no-referrer"
             title="ICT Summit Programme & Booklet 2024"
