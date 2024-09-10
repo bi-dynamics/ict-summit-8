@@ -49,13 +49,6 @@ const day1Presentations = [
   },
   {
     image: "/press-release/ict-summit-logo.png",
-    presentation:
-      "presentations/day_1/Leveraging-Open-Source-Software-in-the-age-of-AI.pdf",
-    title:
-      "Leveraging Open Source Software in the age of AI by Mr. Sakaria Ndadi",
-  },
-  {
-    image: "/press-release/ict-summit-logo.png",
     presentation: "presentations/day_1/Peters_ICT_Summit_2024.pdf",
     title: "Namibia AI Readiness by Prof. Anicia Peters",
   },
@@ -95,6 +88,13 @@ const day2Presentations = [
     presentation: "presentation/day_2/Guest-of-Honour-8th-Summit-Nambia.pdf",
     title:
       "Guest of Honor Speech by Hon. Thulagano Merafe Segokgo Minister of Communications, Knowledge and Technology, Republic of Botswana",
+  },
+  {
+    image: "/press-release/ict-summit-logo.png",
+    presentation:
+      "presentations/day_2/Leveraging-Open-Source-Software-in-the-age-of-AI.pdf",
+    title:
+      "Leveraging Open Source Software in the age of AI by Mr. Sakaria Ndadi",
   },
 ];
 const day3Presentations = [
