@@ -64,17 +64,37 @@ const day1Presentations = [
     presentation: "presentations/day_1/The-Noise-Before-Defeat.pdf",
     title: "The Noise Before Defeat by Mr. Nithen Naidoo",
   },
+  {
+    image: "/press-release/ict-summit-logo.png",
+    presentation:
+      "presentations/day_1/Real-time-monitoring-in-home-networks.pdf",
+    title: "Real-time Monitoring in Home Networks by Mr. Klaus von Kries",
+  },
+  {
+    image: "/press-release/ict-summit-logo.png",
+    presentation:
+      "presentations/day_1/MTC-Ndafenongo_8th-National-ICT-Summit-2024.pdf",
+    title:
+      "The Benefits of Smart Partnerships in enabling Digital Transformation and Artificial Intelligence by Mr. Adolf Ndafenongo",
+  },
+  {
+    image: "/press-release/ict-summit-logo.png",
+    presentation: "presentations/day_1/DS_ICT-Summit-2024.pdf",
+    title: "Strategic Alignment of AI & Automation by Mr. Medmillian Handura",
+  },
 ];
 const day2Presentations = [
   {
     image: "",
-    presentation: "",
-    title: "",
+    presentation:
+      "presentations/day_2/Namibia-Digitalization-Journey_10-September-2024-JvW.pdf",
+    title: "Namibian Government's Digitalisation Journey by Johan van Wyk",
   },
   {
     image: "",
-    presentation: "",
-    title: "",
+    presentation: "presentation/day_2/Guest-of-Honour-8th-Summit-Nambia.pdf",
+    title:
+      "Guest of Honor Speech by Hon. Thulagano Merafe Segokgo Minister of Communications, Knowledge and Technology, Republic of Botswana",
   },
 ];
 const day3Presentations = [
@@ -205,7 +225,7 @@ export default function Presentations_2024() {
           )}
         </motion.div>
       )}
-      {/* {day === 2 && (
+      {day === 2 && (
         <motion.div
           className="relative left-0 z-10 flex gap-4 overflow-hidden"
           style={{ x: xTranslation, width: "max-content" }}
@@ -219,17 +239,19 @@ export default function Presentations_2024() {
             setDuration(FAST_DURATION);
           }}
         >
-          {[...day2Presentations].map(({ image, presentation, title }, idx) => (
-            <Card
-              image={`${image}`}
-              href={presentation}
-              title={title}
-              key={idx}
-            />
-          ))}
+          {[...day2Presentations, ...day2Presentations].map(
+            ({ image, presentation, title }, idx) => (
+              <Card_2024
+                image={`${image}`}
+                href={presentation}
+                title={title}
+                key={idx}
+              />
+            )
+          )}
         </motion.div>
       )}
-      {day === 3 && (
+      {/* {day === 3 && (
         <motion.div
           className="relative left-0 z-10 flex gap-4 overflow-hidden"
           style={{ x: xTranslation, width: "max-content" }}
