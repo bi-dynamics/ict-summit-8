@@ -97,6 +97,12 @@ const day2Presentations = [
       "presentations/day_2/Namibia-Digitalization-Journey_10-September-2024-JvW.pdf",
     title: "Namibian Government's Digitalisation Journey by Johan van Wyk",
   },
+  {
+    image: "",
+    presentation: "presentations/day_2/Nithen-Naidoo_Bsides-JHB-2024.pdf",
+    title:
+      "I've seen you get hacked! (AI Real-time Attack Simulation) by Dillon Peens",
+  },
 ];
 const day3Presentations = [
   {
