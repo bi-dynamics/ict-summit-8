@@ -44,8 +44,8 @@ export default function Exhibitors_2024() {
           </h2>
           <p className="text-headings/70 text-center md:text-left w-full text-base sm:text-lg">
             A strong line-up of industry leaders and game changers will be
-            exhibiting at this years' summit. Visit their stands to learn more
-            about their offerings
+            exhibiting at this years&apos; summit. Visit their stands to learn
+            more about their offerings
           </p>
         </div>
 
