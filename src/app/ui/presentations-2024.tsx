@@ -83,7 +83,13 @@ const day2Presentations = [
     title:
       "Guest of Honor Speech by Hon. Thulagano Merafe Segokgo Minister of Communications, Knowledge and Technology, Republic of Botswana",
   },
-  //Adolf here
+  {
+    image: "",
+    presentation:
+      "presentation/day_2/Ndafenongo_8th-National-ICT-Summit-2024_The-Role-of-Telco-in-Enabling-Digital-Transformation-and-Artificial-Intelligence.pdf",
+    title:
+      "The Role of Telco in Enabling Digital Transformation and Artificial Intelligence by Adolf Ndafenongo",
+  },
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
