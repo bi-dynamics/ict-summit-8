@@ -12,7 +12,7 @@ const day1Presentations = [
     image: "/press-release/ict-summit-logo.png",
     presentation:
       "presentations/day_1/Ministers-Speech-National-ICT-Official-Opening-2024.pdf",
-    title: "Ministers Speech by Hon. Emma Thoefelus",
+    title: "Ministers Speech by Hon. Emma Theofelus",
   },
   {
     image: "/press-release/ict-summit-logo.png",
@@ -79,22 +79,23 @@ const day1Presentations = [
 const day2Presentations = [
   {
     image: "",
-    presentation:
-      "presentations/day_2/Namibia-Digitalization-Journey_10-September-2024-JvW.pdf",
-    title: "Namibian Government's Digitalisation Journey by Johan van Wyk",
-  },
-  {
-    image: "",
     presentation: "presentation/day_2/Guest-of-Honour-8th-Summit-Nambia.pdf",
     title:
       "Guest of Honor Speech by Hon. Thulagano Merafe Segokgo Minister of Communications, Knowledge and Technology, Republic of Botswana",
   },
+  //Adolf here
   {
     image: "/press-release/ict-summit-logo.png",
     presentation:
       "presentations/day_2/Leveraging-Open-Source-Software-in-the-age-of-AI.pdf",
     title:
       "Leveraging Open Source Software in the age of AI by Mr. Sakaria Ndadi",
+  },
+  {
+    image: "",
+    presentation:
+      "presentations/day_2/Namibia-Digitalization-Journey_10-September-2024-JvW.pdf",
+    title: "Namibian Government's Digitalisation Journey by Johan van Wyk",
   },
 ];
 const day3Presentations = [
