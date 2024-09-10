@@ -76,7 +76,7 @@
   background: #ECEFF8;
 
   @media (min-width: 769px) {
-      background-image: radial-gradient(circle, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 1) 25%);
+      background-image: radial-gradient(circle at top right, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 1) 30%);
   }
  }
 }

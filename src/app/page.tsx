@@ -24,6 +24,7 @@ const RegForm = dynamic(() => import("./ui/registration-form"), {
 
 import Link from "next/link";
 import Presentations_2024 from "./ui/presentations-2024";
+import Exhibitors_2024 from "./ui/exhibitors-2024";
 
 export const metadata: Metadata = {
   title: "ICT Summit Namibia",
@@ -373,108 +374,7 @@ export default function Home() {
           </div>
         </div>
       </section> */}
-      <section
-        id="exhibitors"
-        className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-16"
-      >
-        <div className="w-full max-w-[960px] h-full flex flex-col justify-center items-center gap-16">
-          <div className="w-full h-fit flex flex-col justify-center items-center gap-4">
-            <h2 className="text-headings font-semibold text-center md:text-left w-full text-3xl md:text-4xl">
-              Our Exhibitors
-            </h2>
-            <p className="text-headings/70 text-center md:text-left w-full text-base sm:text-lg">
-              A strong line-up of industry leaders and game changers will be
-              exhibiting at this years’ summit. Visit their stands to learn more
-              about their offerings
-            </p>
-          </div>
-
-          {/* container */}
-          <div className="flex flex-col md:flex-row md:flex-wrap w-full mx-auto justify-between items-center md:items-start gap-8">
-            <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl rounded-xl">
-              <Image
-                src="/exhibitors/nust-logo.png"
-                alt="NUST Logo"
-                className="z-[2] object-cover"
-                width={250}
-                height={250}
-              />
-              <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
-                <Link
-                  href="https://www.linkedin.com/school/nust-namibia/"
-                  className="text-headings z-[3] hover:text-headings/50"
-                  target="_blank"
-                  title="LinkedIn Profile"
-                >
-                  <Linkedin />
-                </Link>
-                <Link
-                  href="https://www.nust.na/"
-                  className="text-headings z-[3] hover:text-headings/50"
-                  target="_blank"
-                  title="Website"
-                >
-                  <Globe />
-                </Link>
-              </div>
-            </div>
-            <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl rounded-xl">
-              <Image
-                src="/exhibitors/unam-logo.png"
-                alt="UNAM Logo"
-                className="z-[2] object-cover"
-                width={250}
-                height={250}
-              />
-              <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
-                <Link
-                  href="https://www.linkedin.com/school/university-of-namibia/"
-                  className="text-headings z-[3] hover:text-headings/50"
-                  target="_blank"
-                  title="LinkedIn Profile"
-                >
-                  <Linkedin />
-                </Link>
-                <Link
-                  href="https://www.unam.edu.na/"
-                  className="text-headings z-[3] hover:text-headings/50"
-                  target="_blank"
-                  title="Website"
-                >
-                  <Globe />
-                </Link>
-              </div>
-            </div>
-            <div className="relative flex items-center justify-center w-[250px] h-[250px] bg-white shadow-xl rounded-xl">
-              <Image
-                src="/exhibitors/ium-logo.png"
-                alt="IUM Logo"
-                className="z-[2] object-cover p-10"
-                width={250}
-                height={250}
-              />
-              <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
-                <Link
-                  href="https://www.linkedin.com/company/the-international-university-of-management-ium-/"
-                  className="text-headings z-[3] hover:text-headings/50"
-                  target="_blank"
-                  title="LinkedIn Profile"
-                >
-                  <Linkedin />
-                </Link>
-                <Link
-                  href="https://ium.edu.na/"
-                  className="text-headings z-[3] hover:text-headings/50"
-                  target="_blank"
-                  title="Website"
-                >
-                  <Globe />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Exhibitors_2024 />
 
       <footer id="contact" className="w-full h-fit pt-16 pb-8 bg-[#ECEFF8]">
         {/* container */}
