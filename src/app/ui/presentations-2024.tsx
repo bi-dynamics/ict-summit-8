@@ -109,6 +109,27 @@ const day2Presentations = [
     title:
       "I've seen you get hacked! (AI Real-time Attack Simulation) by Dillon Peens",
   },
+  {
+    image: "",
+    presentation:
+      "presentations/day_2/Unlocking-Urban-Mobility-with-Yango_Zanyiwe-ASARE.pdf",
+    title:
+      "Unlocking Urban Mobility with Yango: Exploring Digital Platofrm Innovations and Technology Applications by Zanyiwe ASARE",
+  },
+  {
+    image: "",
+    presentation:
+      "presentations/day_2/nbcPlus-Presentation_ICT Summit_Sept2024.pdf",
+    title:
+      "Running A Viable Streaming Service As a Public Broadcaster by Nico Mwiya",
+  },
+  {
+    image: "",
+    presentation:
+      "presentations/day_2/Unlocking-Urban-Mobility-with-Yango_Zanyiwe-ASARE.pdf",
+    title:
+      "Navigating the Future of Urban Mobility: Digital Innovations to Ensure Safety by Kabanda Chewe",
+  },
 ];
 const day3Presentations = [
   {
