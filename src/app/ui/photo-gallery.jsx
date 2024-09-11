@@ -13,7 +13,7 @@ import Image from "next/image";
 
 
 const images = [
-  { src: "/image-gallery-2024/185A0013.webp", alt: "ICT SUMMIT 2024" },
+  { src: "/image-gallery-2024/Day-1-cover.jpg", alt: "ICT SUMMIT 2024" },
   { src: "/image-gallery-2024/185A0031.jpg", alt: "ICT SUMMIT 2024" },
   { src: "/image-gallery-2024/185A0051.jpg", alt: "ICT SUMMIT 2024" },
   { src: "/image-gallery-2024/185A0062.jpg", alt: "ICT SUMMIT 2024" },
