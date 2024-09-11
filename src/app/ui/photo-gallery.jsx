@@ -45,6 +45,20 @@ const images = [
   { src: "/image-gallery-2024/185A0394.jpg", alt: "ICT SUMMIT 2024" },
   { src: "/image-gallery-2024/185A0401.jpg", alt: "ICT SUMMIT 2024" },
   { src: "/image-gallery-2024/185A0425.jpg", alt: "ICT SUMMIT 2024" },
+  { src: "/image-gallery-2024/Day-2-cover.jpg", alt: "ICT SUMMIT 2024" },
+  { src: "/image-gallery-2024/185A9993.jpg", alt: "ICT SUMMIT 2024" },
+  { src: "/image-gallery-2024/185A9987.jpg", alt: "ICT SUMMIT 2024" },
+  { src: "/image-gallery-2024/185A9951.jpg", alt: "ICT SUMMIT 2024" },
+  { src: "/image-gallery-2024/Day-3-cover.jpg", alt: "ICT SUMMIT 2024" },
+  { src: "/image-gallery-2024/185A1637.jpg", alt: "ICT SUMMIT 2024" },
+  { src: "/image-gallery-2024/185A1659.jpg", alt: "ICT SUMMIT 2024" },
+  { src: "/image-gallery-2024/185A1669.jpg", alt: "ICT SUMMIT 2024" },
+  { src: "/image-gallery-2024/185A1691.jpg", alt: "ICT SUMMIT 2024" },
+
+
+
+
+  
   ];
   
   export default function PhotoGallery() {
