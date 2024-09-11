@@ -157,11 +157,6 @@ const day3Presentations = [
   },
   {
     image: "",
-    presentation: "presentations/day_3/PITCH-DECK_Thank-you-wallet.pdf",
-    title: "HACKATON: Thank-you Wallet",
-  },
-  {
-    image: "",
     presentation: "presentations/day_3/Press-Track-Nam_Pitch.pdf",
     title: "HACKATON: PressTrack Namibia",
   },
@@ -169,6 +164,56 @@ const day3Presentations = [
     image: "",
     presentation: "presentations/day_3/SIZA-pitch.pdf",
     title: "HACKATON: SIZA",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/Okaluli-MICT_Pitch.pdf",
+    title: "HACKATON: OKALULI",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/Tinura-Innovations_pitch.pdf",
+    title: "HACKATON: Tinura Innovations",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/Billet-Pitch.pdf",
+    title: "HACKATON: Billet",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/African-Nyamazane_pitch.pdf",
+    title: "HACKATON: African Nyamazane",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/AMPERRA-CHARGING-COMPANY_PITCH-DECK.pdf",
+    title: "HACKATON: Amperra Charging Company",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/HydroWatch_pitch.pdf",
+    title: "HACKATON: HydroWatch",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/PITCH-DECK_Thank-you-wallet.pdf",
+    title: "HACKATON: Thank-you Wallet",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/DataVue_pitch.pdf",
+    title: "HACKATON: DataVue",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/Autono-Me_pitch.pdf",
+    title: "HACKATON: Autono-Me",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/Kaskola_pitch.pdf",
+    title: "HACKATON: Kaskola",
   },
 ];
 
