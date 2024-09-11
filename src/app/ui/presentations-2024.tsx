@@ -134,13 +134,41 @@ const day2Presentations = [
 const day3Presentations = [
   {
     image: "",
-    presentation: "",
-    title: "",
+    presentation:
+      "presentations/day_3/NIPDB-ScaleUp-Namibia-Presentation_National-ICT-Summit-2024.pdf",
+    title:
+      "ScaleUp Namibia (SUN): A Network of Namibian Startup Enablers Fostering an Entrepreneurial, Innovative, and Technological Ecosystem by Ms. Linda McLeod",
   },
   {
     image: "",
-    presentation: "",
-    title: "",
+    presentation: "presentations/day_3/Innovators-pitch.pdf",
+    title: "HACKATON: Innovators",
+  },
+  {
+    image: "",
+    presentation:
+      "presentations/day_3/Media-Practitioners-Online-Registration-Portal_pitch.pdf",
+    title: "HACKATON: Medical Practitioners Online Registration Portal",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/Meva.ai-pitch.pdf",
+    title: "HACKATON: Meva.ai",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/PITCH-DECK_Thank-you-wallet.pdf",
+    title: "HACKATON: Thank-you Wallet",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/Press-Track-Nam_Pitch.pdf",
+    title: "HACKATON: PressTrack Namibia",
+  },
+  {
+    image: "",
+    presentation: "presentations/day_3/SIZA-pitch.pdf",
+    title: "HACKATON: SIZA",
   },
 ];
 
@@ -285,7 +313,7 @@ export default function Presentations_2024() {
           )}
         </motion.div>
       )}
-      {/* {day === 3 && (
+      {day === 3 && (
         <motion.div
           className="relative left-0 z-10 flex gap-4 overflow-hidden"
           style={{ x: xTranslation, width: "max-content" }}
@@ -299,16 +327,18 @@ export default function Presentations_2024() {
             setDuration(FAST_DURATION);
           }}
         >
-          {[...day3Presentations].map(({ image, presentation, title }, idx) => (
-            <Card
-              image={`${image}`}
-              href={presentation}
-              title={title}
-              key={idx}
-            />
-          ))}
+          {[...day3Presentations, ...day3Presentations].map(
+            ({ image, presentation, title }, idx) => (
+              <Card_2024
+                image={`${image}`}
+                href={presentation}
+                title={title}
+                key={idx}
+              />
+            )
+          )}
         </motion.div>
-      )} */}
+      )}
     </main>
   );
 }
