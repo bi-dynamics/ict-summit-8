@@ -32,7 +32,7 @@ const Card_2024: React.FC<CardProps> = ({ image, href, title }) => {
           <Button
             about="download presentation"
             aria-label="Download Presentation"
-            className="bg-transparent text-wrap h-full text-headings active:scale-[.99] transition-all hover:scale-105 hover:text-white font-semibold mb-2 text-sm z-10 w-full rounded-lg flex items-center justify-center gap-[0.5ch] hover:border hover:border-primary"
+            className="bg-transparent text-wrap px-4 h-full text-headings active:scale-[.99] transition-all hover:scale-105 hover:text-white font-semibold mb-2 text-sm z-10 w-full rounded-lg flex items-center justify-center gap-[0.5ch] hover:border hover:border-primary"
           >
             {title}
           </Button>

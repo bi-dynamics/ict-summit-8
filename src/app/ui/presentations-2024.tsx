@@ -142,78 +142,78 @@ const day3Presentations = [
   {
     image: "",
     presentation: "presentations/day_3/Innovators-pitch.pdf",
-    title: "HACKATON: Innovators",
+    title: "INNOVATOR: Innovators",
   },
   {
     image: "",
     presentation:
       "presentations/day_3/Media-Practitioners-Online-Registration-Portal_pitch.pdf",
-    title: "HACKATON: Medical Practitioners Online Registration Portal",
+    title: "INNOVATOR: Medical Practitioners Online Registration Portal",
   },
   {
     image: "",
     presentation: "presentations/day_3/Meva.ai-pitch.pdf",
-    title: "HACKATON: Meva.ai",
+    title: "INNOVATOR: Meva.ai",
   },
   {
     image: "",
     presentation: "presentations/day_3/Press-Track-Nam_Pitch.pdf",
-    title: "HACKATON: PressTrack Namibia",
+    title: "INNOVATOR: PressTrack Namibia",
   },
   {
     image: "",
     presentation: "presentations/day_3/SIZA-pitch.pdf",
-    title: "HACKATON: SIZA",
+    title: "INNOVATOR: SIZA",
   },
   {
     image: "",
     presentation: "presentations/day_3/Okaluli-MICT_Pitch.pdf",
-    title: "HACKATON: OKALULI",
+    title: "INNOVATOR: OKALULI",
   },
   {
     image: "",
     presentation: "presentations/day_3/Tinura-Innovations_pitch.pdf",
-    title: "HACKATON: Tinura Innovations",
+    title: "INNOVATOR: Tinura Innovations",
   },
   {
     image: "",
     presentation: "presentations/day_3/Billet-Pitch.pdf",
-    title: "HACKATON: Billet",
+    title: "INNOVATOR: Billet",
   },
   {
     image: "",
     presentation: "presentations/day_3/African-Nyamazane_pitch.pdf",
-    title: "HACKATON: African Nyamazane",
+    title: "INNOVATOR: African Nyamazane",
   },
   {
     image: "",
     presentation: "presentations/day_3/AMPERRA-CHARGING-COMPANY_PITCH-DECK.pdf",
-    title: "HACKATON: Amperra Charging Company",
+    title: "INNOVATOR: Amperra Charging Company",
   },
   {
     image: "",
     presentation: "presentations/day_3/HydroWatch_pitch.pdf",
-    title: "HACKATON: HydroWatch",
+    title: "INNOVATOR: HydroWatch",
   },
   {
     image: "",
     presentation: "presentations/day_3/PITCH-DECK_Thank-you-wallet.pdf",
-    title: "HACKATON: Thank-you Wallet",
+    title: "INNOVATOR: Thank-you Wallet",
   },
   {
     image: "",
     presentation: "presentations/day_3/DataVue_pitch.pdf",
-    title: "HACKATON: DataVue",
+    title: "INNOVATOR: DataVue",
   },
   {
     image: "",
     presentation: "presentations/day_3/Autono-Me_pitch.pdf",
-    title: "HACKATON: Autono-Me",
+    title: "INNOVATOR: Autono-Me",
   },
   {
     image: "",
     presentation: "presentations/day_3/Kaskola_pitch.pdf",
-    title: "HACKATON: Kaskola",
+    title: "INNOVATOR: Kaskola",
   },
 ];
 
@@ -264,7 +264,7 @@ export default function Presentations_2024() {
       <h2 className=" text-headings font-bold text-3xl sm:text-4xl z-[12]">
         Presentations
       </h2>
-      <div className="w-full h-fit flex flex-row gap-4 z-[12] max-w-screen-lg">
+      <div className="w-full h-fit flex flex-row gap-4 px-4 z-[12] max-w-screen-lg">
         <Button
           name="Register"
           className={clsx(
