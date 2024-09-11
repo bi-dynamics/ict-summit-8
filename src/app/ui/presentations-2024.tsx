@@ -215,6 +215,13 @@ const day3Presentations = [
     presentation: "presentations/day_3/Kaskola_pitch.pdf",
     title: "INNOVATOR: Kaskola",
   },
+  {
+    image: "",
+    presentation:
+      "presentations/day_3/Hon.-Deputy-Minister-of-ICT_8th-National-ICT-SUMMIT-2024.pdf",
+    title:
+      "Keynote address by HON. MODEESTUS AMUTSE, DEPUTY MINISTER OF INFORMATION AND COMMUNICATION TECHNOLOGY ",
+  },
 ];
 
 export default function Presentations_2024() {
