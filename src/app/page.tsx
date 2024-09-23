@@ -275,7 +275,7 @@ export default function Home() {
           </Link>
         </div>
       </section>
-      <RegForm />
+      {/* <RegForm /> */}
       {/* PRESS RELEASE */}
       <section
         id="press-release"

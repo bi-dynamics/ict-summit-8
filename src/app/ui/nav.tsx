@@ -47,7 +47,7 @@ export default function Nav() {
     { name: "Sponsors 2024", href: "sponsors2024" },
     { name: "About", href: "about" },
     { name: "Programme", href: "programme" },
-    { name: "Registration", href: "registration" },
+    // { name: "Registration", href: "registration" },
     { name: "Press Release", href: "press-release" },
     { name: "Presentations", href: "presentations" },
     { name: "Photos", href: "photo-gallery" },
