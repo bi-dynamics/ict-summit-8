@@ -71,32 +71,26 @@ export default function Home() {
         {/* gradient layer */}
         <div className="absolute -z-[9] h-full w-full bg-gradient-to-b from-transparent via-[#eceff800] via-80% to-[#ECEFF8] to-95%"></div>
         {/* content container */}
-        <main className="h-full w-full mt-[172px] md:pt-16 px-4 sm:px-8 lg:px-[100px] flex flex-col items-start justify-center gap-8">
+        <main className="h-full w-full z-[40] mt-[172px] md:pt-16 px-4 sm:px-8 lg:px-[100px] flex flex-col items-start justify-center gap-8">
           <div className="w-full md:w-[60%] lg:w-1/2 h-full flex flex-col items-center justify-center gap-6 sm:gap-8 ">
             <h1 className="text-2xl -mb-4 text-headings text-left font-black">
-              8th NATIONAL ICT SUMMIT
+              9th NATIONAL ICT SUMMIT
             </h1>
-            <h2 className="text-xl sm:text-2xl z-[20] text-center text-headings sm:leading-snug leading-relaxed font-medium italic py-2 bg-clip-text w-full ">
-              &quot;Building resilience to <br />
+            <h2 className="text-lg sm:text-xl z-[20] text-center text-headings sm:leading-snug leading-relaxed font-medium py-2 bg-clip-text w-full ">
+              Harnessing ICT for Inclusive Growth: <br />
               <span
                 className="font-bold w-full text-[40px] px-4 sm:text-7xl bg-clip-text text-center text-transparent tracking-tight"
                 style={{
                   backgroundImage: "radial-gradient(circle, #0095FF , #0077CC)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
                 }}
               >
-                &quot;ADAPT OR DIE&quot;
-              </span>{" "}
-              <br />
-              in the era of <br />
-              <span className="text-primary font-bold">
-                Digital Transformation
-              </span>{" "}
-              <br className="visible sm:hidden" />
-              and <br className="visible sm:hidden" />
-              <span className="text-primary font-bold">
-                Artificial Intelligence (AI)
+                Digital Pathways to Reduce Unemployment and Eradicate Poverty
               </span>
-              &quot;
+              <br />
+
+
             </h2>
             {/* <Link
               href="/Invitation-to-attend-the-7th-National-ICT-Summit-OMAs.pdf"
@@ -117,11 +111,11 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row md:flex-col items-center w-full justify-center sm:gap-10 md:gap-4 gap-4">
               <div className="text-headings text-lg sm:text-xl font-medium flex items-center justify-center gap-4">
                 <LocateFixed className="text-primary" />
-                Mercure (Safari) Hotel, Windhoek
+                Ongwediva Trade Centre, Oshana Region
               </div>
               <div className="text-headings text-lg sm:text-xl font-medium flex items-center justify-center gap-4">
                 <Calendar className="text-primary" />
-                9-11 September 2024
+                12-16 October 2026
               </div>
             </div>
           </div>
