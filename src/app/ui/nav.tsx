@@ -47,7 +47,10 @@ export default function Nav() {
     { name: "Sponsors 2024", href: "sponsors2024" },
     { name: "About", href: "about" },
     { name: "Programme", href: "programme" },
-    // { name: "Registration", href: "registration" },
+    // The 2026 registration form is a separate PHP application served by nginx
+    // at /registerictsummit. It is NOT a Next.js route, so it must be rendered with a
+    // plain <a> — next/link would attempt a client-side navigation and 404.
+    { name: "Register", href: "/registerictsummit", external: true },
     { name: "Press Release", href: "press-release" },
     { name: "Presentations", href: "presentations" },
     { name: "Photos", href: "photo-gallery" },
@@ -207,6 +210,23 @@ export default function Nav() {
           {links.map((link, index) => {
             const isActive = link.href === activeSection;
 
+            // Mobile Nav — external route (PHP registration form)
+            if (link.external) {
+              return (
+                <a
+                  onClick={() => setOpenMenu(false)}
+                  key={index}
+                  title={link.name}
+                  href={link.href}
+                  className="w-fit overflow-hidden relative rounded-xl px-6 py-2 flex items-center justify-center"
+                >
+                  <p className="w-full h-full text-[#003c66] font-bold text-sm sm:text-base underline underline-offset-4">
+                    {link.name}
+                  </p>
+                </a>
+              );
+            }
+
             return (
               // Mobile Nav
               <Link
@@ -255,6 +275,21 @@ export default function Nav() {
       >
         {links.map((link, index) => {
           const isActive = link.href === activeSection;
+
+          // Desktop Nav — external route (PHP registration form).
+          // Styled as a solid pill so it reads as the primary action.
+          if (link.external) {
+            return (
+              <a
+                key={index}
+                title={link.name}
+                href={link.href}
+                className="w-fit mx-2 rounded-full px-6 py-2 flex items-center justify-center bg-headings text-white text-xs font-bold hover:opacity-90 active:scale-[.99] transition-all"
+              >
+                {link.name}
+              </a>
+            );
+          }
 
           //add drop down menu to links with year fields
           return link.years ? (

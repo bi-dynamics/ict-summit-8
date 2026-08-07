@@ -8,6 +8,7 @@ import {
   Facebook,
   Globe,
   Linkedin,
+  SquareArrowOutUpRight,
 } from "lucide-react";
 import Sponsors2024 from "./ui/sponsors-2024";
 import dynamic from "next/dynamic";
@@ -118,6 +119,26 @@ export default function Home() {
                 12-16 October 2026
               </div>
             </div>
+
+            {/*
+              Registration form. Served by nginx + PHP-FPM at /registerictsummit, NOT by
+              this Next.js app — so this must stay a plain <a>. Using next/link
+              here would trigger a client-side navigation and 404.
+            */}
+            <a
+              href="/registerictsummit"
+              title="Register for the 9th National ICT Summit 2026"
+              className="w-fit h-fit flex items-center justify-center mt-2"
+            >
+              <Button
+                name="Register for the ICT Summit 2026"
+                about="Register for the ICT Summit 2026"
+                className="text-base rounded-2xl bg-headings text-white hover:opacity-90 active:scale-[.99] group transition-all py-7 px-[18px]"
+              >
+                REGISTER FOR THE SUMMIT
+                <SquareArrowOutUpRight className="ml-2 h-5 w-5 group-active:scale-[.99]" />
+              </Button>
+            </a>
           </div>
         </main>
       </section>
