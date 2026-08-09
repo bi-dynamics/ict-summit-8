@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
-import { ArrowBigRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
-import clsx from "clsx";
+import { cn } from "../lib/utils";
 
 interface CardProps {
   image: string;
@@ -12,75 +12,67 @@ interface CardProps {
   onClick?: () => void;
 }
 
-const Card: React.FC<CardProps> = ({
-  image,
-  sponsorLevel,
-  onShowModal,
-  onClick,
-}) => {
+/**
+ * Archive sponsor tile for the marquee. The tier band along the bottom uses
+ * the design system's tier colours rather than the old metallic gradients —
+ * flat fills only, no texture.
+ */
+const tierBand: Record<string, string> = {
+  Platinum: "bg-tier-platinum-soft text-tier-platinum",
+  Gold: "bg-tier-gold-soft text-tier-gold",
+  Diamond: "bg-tier-diamond-soft text-tier-diamond",
+  Silver: "bg-tier-silver-soft text-tier-silver",
+};
+
+const Card: React.FC<CardProps> = ({ image, sponsorLevel, onShowModal, onClick }) => {
   const [showOverlay, setShowOverlay] = useState(false);
 
   return (
-    <>
-      <motion.div
-        className="relative group overflow-hidden h-[350px] min-w-[250px] rounded-xl flex justify-center items-center"
-        key={image}
-        onHoverStart={() => setShowOverlay(true)}
-        onHoverEnd={() => setShowOverlay(false)}
-        onClick={onClick}
+    <motion.div
+      className="group relative flex h-[350px] min-w-[250px] items-center justify-center overflow-hidden rounded-md border border-line-subtle bg-white"
+      key={image}
+      onHoverStart={() => setShowOverlay(true)}
+      onHoverEnd={() => setShowOverlay(false)}
+      onClick={onClick}
+    >
+      <span
+        className={cn(
+          "absolute inset-x-0 bottom-0 z-[2] border-t border-line-subtle px-4 py-3 text-center font-body text-overline font-bold uppercase tracking-overline",
+          tierBand[sponsorLevel] ?? "bg-grey-100 text-grey-700"
+        )}
       >
-        <p
-          className={clsx(
-            " group-hover:translate-y-16 text-center transition-all absolute mt-8 bottom-0 p-2 pt-4 px-4 bg-headings w-full h-16 rounded-b-xl mx-auto font-bold text-md",
-            {
-              " text-primary bg-gradient-to-t from-[#e5e4e2] via-[#dbd7cd] to-[#ECEFF8]":
-                sponsorLevel === "Platinum",
-              " text-primary bg-gradient-to-t from-[#FFD700] from-10% to-[#ECEFF8]":
-                sponsorLevel === "Gold",
-              " text-primary bg-gradient-to-t from-[#b8f2ff] to-[#ECEFF8]":
-                sponsorLevel === "Diamond",
-              " text-primary bg-gradient-to-t from-[#d0d0d0] from-10% to-[#ECEFF8]":
-                sponsorLevel === "Silver",
-            }
-          )}
-        >
-          {sponsorLevel}
-        </p>
-        {/* Hover overlay */}
-        <AnimatePresence>
-          {showOverlay && (
-            <motion.div
-              className="absolute left-0 top-0 bottom-0 right-0 z-10 flex justify-center items-center"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+        {sponsorLevel}
+      </span>
+
+      <AnimatePresence>
+        {showOverlay && (
+          <motion.div
+            className="absolute inset-0 z-10 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.22, ease: [0.2, 0, 0.2, 1] }}
+          >
+            <div aria-hidden="true" className="absolute h-full w-full bg-navy-950/[0.62]" />
+            <button
+              type="button"
+              className="z-10 inline-flex items-center gap-2 rounded-sm bg-white px-4 py-[10px] font-body text-body-sm font-semibold text-blue-700 transition-colors duration-fast ease-standard hover:bg-blue-50"
+              onClick={onShowModal}
             >
-              <div className="absolute bg-black pointer-events-none opacity-50 h-full w-full" />
-              <motion.h1
-                className="bg-headings font-semibold text-sm z-10 px-3 py-2 rounded-full flex items-center gap-[0.5ch] hover:opacity-75"
-                initial={{ y: 10 }}
-                animate={{ y: 0 }}
-                exit={{ y: 10 }}
-                onClick={() => {
-                  onShowModal();
-                }}
-              >
-                <span className="text-white">About</span>
-                {/* change button to view {comapny.name} and have modal */}
-                <ArrowBigRight className="h-4 w-4 text-white" />
-              </motion.h1>
-            </motion.div>
-          )}
-        </AnimatePresence>
-        <Image
-          src={image}
-          alt={image.split(".")[0].split("/")[2].split("-")[0]}
-          fill
-          style={{ objectFit: "fill" }}
-          className="p-8"
-        />
-      </motion.div>
-    </>
+              About
+              <ArrowRight className="h-4 w-4" />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <Image
+        src={image}
+        alt={image.split(".")[0].split("/")[2].split("-")[0]}
+        fill
+        className="object-contain p-8 pb-16"
+      />
+    </motion.div>
   );
 };
 

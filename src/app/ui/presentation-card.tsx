@@ -1,8 +1,7 @@
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
-import { ArrowBigRight } from "lucide-react";
+import { motion } from "framer-motion";
+import React from "react";
+import { Download } from "lucide-react";
 import Image from "next/image";
-import { Button } from "./button";
 import Link from "next/link";
 
 interface CardProps {
@@ -11,43 +10,30 @@ interface CardProps {
   title: string;
 }
 
-const Card: React.FC<CardProps> = ({ image, href, title }) => {
-  const [showOverlay, setShowOverlay] = useState(false);
+/**
+ * 2023 presentation tile for the marquee — the presenting organisation's mark
+ * over a download action. Flat and 1px-ruled like every other card.
+ */
+const Card: React.FC<CardProps> = ({ image, href, title }) => (
+  <motion.div
+    className="relative flex h-[350px] min-w-[250px] flex-col overflow-hidden rounded-md border border-line-subtle bg-white"
+    key={image + href}
+  >
+    <div className="relative flex-1 border-b border-line-subtle bg-grey-50">
+      <Image src={image} alt={title || "Presentation"} fill className="object-contain p-8" />
+    </div>
 
-  return (
-    <motion.div
-      className="relative overflow-hidden h-[350px] min-w-[250px] rounded-2xl flex justify-center items-center"
-      key={image}
-      onHoverStart={() => setShowOverlay(true)}
-      onHoverEnd={() => setShowOverlay(false)}
+    <Link
+      href={href}
+      target="_blank"
+      referrerPolicy="no-referrer"
+      title={title ? `Download ${title}` : "Download presentation"}
+      className="flex items-center justify-center gap-2 px-4 py-4 font-body text-body-sm font-semibold text-brand no-underline transition-colors duration-fast ease-standard hover:bg-blue-50 hover:text-blue-800"
     >
-      <motion.div className="absolute left-0 top-0 px-2 bottom-0 right-0 z-10 flex justify-center items-end">
-        <div className="absolute bg-gradient-to-t from-primary/50 to-transparent pointer-events-none opacity-50 h-1/2 w-full" />
-        <Link
-          href={href}
-          className="w-fit h-fit z-10"
-          target="_blank"
-          referrerPolicy="no-referrer"
-        >
-          <Button
-            about="download presentation"
-            aria-label="Download Presentation"
-            className="bg-transparent text-headings active:scale-[.99] transition-all hover:scale-105 hover:text-white font-semibold mb-2 text-sm z-10 w-full rounded-lg flex items-center justify-center gap-[0.5ch] hover:border hover:border-primary"
-          >
-            Download {title}
-          </Button>
-        </Link>
-      </motion.div>
-
-      <Image
-        src={image}
-        alt={image}
-        fill
-        style={{ objectFit: "contain" }}
-        className="p-8"
-      />
-    </motion.div>
-  );
-};
+      Download presentation
+      <Download className="h-4 w-4" />
+    </Link>
+  </motion.div>
+);
 
 export default Card;

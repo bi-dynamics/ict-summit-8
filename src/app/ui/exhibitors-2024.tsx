@@ -1,191 +1,94 @@
-"use client";
-
 import { Globe, Linkedin } from "lucide-react";
 import Link from "next/link";
-import "swiper/css";
-import "swiper/css/free-mode";
-import "swiper/css/navigation";
-import "swiper/css/autoplay";
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, FreeMode, Navigation } from "swiper/modules";
+import { SectionHeading } from "./ds/section-heading";
 
 const exhibitors = [
   {
     src: "/exhibitors/nust-logo.png",
     alt: "NUST Logo",
+    name: "Namibia University of Science and Technology",
     linkedIn: "https://www.linkedin.com/school/nust-namibia/",
     website: "https://www.nust.na/",
   },
   {
     src: "/exhibitors/unam-logo.png",
     alt: "UNAM Logo",
+    name: "University of Namibia",
     linkedIn: "https://www.linkedin.com/school/university-of-namibia/",
     website: "https://www.unam.edu.na/",
   },
   {
     src: "/exhibitors/ium-logo.png",
     alt: "IUM Logo",
+    name: "International University of Management",
     linkedIn:
       "https://www.linkedin.com/company/the-international-university-of-management-ium-/",
     website: "https://ium.edu.na/",
   },
 ];
+
+/**
+ * 2024 exhibitor listing. A plain, even three-up grid — the system's grids are
+ * never carousels, and with three entries there is nothing to scroll past.
+ */
 export default function Exhibitors_2024() {
   return (
     <section
       id="exhibitors"
-      className="w-full h-fit flex items-center justify-center px-4 sm:px-8 md:px-[100px] py-16"
+      className="flex h-fit w-full items-center justify-center bg-white px-4 py-16 sm:px-6 md:px-8 md:py-24"
     >
-      <div className="w-full max-w-[960px] h-full flex flex-col justify-center items-center gap-16">
-        <div className="w-full h-fit flex flex-col justify-center items-center gap-4">
-          <h2 className="text-headings font-semibold text-center md:text-left w-full text-3xl md:text-4xl">
-            Our Exhibitors
-          </h2>
-          <p className="text-headings/70 text-center md:text-left w-full text-base sm:text-lg">
-            A strong line-up of industry leaders and game changers will be
-            exhibiting at this years&apos; summit. Visit their stands to learn
-            more about their offerings
-          </p>
-        </div>
+      <div className="flex h-full w-full max-w-container flex-col items-center justify-center gap-10">
+        <SectionHeading
+          overline="Exhibitors"
+          title="Who exhibited in 2024"
+          description="A line-up of industry leaders and game changers exhibited at the 8th National ICT Summit."
+          className="w-full"
+        />
 
-        {/* container */}
-        <div className="flex flex-col w-full mx-auto justify-center items-start sm:gap-4">
-          <Swiper
-            spaceBetween={32}
-            loop
-            centeredSlides={true}
-            breakpoints={{
-              639: { slidesPerView: 2.4 },
-              769: { slidesPerView: 4 },
-            }}
-            navigation={true}
-            autoplay={{ disableOnInteraction: true, pauseOnMouseEnter: true }}
-            slidesPerView={1.2}
-            modules={[FreeMode, Navigation, Autoplay]}
-            className="w-full max-w-[960px] h-fit rounded-t-lg flex items-end justify-center"
-          >
-            {[...exhibitors, ...exhibitors].map(
-              ({ src, alt, linkedIn, website }, index) => (
-                <SwiperSlide
-                  key={index}
-                  className="w-fit h-[400px] relative flex flex-col my-auto items-end justify-end"
-                >
-                  <Image
-                    src={src}
-                    alt={alt}
-                    width={250}
-                    height={250}
-                    sizes="(max-width: 768px) 395px, (max-width: 1200px) 960px, 960px"
-                    className=" object-contain mx-auto"
-                  />
-                  <div className="w-full h-fit py-4 flex flex-row items-center justify-center gap-4">
-                    <Link
-                      href={linkedIn}
-                      className="text-headings z-[3] hover:text-headings/50"
-                      target="_blank"
-                      title="LinkedIn Profile"
-                    >
-                      <Linkedin />
-                    </Link>
-                    <Link
-                      href={website}
-                      className="text-headings z-[3] hover:text-headings/50"
-                      target="_blank"
-                      title="Website"
-                    >
-                      <Globe />
-                    </Link>
-                  </div>
-                </SwiperSlide>
-              )
-            )}
-          </Swiper>
+        <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {exhibitors.map(({ src, alt, name, linkedIn, website }) => (
+            <div
+              key={name}
+              className="flex flex-col overflow-hidden rounded-md border border-line-subtle bg-white transition-all duration-base ease-standard hover:-translate-y-[2px] hover:shadow-md"
+            >
+              <div className="relative flex h-[220px] items-center justify-center border-b border-line-subtle bg-grey-50 p-8">
+                <Image
+                  src={src}
+                  alt={alt}
+                  width={220}
+                  height={160}
+                  sizes="(max-width: 769px) 90vw, 320px"
+                  className="max-h-full w-auto object-contain"
+                />
+              </div>
+
+              <div className="flex flex-1 items-center justify-between gap-4 p-5">
+                <span className="font-body text-body-sm font-semibold leading-snug text-ink">
+                  {name}
+                </span>
+                <span className="flex shrink-0 items-center gap-3">
+                  <Link
+                    href={linkedIn}
+                    className="text-brand transition-colors duration-fast ease-standard hover:text-blue-800"
+                    target="_blank"
+                    title={`${name} on LinkedIn`}
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </Link>
+                  <Link
+                    href={website}
+                    className="text-brand transition-colors duration-fast ease-standard hover:text-blue-800"
+                    target="_blank"
+                    title={`${name} website`}
+                  >
+                    <Globe className="h-5 w-5" />
+                  </Link>
+                </span>
+              </div>
+            </div>
+          ))}
         </div>
-        {/* container */}
-        {/* <div className="flex flex-col md:flex-row md:flex-wrap w-full mx-auto justify-between items-center md:items-start gap-8">
-          <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl rounded-xl">
-            <Image
-              src="/exhibitors/nust-logo.png"
-              alt="NUST Logo"
-              className="z-[2] object-cover"
-              width={250}
-              height={250}
-            />
-            <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
-              <Link
-                href="https://www.linkedin.com/school/nust-namibia/"
-                className="text-headings z-[3] hover:text-headings/50"
-                target="_blank"
-                title="LinkedIn Profile"
-              >
-                <Linkedin />
-              </Link>
-              <Link
-                href="https://www.nust.na/"
-                className="text-headings z-[3] hover:text-headings/50"
-                target="_blank"
-                title="Website"
-              >
-                <Globe />
-              </Link>
-            </div>
-          </div>
-          <div className="relative flex items-center justify-center w-[250px] h-[250px] px-4 bg-white shadow-xl rounded-xl">
-            <Image
-              src="/exhibitors/unam-logo.png"
-              alt="UNAM Logo"
-              className="z-[2] object-cover"
-              width={250}
-              height={250}
-            />
-            <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
-              <Link
-                href="https://www.linkedin.com/school/university-of-namibia/"
-                className="text-headings z-[3] hover:text-headings/50"
-                target="_blank"
-                title="LinkedIn Profile"
-              >
-                <Linkedin />
-              </Link>
-              <Link
-                href="https://www.unam.edu.na/"
-                className="text-headings z-[3] hover:text-headings/50"
-                target="_blank"
-                title="Website"
-              >
-                <Globe />
-              </Link>
-            </div>
-          </div>
-          <div className="relative flex items-center justify-center w-[250px] h-[250px] bg-white shadow-xl rounded-xl">
-            <Image
-              src="/exhibitors/ium-logo.png"
-              alt="IUM Logo"
-              className="z-[2] object-cover p-10"
-              width={250}
-              height={250}
-            />
-            <div className="w-full h-fit absolute bottom-4 flex flex-row items-center justify-center gap-4">
-              <Link
-                href="https://www.linkedin.com/company/the-international-university-of-management-ium-/"
-                className="text-headings z-[3] hover:text-headings/50"
-                target="_blank"
-                title="LinkedIn Profile"
-              >
-                <Linkedin />
-              </Link>
-              <Link
-                href="https://ium.edu.na/"
-                className="text-headings z-[3] hover:text-headings/50"
-                target="_blank"
-                title="Website"
-              >
-                <Globe />
-              </Link>
-            </div>
-          </div>
-        </div> */}
       </div>
     </section>
   );

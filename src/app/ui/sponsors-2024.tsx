@@ -10,6 +10,7 @@ import { useEffect, useRef, useState } from "react";
 import useMeasure from "react-use-measure";
 import Card from "./sponsor-card";
 import { XCircle } from "lucide-react";
+import { SectionHeading } from "./ds/section-heading";
 
 const images = [
   {
@@ -224,7 +225,7 @@ const images = [
   // },
 ];
 
-export default function Sponsors2023() {
+export default function Sponsors2024() {
   const FAST_DURATION = 25;
   const SLOW_DURATION = 999;
 
@@ -272,22 +273,26 @@ export default function Sponsors2023() {
   }, [rerender, xTranslation, duration, width, mustFinish]);
 
   return (
-    <main
+    <section
       id="sponsors2024"
-      className="py-16 overflow-hidden relative bg-[#ECEFF8] flex flex-col items-center justify-center space-y-4"
+      className="relative flex flex-col items-center justify-center gap-10 overflow-hidden bg-grey-50 py-16 md:py-24"
     >
-      <h2 className=" text-headings font-bold w-full text-center text-2xl sm:text-4xl z-[12]">
-        Proudly Welcoming Our 2024 Sponsors
-      </h2>
-      <p className="text-headings text-base sm:text-lg max-w-screen-md text-center z-[12] px-4 sm:px-8">
-        The ICT Summit greatly appreciates the contributions made by its
-        sponsors who have chosen to take ownership and responsibility for
-        growing the ICT industry.
-      </p>
-      {/* gradient layer */}
-      <div className="absolute left-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-r from-[#ECEFF8] to-transparent"></div>
-      {/* gradient layer */}
-      <div className="absolute right-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-l from-[#ECEFF8] to-transparent"></div>
+      <SectionHeading
+        align="center"
+        overline="Sponsors"
+        title="Our 2024 sponsors"
+        description="The ICT Summit greatly appreciates the contributions made by its sponsors, who have chosen to take ownership and responsibility for growing the ICT industry."
+        className="z-[12] px-4 sm:px-6"
+      />
+      {/* Edge fades so the marquee reads as continuous rather than clipped. */}
+      <div
+        aria-hidden="true"
+        className="absolute left-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-r from-grey-50 to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute right-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-l from-grey-50 to-transparent"
+      />
       <motion.div
         className="relative left-0 z-10 flex gap-4 overflow-hidden"
         style={{ x: xTranslation, width: "max-content" }}
@@ -338,7 +343,7 @@ export default function Sponsors2023() {
           />
         )}
       </AnimatePresence>
-    </main>
+    </section>
   );
 }
 
@@ -368,21 +373,30 @@ const Modal = ({ onClose, heading, bodyText, sponsorLevel }: ModalProps) => {
         initial={{ opacity: 0, y: "50%" }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: "50%" }}
-        className="w-[95vw] md:w-[60vw] mx-auto max-h-[40vh] overflow-y-auto fixed bottom-4 z-20 bg-white/95 border-4 border-primary/50 rounded-xl p-8 flex"
+        transition={{ duration: 0.22, ease: [0.2, 0, 0.2, 1] }}
+        className="fixed inset-x-0 bottom-4 z-20 mx-auto flex max-h-[40vh] w-[95vw] overflow-y-auto rounded-md border border-t-rule border-line-subtle border-t-brand bg-white p-8 shadow-lg md:w-[60vw]"
         ref={modalRef}
       >
-        <div className="w-full flex flex-col items-center justify-start gap-6">
-          <h2 className="font-bold text-3xl">{heading}</h2>
-          <p className="py-2 px-4 rounded-full bg-primary text-white text-lg font-bold">
+        <div className="flex w-full flex-col items-start justify-start gap-4">
+          <span className="font-body text-overline font-bold uppercase tracking-overline text-brand">
             {sponsorLevel} Sponsor
-          </p>
-          <div className="flex flex-col w-full h-full gap-4">
-            <p>{bodyText?.split("<br/>")[0]}</p>
-
-            <p>{bodyText?.split("<br/>")[1]}</p>
+          </span>
+          <h2 className="m-0 font-display text-h2 font-bold tracking-tightish text-ink">
+            {heading}
+          </h2>
+          <div className="flex h-full w-full flex-col gap-4 font-body text-body-sm leading-relaxed text-ink-secondary">
+            <p className="m-0">{bodyText?.split("<br/>")[0]}</p>
+            <p className="m-0">{bodyText?.split("<br/>")[1]}</p>
           </div>
         </div>
-        <XCircle onClick={onClose} className="w-8 h-8 text-primary" />
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close sponsor details"
+          className="shrink-0"
+        >
+          <XCircle className="h-8 w-8 text-brand transition-colors duration-fast ease-standard hover:text-blue-800" />
+        </button>
       </motion.div>
     </>
   );

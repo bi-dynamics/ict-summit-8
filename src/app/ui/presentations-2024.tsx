@@ -3,9 +3,9 @@
 import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
-import { Button } from "./button";
-import clsx from "clsx";
 import Card_2024 from "./presentation-card-2024";
+import { SummitButton } from "./ds/button";
+import { SectionHeading } from "./ds/section-heading";
 
 const day1Presentations = [
   {
@@ -264,55 +264,48 @@ export default function Presentations_2024() {
   }, [rerender, xTranslation, duration, width, mustFinish]);
 
   return (
-    <main
+    <section
       id="presentations"
-      className="py-16 relative overflow-hidden bg-[#ECEFF8] flex flex-col items-center justify-center space-y-16"
+      className="relative flex flex-col items-center justify-center gap-10 overflow-hidden bg-grey-50 py-16 md:py-24"
     >
-      <h2 className=" text-headings font-bold text-3xl sm:text-4xl z-[12]">
-        Presentations
-      </h2>
-      <div className="w-full h-fit flex flex-row gap-4 px-4 z-[12] max-w-screen-lg">
-        <Button
-          name="Register"
-          className={clsx(
-            "z-[2] rounded-xl font-bold w-full text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105",
-            { "bg-primary border-primary": day === 1 }
-          )}
-          size={"lg"}
-          about="Day 1 Presentations"
-          onClick={() => setDay(1)}
-        >
-          Day 1
-        </Button>
-        <Button
-          name="Register"
-          className={clsx(
-            "z-[2] rounded-xl font-bold w-full text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105",
-            { "bg-primary border-primary": day === 2 }
-          )}
-          size={"lg"}
-          about="Day 2 Presentations"
-          onClick={() => setDay(2)}
-        >
-          Day 2
-        </Button>
-        <Button
-          name="Register"
-          className={clsx(
-            "z-[2] rounded-xl font-bold w-full text-headings hover:text-white border-2 border-[#E5F4FF] hover:border-primary bg-[#E5F4FF] active:scale-[.99] transition-all shadow-lg hover:scale-105",
-            { "bg-primary border-primary": day === 3 }
-          )}
-          size={"lg"}
-          about="Day 3 Presentations"
-          onClick={() => setDay(3)}
-        >
-          Day 3
-        </Button>
+      <SectionHeading
+        align="center"
+        overline="Presentations"
+        title="2024 presentations"
+        description="Download the slides presented across the three days of the 8th National ICT Summit."
+        className="z-[12] px-4 sm:px-6"
+      />
+
+      <div
+        role="tablist"
+        aria-label="Presentation day"
+        className="z-[12] flex w-full max-w-container flex-row gap-3 px-4 sm:px-6"
+      >
+        {[1, 2, 3].map((d) => (
+          <SummitButton
+            key={d}
+            role="tab"
+            aria-selected={day === d}
+            variant={day === d ? "primary" : "secondary"}
+            size="lg"
+            fullWidth
+            about={`Day ${d} Presentations`}
+            onClick={() => setDay(d)}
+          >
+            Day {d}
+          </SummitButton>
+        ))}
       </div>
-      {/* gradient layer */}
-      <div className="absolute left-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-r from-[#ECEFF8] to-transparent"></div>
-      {/* gradient layer */}
-      <div className="absolute right-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-l from-[#ECEFF8] to-transparent"></div>
+
+      {/* Edge fades so the marquee reads as continuous rather than clipped. */}
+      <div
+        aria-hidden="true"
+        className="absolute left-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-r from-grey-50 to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute right-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-l from-grey-50 to-transparent"
+      />
       {day === 1 && (
         <motion.div
           className="relative left-0 z-10 flex gap-4 overflow-hidden"
@@ -391,6 +384,6 @@ export default function Presentations_2024() {
           )}
         </motion.div>
       )}
-    </main>
+    </section>
   );
 }
