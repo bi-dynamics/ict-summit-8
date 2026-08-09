@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
+import { ASSETS } from "../lib/summit-data";
 import { DocumentCard } from "../ui/ds/document-card";
 import { DocumentDownload } from "../ui/ds/document-download";
 import { PageHeader } from "../ui/ds/page-header";
@@ -26,7 +27,7 @@ export default function Summit2024Page() {
         overline="Previous summits · 8th edition"
         title="8th National ICT Summit — 2024"
         description="“Building resilience to ‘Adapt or die’ in the era of Digital Transformation and Artificial Intelligence (AI)”"
-        backgroundSrc="/ict-summit-namibia.jpg"
+        backgroundSrc={ASSETS.headerPhoto}
       >
         <div className="flex flex-wrap gap-x-10 gap-y-4 border-t border-white/20 pt-5">
           {[
@@ -108,7 +109,7 @@ export default function Summit2024Page() {
         meta="PDF · 2024 edition"
         fileLabel="Download"
         href="/ICT-SUMMIT-BOOKLET-&-PROGRAMME-2024.pdf"
-        backgroundSrc="/ict-invitation-background.jpg"
+        backgroundSrc={ASSETS.bandA}
       />
 
       <Section>

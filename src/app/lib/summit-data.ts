@@ -217,12 +217,26 @@ export const CONTACTS: Contact[] = [
   },
 ];
 
-/** Brand assets. Raster extractions — request vector originals before print. */
+/**
+ * Brand assets.
+ *
+ * The four images under `/brand/` are the booklet's own imagery, extracted
+ * straight from the embedded JPEG streams of
+ * `9th-ICT-Summit-Booklet-2026.pdf` rather than re-encoded, so they are the
+ * untouched originals at booklet resolution (~1120px wide).
+ *
+ * They are the only photography permitted behind white type, and only ever
+ * under `--overlay-brand-wash` — see the imagery guideline. Raster
+ * extractions: request vector originals before any print or large-format use.
+ */
 export const ASSETS = {
   logo: "/press-release/ict-summit-logo.png",
   crest: "/namibian-coat-of-arms.png",
-  heroPhoto: "/ict-summit-namibia.jpg",
-  headerPhoto: "/ict-launch.jpg",
-  bandA: "/ict-invitation-background.jpg",
-  bandB: "/brief-background.jpg",
+  /** Cover composite — conference stage under the white network motif. */
+  heroPhoto: "/brand/summit-network-overlay.jpg",
+  /** Blue-cast delegate hall with network overlay. Page headers. */
+  headerPhoto: "/brand/summit-delegates-blue.jpg",
+  /** The horizontal photo bands used as section headers throughout the booklet. */
+  bandA: "/brand/summit-band-a.jpg",
+  bandB: "/brand/summit-band-b.jpg",
 } as const;

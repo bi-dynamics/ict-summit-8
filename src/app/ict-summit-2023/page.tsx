@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 
+import { ASSETS } from "../lib/summit-data";
 import { DocumentCard } from "../ui/ds/document-card";
 import { DocumentDownload } from "../ui/ds/document-download";
 import { PageHeader } from "../ui/ds/page-header";
@@ -91,7 +92,7 @@ export default function Summit2023Page() {
         overline="Previous summits · 7th edition"
         title="7th National ICT Summit — 2023"
         description="Presenters, presentations, press material, reports and photography from the 2023 edition of the National ICT Summit."
-        backgroundSrc="/2023-Banner.jpeg"
+        backgroundSrc={ASSETS.headerPhoto}
       />
 
       <DocumentDownload
@@ -100,7 +101,7 @@ export default function Summit2023Page() {
         meta="PDF · 2023 edition"
         fileLabel="Download programme"
         href="/ICT-SUMMIT-PROGRAMME-2023.pdf"
-        backgroundSrc="/ict-invitation-background.jpg"
+        backgroundSrc={ASSETS.bandB}
       />
 
       <Section>
