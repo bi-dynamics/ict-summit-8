@@ -22,12 +22,7 @@ export const SUMMIT = {
    * a plain <a>; next/link would attempt a client-side navigation and 404.
    */
   registrationUrl: "/registerictsummit",
-  /**
-   * TODO — the 2026 booklet PDF is not yet in `public/`. Drop
-   * `9th-ICT-Summit-Booklet-2026.pdf` there (it lives at
-   * `assets/docs/` in the Claude Design project) and this link resolves.
-   * Until then the download band on the homepage 404s.
-   */
+  /** The full 11-page 2026 sponsorship package booklet & pledge form. */
   bookletUrl: "/9th-ICT-Summit-Booklet-2026.pdf",
   pledgeFormUrl: "/pledge-form.pdf",
   email: "ICT.Summit@mict.gov.na",
