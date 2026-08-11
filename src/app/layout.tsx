@@ -1,6 +1,6 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Archivo, Source_Sans_3 } from "next/font/google";
-import "./globals.css";
 import { GoogleTagManager } from "@next/third-parties/google";
 import SiteNav from "./ui/site-nav";
 import SiteFooter from "./ui/site-footer";

@@ -374,7 +374,7 @@ const Modal = ({ onClose, heading, bodyText, sponsorLevel }: ModalProps) => {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: "50%" }}
         transition={{ duration: 0.22, ease: [0.2, 0, 0.2, 1] }}
-        className="fixed inset-x-0 bottom-4 z-20 mx-auto flex max-h-[40vh] w-[95vw] overflow-y-auto rounded-md border border-t-rule border-line-subtle border-t-brand bg-white p-8 shadow-lg md:w-[60vw]"
+        className="fixed inset-x-0 bottom-4 z-20 mx-auto flex max-h-[40vh] w-[95vw] overflow-y-auto rounded-md border border-t-4 border-line-subtle border-t-brand bg-white p-8 shadow-lg md:w-[60vw]"
         ref={modalRef}
       >
         <div className="flex w-full flex-col items-start justify-start gap-4">

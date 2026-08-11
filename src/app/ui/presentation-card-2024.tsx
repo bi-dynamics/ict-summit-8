@@ -16,7 +16,7 @@ interface CardProps {
  */
 const Card_2024: React.FC<CardProps> = ({ href, title }) => (
   <motion.div
-    className="relative flex h-[350px] min-w-[250px] max-w-[280px] flex-col overflow-hidden rounded-md border border-t-rule border-line-subtle border-t-brand bg-white"
+    className="relative flex h-[350px] min-w-[250px] max-w-[280px] flex-col overflow-hidden rounded-md border border-t-4 border-line-subtle border-t-brand bg-white"
     key={href}
   >
     <div className="flex flex-1 flex-col gap-3 p-6">

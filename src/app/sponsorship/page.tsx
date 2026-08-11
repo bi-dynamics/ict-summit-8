@@ -142,7 +142,7 @@ export default function SponsorshipPage() {
         </div>
 
         {/* Inline notice — a 4px left rule, the counterpart of the tier top rule. */}
-        <div className="mt-8 rounded-sm border-l-rule border-l-brand bg-blue-50 px-6 py-5 font-body text-body-sm text-blue-800">
+        <div className="mt-8 rounded-sm border-l-4 border-l-brand bg-blue-50 px-6 py-5 font-body text-body-sm text-blue-800">
           Deadline for company profiles, topics and speakers: <b>30 July 2026</b> — email{" "}
           <a href="mailto:Johanna.Shihepo@mict.gov.na" className="font-semibold underline">
             Johanna.Shihepo@mict.gov.na

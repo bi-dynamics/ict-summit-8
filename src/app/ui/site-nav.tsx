@@ -157,7 +157,7 @@ export default function SiteNav() {
                   </button>
 
                   {open ? (
-                    <div className="absolute left-0 top-full z-40 flex min-w-[220px] flex-col rounded-md border border-t-rule border-line-subtle border-t-brand bg-white p-2 shadow-lg">
+                    <div className="absolute left-0 top-full z-40 flex min-w-[220px] flex-col rounded-md border border-t-4 border-line-subtle border-t-brand bg-white p-2 shadow-lg">
                       {item.children.map((c) => (
                         <Link
                           key={c.href}

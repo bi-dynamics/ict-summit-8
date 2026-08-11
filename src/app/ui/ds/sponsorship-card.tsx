@@ -69,10 +69,13 @@ export function SponsorshipCard({
   return (
     <div
       className={cn(
-        "flex flex-col overflow-hidden rounded-md border border-t-rule bg-white",
+        "flex flex-col overflow-hidden rounded-md border border-t-4 bg-white",
         "transition-all duration-base ease-standard hover:-translate-y-[2px]",
-        m.rule,
+        // The all-sides border colour must precede the tier rule: an
+        // all-sides colour supersedes a top-only one, so putting m.rule first
+        // would let border-line-subtle overwrite the tier accent.
         featured ? cn(featuredBorder[tier], "shadow-md") : "border-line-subtle",
+        m.rule,
         className
       )}
     >

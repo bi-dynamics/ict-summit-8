@@ -175,9 +175,9 @@ module.exports = {
         xl: "20px",
         pill: "999px",
       },
-      borderWidth: {
-        rule: "4px",
-      },
+      // --rule-accent (4px) is Tailwind's stock border-*-4, so no custom width
+      // is defined here: a custom name would be unknown to tailwind-merge and
+      // get mistaken for a border *colour*, dropping one of the two classes.
       boxShadow: {
         sm: "0 1px 2px rgba(0, 16, 48, 0.06), 0 1px 1px rgba(0, 16, 48, 0.04)",
         md: "0 4px 12px rgba(0, 16, 48, 0.08), 0 1px 3px rgba(0, 16, 48, 0.06)",

@@ -11,7 +11,7 @@ export function EventRow({ name, date, town, detail, dressCode, highlight = fals
   return (
     <div
       className={cn(
-        "grid grid-cols-1 items-start gap-2 border-b border-l-rule border-line-subtle px-4 py-5 last:border-b-0 sm:px-6",
+        "grid grid-cols-1 items-start gap-2 border-b border-l-4 border-line-subtle px-4 py-5 last:border-b-0 sm:px-6",
         "md:grid-cols-[150px_1fr_180px] md:gap-6",
         highlight ? "border-l-brand bg-blue-50" : "border-l-transparent"
       )}
