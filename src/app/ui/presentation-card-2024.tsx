@@ -1,8 +1,6 @@
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
-import { ArrowBigRight } from "lucide-react";
-import Image from "next/image";
-import { Button } from "./button";
+import { motion } from "framer-motion";
+import React from "react";
+import { Download } from "lucide-react";
 import Link from "next/link";
 
 interface CardProps {
@@ -11,43 +9,36 @@ interface CardProps {
   title: string;
 }
 
-const Card_2024: React.FC<CardProps> = ({ image, href, title }) => {
-  const [showOverlay, setShowOverlay] = useState(false);
+/**
+ * 2024 presentation tile. The 2024 set has no per-talk artwork — every entry
+ * carries the same summit mark — so the tile leads with the talk title and
+ * speaker instead of a redundant logo.
+ */
+const Card_2024: React.FC<CardProps> = ({ href, title }) => (
+  <motion.div
+    className="relative flex h-[350px] min-w-[250px] max-w-[280px] flex-col overflow-hidden rounded-md border border-t-4 border-line-subtle border-t-brand bg-white"
+    key={href}
+  >
+    <div className="flex flex-1 flex-col gap-3 p-6">
+      <span className="font-body text-overline font-bold uppercase tracking-overline text-brand">
+        Presentation
+      </span>
+      <span className="font-display text-h4 font-bold leading-snug text-ink text-pretty">
+        {title}
+      </span>
+    </div>
 
-  return (
-    <motion.div
-      className="relative overflow-hidden h-[350px] min-w-[250px] rounded-2xl flex justify-center items-center"
-      key={image}
-      onHoverStart={() => setShowOverlay(true)}
-      onHoverEnd={() => setShowOverlay(false)}
+    <Link
+      href={href}
+      target="_blank"
+      referrerPolicy="no-referrer"
+      title={`Download ${title}`}
+      className="flex items-center justify-center gap-2 border-t border-line-subtle px-4 py-4 font-body text-body-sm font-semibold text-brand no-underline transition-colors duration-fast ease-standard hover:bg-blue-50 hover:text-blue-800"
     >
-      <motion.div className="absolute left-0 top-0 px-2 bottom-0 right-0 z-10 flex justify-center items-end">
-        <div className="absolute bg-gradient-to-t from-primary/50 to-transparent pointer-events-none opacity-50 h-1/2 w-full" />
-        <Link
-          href={href}
-          className="w-full h-full z-10"
-          target="_blank"
-          referrerPolicy="no-referrer"
-        >
-          <Button
-            about="download presentation"
-            aria-label="Download Presentation"
-            className="bg-transparent text-wrap px-4 h-full text-headings active:scale-[.99] transition-all hover:scale-105 hover:text-white font-semibold mb-2 text-sm z-10 w-full rounded-lg flex items-center justify-center gap-[0.5ch] hover:border hover:border-primary"
-          >
-            {title}
-          </Button>
-        </Link>
-      </motion.div>
-      {/* 
-      <Image
-        src={image}
-        alt={image}
-        fill
-        style={{ objectFit: "contain" }}
-        className="p-8"
-      /> */}
-    </motion.div>
-  );
-};
+      Download PDF
+      <Download className="h-4 w-4" />
+    </Link>
+  </motion.div>
+);
 
 export default Card_2024;

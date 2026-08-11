@@ -7,6 +7,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import { SectionHeading } from "./ds/section-heading";
 
 const videos = [
   {
@@ -35,21 +36,16 @@ export default function VideoGallery() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
     <section
-    id="video-gallery-2023"
-      style={{
-        backgroundImage:
-          "radial-gradient(circle at top right, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 1) 30%)",
-      }}
-      className="w-full h-fit flex items-center justify-center px-4 sm:px-[32px] md:px-[100px] py-16 bg-[#ECEFF8]"
+      id="video-gallery-2023"
+      className="w-full h-fit flex items-center justify-center px-4 sm:px-6 md:px-8 py-16 md:py-24 bg-grey-50"
     >
-      <div className="w-full max-w-[960px] h-fit flex flex-col justify-center items-center gap-16">
-        <div className="w-full h-fit flex flex-col justify-center items-center gap-4">
-
-        <h2 className="text-headings font-semibold text-center md:text-left w-full text-3xl sm:text-4xl">
-          Video Gallery
-        </h2>
-        <p className="text-headings/70 text-center md:text-left w-full text-base sm:text-lg">Watch a few videos from the previous sessions at the summit</p>
-        </div>
+      <div className="w-full max-w-container h-fit flex flex-col justify-center items-center gap-10">
+        <SectionHeading
+          overline="Gallery"
+          title="Video gallery"
+          description="Watch a few videos from the previous sessions at the summit."
+          className="w-full"
+        />
 
         {/* container */}
         <div className="flex flex-col md:flex-row w-full h-fit mx-auto justify-center items-start gap-8">
@@ -60,9 +56,9 @@ export default function VideoGallery() {
             navigation={true}
             thumbs={{ swiper: thumbsSwiper }}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="w-full md:w-[60vw] h-[30vh] sm:h-[45vh] max-w-[960px] md:rounded-l-lg shadow-none bg-transparent"
+            className="w-full md:w-[60vw] h-[30vh] sm:h-[45vh] max-w-[960px] md:rounded-l-md border border-line-subtle bg-white"
             style={{
-              "--swiper-navigation-color": "#0095FF",
+              "--swiper-navigation-color": "#1441cc",
             }}
           >
             {videos.map(({ src, alt }, index) => (
@@ -95,7 +91,7 @@ export default function VideoGallery() {
              } }
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="h-[10vh] sm:h-[20vh] md:h-[43vh] w-full md:w-[20vw] overflow-y-hidden flex max-w-[960px] md:rounded-r-lg"
+            className="h-[10vh] sm:h-[20vh] md:h-[43vh] w-full md:w-[20vw] overflow-y-hidden flex max-w-[960px] md:rounded-r-md"
           >
             {videos.map(({ src, alt }, index) => (
               <SwiperSlide key={index} className="w-full h-full">

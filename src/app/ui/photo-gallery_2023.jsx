@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/thumbs";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import Image from "next/image";
+import { SectionHeading } from "./ds/section-heading";
 
 
 
@@ -86,17 +87,15 @@ const images = [
    
   return (
     <section
-    id="photo-gallery-2023"
-      style={{
-        backgroundImage:
-          "radial-gradient(circle at bottom right, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 1) 30%)",
-      }}
-      className="w-full h-fit flex items-center justify-center px-4 sm:px-[32px] md:px-[100px] py-16 bg-[#ECEFF8]"
+      id="photo-gallery-2023"
+      className="w-full h-fit flex items-center justify-center px-4 sm:px-6 md:px-8 py-16 md:py-24 bg-white"
     >
-      <div className="w-full max-w-[960px] h-full flex flex-col justify-center items-center gap-16">
-        <h2 className="text-headings font-semibold text-center md:text-left w-full text-3xl sm:text-4xl">
-          Photo Gallery
-        </h2>
+      <div className="w-full max-w-container h-full flex flex-col justify-center items-center gap-10">
+        <SectionHeading
+          overline="Gallery"
+          title="Photo gallery"
+          className="w-full"
+        />
         {/* container */}
         <div className="flex flex-col w-full mx-auto justify-center items-start sm:gap-4">
           <Swiper
@@ -105,9 +104,9 @@ const images = [
             navigation={true}
             thumbs={{ swiper: thumbsSwiper }}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="w-full max-w-[960px] h-[30vh] sm:h-[60vh] rounded-t-lg"
+            className="w-full h-[30vh] sm:h-[60vh] rounded-t-md border border-line-subtle bg-grey-50"
             style={{
-              "--swiper-navigation-color": "#0095FF",
+              "--swiper-navigation-color": "#1441cc",
             }}
           >
             {images.map(({ src, alt }, index) => (
@@ -126,8 +125,8 @@ const images = [
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs]}
-            className="h-[20vh] w-full max-w-[960px] rounded-b-lg"
-            
+            className="h-[20vh] w-full rounded-b-md"
+
           >
             {images.map(({ src, alt }, index) => (
               <SwiperSlide key={index} className="w-full h-full">

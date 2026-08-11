@@ -4,6 +4,7 @@ import { animate, motion, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
 import Card from "./presentation-card";
+import { SectionHeading } from "./ds/section-heading";
 
 const images = [
   {
@@ -72,17 +73,26 @@ export default function Presentations() {
   }, [rerender, xTranslation, duration, width, mustFinish]);
 
   return (
-    <main
+    <section
       id="presentations-2023"
-      className="py-16 relative overflow-hidden bg-[#ECEFF8] flex flex-col items-center justify-center space-y-4"
+      className="relative flex flex-col items-center justify-center gap-10 overflow-hidden bg-grey-50 py-16 md:py-24"
     >
-      <h2 className=" text-headings font-bold text-3xl sm:text-4xl z-[12]">
-        2023 Presentations
-      </h2>
-      {/* gradient layer */}
-      <div className="absolute left-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-r from-[#ECEFF8] to-transparent"></div>
-      {/* gradient layer */}
-      <div className="absolute right-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-l from-[#ECEFF8] to-transparent"></div>
+      <SectionHeading
+        align="center"
+        overline="Presentations"
+        title="2023 presentations"
+        description="Download the slides presented at the 7th National ICT Summit."
+        className="z-[12] px-4 sm:px-6"
+      />
+      {/* Edge fades so the marquee reads as continuous rather than clipped. */}
+      <div
+        aria-hidden="true"
+        className="absolute left-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-r from-grey-50 to-transparent"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute right-0 top-0 z-[11] h-full w-1/4 bg-gradient-to-l from-grey-50 to-transparent"
+      />
       <motion.div
         className="relative left-0 z-10 flex gap-4 overflow-hidden"
         style={{ x: xTranslation, width: "max-content" }}
@@ -100,6 +110,6 @@ export default function Presentations() {
           <Card image={`${image}`} href={presentation} key={idx} title={""} />
         ))}
       </motion.div>
-    </main>
+    </section>
   );
 }

@@ -2,81 +2,174 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------------------------------------------------------------------------
+   National ICT Summit design tokens.
+
+   Ported from the claude.ai design-system project (tokens/*.css). The palette
+   is sampled from the summit logotype: #1441cc is the exact logotype blue and
+   the only correct brand primary; the accent trio is the Namibian flag arc
+   that wraps the mark. Neutrals are deliberately cool so nothing reads warm
+   against the booklet's blue-cast photography.
+
+   The scales below are mirrored in tailwind.config.ts so they can be reached
+   as utilities (bg-blue-500, text-ink-secondary, ...). Values that Tailwind
+   cannot express — gradients, tinted shadows, blur — stay as custom
+   properties and are consumed via arbitrary values or inline style.
+--------------------------------------------------------------------------- */
+
 @layer base {
   :root {
-    --background: 227 46% 95%;
-    --foreground: 222.2 47.4% 11.2%;
+    /* Summit blue */
+    --blue-50: #eef2fe;
+    --blue-100: #dce4fd;
+    --blue-200: #b9c8fb;
+    --blue-300: #8fa6f6;
+    --blue-400: #5b7bee;
+    --blue-500: #1441cc;
+    --blue-600: #1136a8;
+    --blue-700: #0d2b85;
+    --blue-800: #0a2065;
+    --blue-900: #071747;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Deep navy — the ground tone of the booklet's photography */
+    --navy-950: #001030;
+    --navy-900: #002050;
+
+    /* Namibian national accents, sampled from the logo arc */
+    --green-500: #009540;
+    --green-600: #007a34;
+    --green-100: #d9f0e2;
+    --red-500: #d40d2f;
+    --red-600: #ad0a26;
+    --red-100: #fbdde2;
+    --gold-500: #ffd000;
+    --gold-600: #d6ae00;
+    --gold-100: #fff4cc;
+
+    /* Cool neutrals */
+    --grey-0: #ffffff;
+    --grey-50: #f6f8fb;
+    --grey-100: #eceff5;
+    --grey-200: #dde2ec;
+    --grey-300: #c3cbda;
+    --grey-400: #97a1b5;
+    --grey-500: #6b768e;
+    --grey-600: #4c566b;
+    --grey-700: #363e4f;
+    --grey-800: #232936;
+    --grey-900: #141821;
+
+    /* Sponsorship tiers */
+    --tier-platinum: #3d4757;
+    --tier-platinum-soft: #e7eaf0;
+    --tier-gold: #b8860b;
+    --tier-gold-soft: #fdf1d4;
+    --tier-diamond: #1f8fb5;
+    --tier-diamond-soft: #ddf1f8;
+    --tier-silver: #6f7b8a;
+    --tier-silver-soft: #eef1f4;
+
+    /* Semantic aliases */
+    --brand-primary: var(--blue-500);
+    --brand-primary-hover: var(--blue-600);
+    --brand-primary-active: var(--blue-700);
+    --surface-page: var(--grey-0);
+    --surface-sunken: var(--grey-50);
+    --surface-inverse: var(--navy-950);
+    --text-primary: var(--grey-900);
+    --text-secondary: var(--grey-600);
+    --text-muted: var(--grey-500);
+    --border-subtle: var(--grey-200);
+
+    /* Elevation — shadows are navy-tinted, never black, so cards sit in the
+       same cool light as the photography. Rationed: separation in this system
+       comes from a 1px rule, not a shadow. */
+    --shadow-sm: 0 1px 2px rgba(0, 16, 48, 0.06), 0 1px 1px rgba(0, 16, 48, 0.04);
+    --shadow-md: 0 4px 12px rgba(0, 16, 48, 0.08), 0 1px 3px rgba(0, 16, 48, 0.06);
+    --shadow-lg: 0 12px 32px rgba(0, 16, 48, 0.12), 0 2px 8px rgba(0, 16, 48, 0.06);
+    --shadow-brand: 0 8px 24px rgba(20, 65, 204, 0.24);
+
+    --overlay-scrim: rgba(0, 16, 48, 0.62);
+    --overlay-protect: linear-gradient(180deg, rgba(0, 16, 48, 0) 0%, rgba(0, 16, 48, 0.78) 100%);
+    --overlay-brand-wash: linear-gradient(135deg, rgba(20, 65, 204, 0.92) 0%, rgba(0, 16, 48, 0.92) 100%);
+    --blur-glass: blur(12px);
+
+    /* Motion — restrained. Fades and short, distance-limited slides only:
+       no bounce, no spring, no parallax. */
+    --duration-fast: 140ms;
+    --duration-base: 220ms;
+    --duration-slow: 360ms;
+    --ease-standard: cubic-bezier(0.2, 0, 0.2, 1);
+    --press-scale: 0.98;
+    --lift-distance: -2px;
+
+    /* Layout */
+    --container-max: 1200px;
+    --container-narrow: 760px;
+    --rule-accent: 4px;
+
+    /* --- shadcn/Radix bridge -------------------------------------------
+       Retained so the untouched form and package primitives still compile,
+       retuned onto the summit palette. */
+    --background: 0 0% 100%;
+    --foreground: 225 25% 11%;
+
+    --muted: 220 33% 97%;
+    --muted-foreground: 222 15% 36%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 47.4% 11.2%;
+    --popover-foreground: 225 25% 11%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 222 26% 90%;
+    --input: 222 26% 90%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 47.4% 11.2%;
+    --card-foreground: 225 25% 11%;
 
-    --primary: 205 100% 50%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 225 82% 44%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 33% 97%;
+    --secondary-foreground: 225 25% 11%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 226 93% 96%;
+    --accent-foreground: 225 82% 28%;
 
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 349 88% 44%;
+    --destructive-foreground: 0 0% 100%;
 
-    --ring: 215 20.2% 65.1%;
-
-    --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
-
-    --muted: 223 47% 11%;
-    --muted-foreground: 215.4 16.3% 56.9%;
-
-    --accent: 216 34% 17%;
-    --accent-foreground: 210 40% 98%;
-
-    --popover: 224 71% 4%;
-    --popover-foreground: 215 20.2% 65.1%;
-
-    --border: 216 34% 17%;
-    --input: 216 34% 17%;
-
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 1.2%;
-
-    --secondary: 222.2 47.4% 11.2%;
-    --secondary-foreground: 210 40% 98%;
-
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-
-    --ring: 216 34% 17%;
+    --ring: 226 81% 65%;
 
     --radius: 0.5rem;
   }
 }
 
 @layer base {
- body{ font-family: var(--font-inter);}
- #exhibitors {
-  background: #ECEFF8;
-
-  @media (min-width: 769px) {
-      background-image: radial-gradient(circle at top right, rgba(0, 149, 255, 0.5) , rgba(236, 239, 248, 1) 30%);
+  body {
+    font-family: var(--font-source-sans), Arial, Helvetica, sans-serif;
+    background: var(--surface-page);
+    color: var(--text-primary);
   }
- }
+
+  /* Focus is a brand border plus a soft ring — never a removed outline. */
+  :focus-visible {
+    outline: 2px solid var(--brand-primary);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  /* The one blue→navy wash that sits over every hero and full-bleed band.
+     White type never sits on a raw photograph. */
+  .bg-brand-wash {
+    background: var(--overlay-brand-wash);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: var(--blur-glass);
+    -webkit-backdrop-filter: var(--blur-glass);
+  }
 }
