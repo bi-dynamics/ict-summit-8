@@ -14,11 +14,14 @@ export const metadata: Metadata = {
     "Enquiries about the 9th National ICT Summit, sponsorship pledges and exhibition stands are handled by the Ministry of Information and Communication Technology.",
 };
 
-/** Kept from the live site — the general summit line, alongside the booklet's named contacts. */
-const GENERAL_LINE = [
-  { label: "Mr. Fillemon Johannes", phone: "+264 81 286 6223" },
-  { label: "Ms. Johanna Nashipili", phone: "+264 81 259 8216" },
-];
+/**
+ * The general summit line shown under "Summit office".
+ *
+ * Derived from CONTACTS rather than hardcoded, so this block and the site
+ * footer cannot drift apart. They previously did: this list still named a
+ * departed contact after CONTACTS had been updated.
+ */
+const GENERAL_LINE = CONTACTS.map((c) => ({ label: c.name, phone: c.phone }));
 
 export default function ContactPage() {
   return (
