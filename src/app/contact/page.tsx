@@ -105,12 +105,14 @@ export default function ContactPage() {
             </p>
             <div className="mt-6">
               {/*
-                Registration is a separate PHP application served by nginx at
-                /registerictsummit — not a Next.js route, so this stays a plain <a>.
+                Registration is handled by Passcard, an external provider, so this
+                is a plain <a> opening in a new tab — never next/link.
               */}
               <SummitLinkButton
                 href={SUMMIT.registrationUrl}
                 title="Register for the 9th National ICT Summit 2026"
+                target="_blank"
+                rel="noopener noreferrer"
                 iconRight={<SquareArrowOutUpRight className="h-4 w-4" />}
               >
                 Register for the summit

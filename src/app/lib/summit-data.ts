@@ -17,11 +17,12 @@ export const SUMMIT = {
   region: "Oshana Region",
   opensAt: "2026-10-12T08:00:00+02:00",
   /**
-   * The registration form is a separate PHP application served by nginx at
-   * /registerictsummit — NOT a Next.js route. It must always be rendered with
-   * a plain <a>; next/link would attempt a client-side navigation and 404.
+   * Registration is handled by Passcard, an external provider. Every link to
+   * it must be a plain <a> opening in a new tab, carrying
+   * target="_blank" rel="noopener noreferrer" — never next/link, which is for
+   * routes inside this application only.
    */
-  registrationUrl: "/registerictsummit",
+  registrationUrl: "https://passcard.com.na/Events/ict-summit-2026/Register",
   /** The full 11-page 2026 sponsorship package booklet & pledge form. */
   bookletUrl: "/9th-ICT-Summit-Booklet-2026.pdf",
   pledgeFormUrl: "/pledge-form.pdf",

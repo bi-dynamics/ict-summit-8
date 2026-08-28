@@ -70,14 +70,15 @@ export default function SiteNav() {
           </button>
 
           {/*
-            The 2026 registration form is a separate PHP application served by
-            nginx at /registerictsummit. It is NOT a Next.js route, so it must
-            be a plain <a> — next/link would attempt a client-side navigation
-            and 404.
+            Registration is handled by Passcard, an external provider. This must
+            stay a plain <a> opening in a new tab — next/link is for routes
+            inside this application only.
           */}
           <a
             href={SUMMIT.registrationUrl}
             title="Register for the 9th National ICT Summit 2026"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex min-h-[34px] items-center gap-2 rounded-sm bg-brand px-[14px] py-2 font-body text-caption font-semibold text-white no-underline transition-colors duration-fast ease-standard hover:bg-brand-hover active:scale-[0.98]"
           >
             Registration
@@ -191,6 +192,8 @@ export default function SiteNav() {
           <a
             href={SUMMIT.registrationUrl}
             title="Register for the 9th National ICT Summit 2026"
+            target="_blank"
+            rel="noopener noreferrer"
             className="ml-4 inline-flex min-h-[34px] items-center gap-2 rounded-sm bg-brand px-[14px] py-2 font-body text-caption font-semibold text-white no-underline transition-colors duration-fast ease-standard hover:bg-brand-hover active:scale-[0.98]"
           >
             Registration

@@ -82,7 +82,7 @@ export interface SummitLinkButtonProps
 }
 
 /**
- * Anchor-shaped button. Used for the /registerictsummit redirect and every PDF
+ * Anchor-shaped button. Used for the external registration link and every PDF
  * download, both of which leave the Next.js router.
  */
 export function SummitLinkButton({
