@@ -40,6 +40,7 @@ export type NavItem = {
 
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
+  { label: "Speakers", href: "/#speakers" },
   {
     label: "Previous Summits",
     children: [
@@ -217,6 +218,118 @@ export const CONTACTS: Contact[] = [
     phone: "+264 81 604 7233",
   },
 ];
+
+export type Speaker = {
+  /** Also the image filename: /public/speakers-2026/<slug>.jpg */
+  slug: string;
+  name: string;
+  /** As billed on the card: "Speaker", or the session they host. */
+  role: string;
+  organisation: string;
+  topicLabel: string;
+  topic: string;
+};
+
+/**
+ * 2026 speaker announcement cards, supplied by MICT and shown exactly as
+ * designed — the cards are the content, so they are never cropped or rebuilt.
+ *
+ * Order is hierarchical: seniority of office, as a protocol office would rank
+ * it. Heads of international organisations, then the head of a national
+ * institution, then senior executives (public sector before private sector and
+ * civil society), then managers, then independent experts. Reorder here.
+ *
+ * The wording below is used only for alt text, which is what screen readers and
+ * search engines read, because the visible text is inside each image. It
+ * follows the cards, with missing spaces restored.
+ */
+export const SPEAKERS: Speaker[] = [
+  {
+    slug: "amanda-serumaga",
+    name: "Ms. Amanda K. Serumaga",
+    role: "Speaker",
+    organisation: "Resident Representative, UNDP",
+    topicLabel: "Topic",
+    topic: "E-ID as a Catalyst for Inclusive Growth: Unlocking Digital Pathways to Job Creation and Poverty Reduction",
+  },
+  {
+    slug: "halima-letamo",
+    name: "Dr. Halima Letamo",
+    role: "Speaker",
+    organisation: "Representative of ITU Area Office for Southern Africa",
+    topicLabel: "Topic",
+    topic: "AI and Automation: Policy frameworks to protect low-income workers from job displacement caused by Artificial Intelligence and Automation",
+  },
+  {
+    slug: "anicia-peters",
+    name: "Prof. Dr. Anicia Peters",
+    role: "Host, Panel Discussion",
+    organisation: "Chief Executive Officer, National Commission on Research, Science and Technology (NCRST)",
+    topicLabel: "Panel discussion topic",
+    topic: "National AI Policies and the Institute",
+  },
+  {
+    slug: "leonard-hango",
+    name: "Mr. Leonard Hango",
+    role: "Speaker",
+    organisation: "Head: Business Unit North-West, Namibia Water Corporation Ltd (NamWater)",
+    topicLabel: "Topic",
+    topic: "Digital Water: Leveraging ICT for Reliability, Inclusion and Growth",
+  },
+  {
+    slug: "rodney-shivangulula",
+    name: "Mr. Rodney Shivangulula",
+    role: "Speaker",
+    organisation: "Head of Payment Solutions, Namibia Post Limited (NamPost)",
+    topicLabel: "Topic",
+    topic: "Extending Digital Access: Leveraging Postal Infrastructure to Bridge Namibia’s Digital Divide for Economic Growth",
+  },
+  {
+    slug: "claudia-nikanor",
+    name: "Ms. Claudia Nikanor",
+    role: "Speaker",
+    organisation: "Head: Operations, Instant Payments Namibia",
+    topicLabel: "Topic",
+    topic: "Empowering Citizens Through Digital Financial Literacy and Digital Payments: Making it Practical",
+  },
+  {
+    slug: "michael-shuufeni",
+    name: "Mr. Michael Shuufeni",
+    role: "Speaker",
+    organisation: "Vice President of ISOC",
+    topicLabel: "Topic",
+    topic: "One Digital Agenda; From Policy to Platform",
+  },
+  {
+    slug: "linda-shitenga",
+    name: "Ms. Linda Shitenga",
+    role: "Speaker",
+    organisation: "Manager: Welfare and Labour Statistics, Namibia Statistics Agency (NSA)",
+    topicLabel: "Topic",
+    topic: "Mapping how ICT adoption is transforming employment in Namibia: Trends and Statistics, 2016–2025",
+  },
+  {
+    slug: "mbangula-amugongo",
+    name: "Dr. Mbangula Lameck Amugongo",
+    role: "Host, High Level Fireside Chat",
+    organisation: "Namibian Technologist, Researcher, and Artificial Intelligence (AI) Expert",
+    topicLabel: "High Level Fireside Chat topic",
+    topic: "Harnessing ICT: Practical Models for Job Creation and Growth",
+  },
+  {
+    slug: "tuwilika-nafuka",
+    name: "Dr. Tuwilika Nafuka",
+    role: "Speaker",
+    organisation: "Namibian Medical Doctor and Chevening Scholar (2025/2026)",
+    topicLabel: "Topic",
+    topic: "Leveraging ICT for Telemedicine, Early Warning Systems and Emergency Response: Governance, Data Sovereignty and Trust in Namibia’s Digital Health Ecosystem",
+  },
+];
+
+export const speakerImage = (s: Speaker) => `/speakers-2026/${s.slug}.jpg`;
+
+export const speakerAlt = (s: Speaker) =>
+  `${s.name}, ${s.role}. ${s.organisation}. ${s.topicLabel}: ${s.topic}`;
 
 /**
  * Brand assets.

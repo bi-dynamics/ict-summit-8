@@ -6,6 +6,7 @@ import {
   EVENTS,
   OBJECTIVES,
   PACKAGES,
+  SPEAKERS,
   SUMMIT,
 } from "./lib/summit-data";
 import { Card } from "./ui/ds/card";
@@ -17,6 +18,7 @@ import { Section } from "./ui/ds/section";
 import { SectionHeading } from "./ui/ds/section-heading";
 import { SponsorshipCard } from "./ui/ds/sponsorship-card";
 import { SummitLinkButton, summitButton } from "./ui/ds/button";
+import { SpeakerCarousel } from "./ui/speaker-carousel";
 import { cn } from "./lib/utils";
 
 const KEY_DATES: [string, string][] = [
@@ -123,6 +125,17 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </Section>
+
+      <Section tone="inverse" id="speakers">
+        <SectionHeading
+          inverse
+          overline="Speakers"
+          title="Who’s taking the stage"
+          description={`Speakers and session hosts at the ${SUMMIT.edition}, ${SUMMIT.dates}. Select a card to view it full size.`}
+          className="mb-10"
+        />
+        <SpeakerCarousel speakers={SPEAKERS} />
       </Section>
 
       <Section tone="sunken" id="objectives">
