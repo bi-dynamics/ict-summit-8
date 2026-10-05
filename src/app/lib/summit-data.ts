@@ -238,14 +238,16 @@ export type Speaker = {
  * it. Heads of international organisations, then the head of a national
  * institution, then senior executives and company heads (public sector, then
  * private sector — established institutions before founders and smaller
- * firms — then civil society), then managers, then independent experts.
- * Reorder here.
+ * firms — then civil society), then managers and specialists, then
+ * independent experts. Reorder here.
  *
  * The wording below is used only for alt text, which is what screen readers and
  * search engines read, because the visible text is inside each image. It
  * follows the cards, with missing spaces and stray punctuation tidied.
  *
- * Images: MICT's 4500 px originals, resized to 2048 px for the web.
+ * Images: MICT's 4500 px originals, resized to 2048 px for the web. Ernst
+ * Khachab's card was supplied with another speaker's name on it; only the name
+ * was corrected, in the card's own lettering.
  */
 export const SPEAKERS: Speaker[] = [
   {
@@ -335,6 +337,14 @@ export const SPEAKERS: Speaker[] = [
     organisation: "Manager: Welfare and Labour Statistics, Namibia Statistics Agency (NSA)",
     topicLabel: "Topic",
     topic: "Mapping how ICT adoption is transforming employment in Namibia: Trends and Statistics, 2016–2025",
+  },
+  {
+    slug: "ernst-khachab",
+    name: "Mr. Ernst Khachab",
+    role: "Speaker",
+    organisation: "Junior Empowerment Specialist & Cybersecurity Enthusiast, Salt Essential IT",
+    topicLabel: "Topic",
+    topic: "Cybersecurity awareness month: “Don’t Make It Easy for Them”",
   },
   {
     slug: "mbangula-amugongo",
