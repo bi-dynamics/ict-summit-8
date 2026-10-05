@@ -236,12 +236,16 @@ export type Speaker = {
  *
  * Order is hierarchical: seniority of office, as a protocol office would rank
  * it. Heads of international organisations, then the head of a national
- * institution, then senior executives (public sector before private sector and
- * civil society), then managers, then independent experts. Reorder here.
+ * institution, then senior executives and company heads (public sector, then
+ * private sector — established institutions before founders and smaller
+ * firms — then civil society), then managers, then independent experts.
+ * Reorder here.
  *
  * The wording below is used only for alt text, which is what screen readers and
  * search engines read, because the visible text is inside each image. It
- * follows the cards, with missing spaces restored.
+ * follows the cards, with missing spaces and stray punctuation tidied.
+ *
+ * Images: MICT's 4500 px originals, resized to 2048 px for the web.
  */
 export const SPEAKERS: Speaker[] = [
   {
@@ -291,6 +295,30 @@ export const SPEAKERS: Speaker[] = [
     organisation: "Head: Operations, Instant Payments Namibia",
     topicLabel: "Topic",
     topic: "Empowering Citizens Through Digital Financial Literacy and Digital Payments: Making it Practical",
+  },
+  {
+    slug: "simeon-shilongo",
+    name: "Mr. Simeon H. Shilongo",
+    role: "Speaker",
+    organisation: "Managing Director of Mango Ride Investment (Pty) Ltd",
+    topicLabel: "Topic",
+    topic: "Digital services platform connecting customers and businesses to transport, logistics, e-commerce",
+  },
+  {
+    slug: "leonard-akathingo",
+    name: "Mr. Leonard Nangolo Akathingo",
+    role: "Speaker",
+    organisation: "Founder, iTransfer Namibia; Founder, Edu-Pull",
+    topicLabel: "Topic",
+    topic: "Connecting Public Servants Through Technology: Solving Namibia’s Cross-Transfer Challenge with iTransfer",
+  },
+  {
+    slug: "anton-august",
+    name: "Mr. Anton Felisberto August",
+    role: "Speaker",
+    organisation: "Royal Mane Investment CC",
+    topicLabel: "Topic",
+    topic: "SolveNam – practical solutions, connecting opportunities and building partnerships that contribute to entrepreneurship and economic development",
   },
   {
     slug: "michael-shuufeni",
