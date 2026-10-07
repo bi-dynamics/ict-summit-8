@@ -6,6 +6,7 @@ import {
   EVENTS,
   OBJECTIVES,
   PACKAGES,
+  POSTERS,
   SPEAKERS,
   SUMMIT,
 } from "./lib/summit-data";
@@ -18,6 +19,7 @@ import { Section } from "./ui/ds/section";
 import { SectionHeading } from "./ui/ds/section-heading";
 import { SponsorshipCard } from "./ui/ds/sponsorship-card";
 import { SummitLinkButton, summitButton } from "./ui/ds/button";
+import { PosterGallery } from "./ui/poster-gallery";
 import { SpeakerCarousel } from "./ui/speaker-carousel";
 import { cn } from "./lib/utils";
 
@@ -132,7 +134,7 @@ export default function Home() {
           inverse
           overline="Speakers"
           title="Who’s taking the stage"
-          description={`Speakers and session hosts at the ${SUMMIT.edition}, ${SUMMIT.dates}. Select a card to view it full size.`}
+          description={`Speakers, session hosts and the Master of Ceremonies at the ${SUMMIT.edition}, ${SUMMIT.dates}. Select a card to view it full size.`}
           className="mb-10"
         />
         <SpeakerCarousel speakers={SPEAKERS} />
@@ -169,6 +171,16 @@ export default function Home() {
             <EventRow key={event.date + event.name} {...event} />
           ))}
         </div>
+      </Section>
+
+      <Section tone="sunken" id="posters">
+        <SectionHeading
+          overline="Posters"
+          title="Summit posters"
+          description="The official posters for the summit, Hackathon Day and the Namibian film screenings. Select a poster to view it full size."
+          className="mb-10"
+        />
+        <PosterGallery posters={POSTERS} />
       </Section>
 
       <DocumentDownload

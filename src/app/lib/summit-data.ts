@@ -87,6 +87,18 @@ export const EVENTS: SummitEvent[] = [
     highlight: true,
   },
   {
+    date: "14–15 October 2026",
+    name: "Namibian film screenings",
+    town: "Ongwediva Trade Fair Centre",
+    detail: "Free screenings of Namibian films each evening from 18h00. The schedule is under Posters below.",
+  },
+  {
+    date: "16 October 2026",
+    name: "Hackathon Day",
+    town: "Ongwediva Trade Fair Centre",
+    detail: "08h00–17h00",
+  },
+  {
     date: "16 October 2026",
     name: "Networking dinner",
     town: "TBC",
@@ -223,11 +235,12 @@ export type Speaker = {
   /** Also the image filename: /public/speakers-2026/<slug>.jpg */
   slug: string;
   name: string;
-  /** As billed on the card: "Speaker", or the session they host. */
+  /** As billed on the card: "Speaker", "Host", or the session they host. */
   role: string;
-  organisation: string;
-  topicLabel: string;
-  topic: string;
+  /** The description line under the name, when the card has one. */
+  organisation?: string;
+  topicLabel?: string;
+  topic?: string;
 };
 
 /**
@@ -235,19 +248,19 @@ export type Speaker = {
  * designed — the cards are the content, so they are never cropped or rebuilt.
  *
  * Order is hierarchical: seniority of office, as a protocol office would rank
- * it. Heads of international organisations, then the head of a national
- * institution, then senior executives and company heads (public sector, then
- * private sector — established institutions before founders and smaller
- * firms — then civil society), then managers and specialists, then
- * independent experts. Reorder here.
+ * it. Heads of international organisations, then heads of national
+ * institutions, then senior executives and company heads (public sector, then
+ * private sector — multinational and established firms before founders and
+ * smaller firms — then civil society), then academia, then managers and
+ * specialists, then independent experts, with the Master of Ceremonies last.
+ * Reorder here.
  *
  * The wording below is used only for alt text, which is what screen readers and
  * search engines read, because the visible text is inside each image. It
  * follows the cards, with missing spaces and stray punctuation tidied.
  *
- * Images: MICT's 4500 px originals, resized to 2048 px for the web. Ernst
- * Khachab's card was supplied with another speaker's name on it; only the name
- * was corrected, in the card's own lettering.
+ * Images: MICT's 4500 px originals (the 7 October set, with the corrected
+ * sponsor strip), resized to 2048 px for the web.
  */
 export const SPEAKERS: Speaker[] = [
   {
@@ -275,6 +288,14 @@ export const SPEAKERS: Speaker[] = [
     topic: "National AI Policies and the Institute",
   },
   {
+    slug: "anna-anghuwo",
+    name: "Ms. Anna Anghuwo",
+    role: "Speaker",
+    organisation: "Chairperson of Electronic Information System Management Advisory Council (EISMAC)",
+    topicLabel: "Topic",
+    topic: "Driving Innovation, Trust and Inclusive Growth",
+  },
+  {
     slug: "leonard-hango",
     name: "Mr. Leonard Hango",
     role: "Speaker",
@@ -289,6 +310,30 @@ export const SPEAKERS: Speaker[] = [
     organisation: "Head of Payment Solutions, Namibia Post Limited (NamPost)",
     topicLabel: "Topic",
     topic: "Extending Digital Access: Leveraging Postal Infrastructure to Bridge Namibia’s Digital Divide for Economic Growth",
+  },
+  {
+    slug: "cornelia-shipindo",
+    name: "Ms. Cornelia Shipindo",
+    role: "Speaker",
+    organisation: "Executive, Cybersecurity Incident Response Team; Communications Regulatory Authority of Namibia",
+    topicLabel: "Topic",
+    topic: "Cybersecurity Awareness Game/Drill – NAM-CSIRT",
+  },
+  {
+    slug: "grant-chivandire",
+    name: "Mr. Grant Chivandire",
+    role: "Speaker",
+    organisation: "CTO & Head of Technology for Mobile Infrastructure, Sub-Saharan Africa, Nokia",
+    topicLabel: "Topic",
+    topic: "AI Radio Access Network",
+  },
+  {
+    slug: "schaun-young",
+    name: "Mr. Schaun Young",
+    role: "Speaker",
+    organisation: "Head of Africa, P3 Communications",
+    topicLabel: "Topic",
+    topic: "AI and Autonomous Networks are transforming the telecommunications industry",
   },
   {
     slug: "claudia-nikanor",
@@ -331,6 +376,14 @@ export const SPEAKERS: Speaker[] = [
     topic: "One Digital Agenda; From Policy to Platform",
   },
   {
+    slug: "attlee-gamundani",
+    name: "Prof Attlee M. Gamundani",
+    role: "Host",
+    organisation: "Associate Professor, Cybersecurity, Faculty of Computing and Informatics, Namibia University of Science and Technology (NUST)",
+    topicLabel: "Topic",
+    topic: "ICT applications in agriculture, food security, and rural economic empowerment",
+  },
+  {
     slug: "linda-shitenga",
     name: "Ms. Linda Shitenga",
     role: "Speaker",
@@ -339,8 +392,24 @@ export const SPEAKERS: Speaker[] = [
     topic: "Mapping how ICT adoption is transforming employment in Namibia: Trends and Statistics, 2016–2025",
   },
   {
+    slug: "loise-katanga",
+    name: "Ms. Loise Katanga",
+    role: "Speaker",
+    organisation: "Senior Economist: Financial Sector Development, Bank of Namibia",
+    topicLabel: "Topic",
+    topic: "Empowering Citizens Through Digital Financial Literacy: Building Trust and Participation in Namibia’s Digital Economy",
+  },
+  {
+    slug: "sam-agbaluwa",
+    name: "Mr. Sam Aghogho Samuel Agbaluwa",
+    role: "Speaker",
+    organisation: "Microsoft Certified Trainer, Digital Transformation & Data Analytics Specialist, ICT Skills & Cybersecurity Professional, Harold Pupkewitz Graduate School of Business, Namibia University of Science and Technology",
+    topicLabel: "Topic",
+    topic: "Turning Data into Job Creation Using Power BI, Power Apps and Copilot to Identify and Create Digital Opportunities",
+  },
+  {
     slug: "ernst-khachab",
-    name: "Mr. Ernst Khachab",
+    name: "Ernst Khachab",
     role: "Speaker",
     organisation: "Junior Empowerment Specialist & Cybersecurity Enthusiast, Salt Essential IT",
     topicLabel: "Topic",
@@ -362,12 +431,78 @@ export const SPEAKERS: Speaker[] = [
     topicLabel: "Topic",
     topic: "Leveraging ICT for Telemedicine, Early Warning Systems and Emergency Response: Governance, Data Sovereignty and Trust in Namibia’s Digital Health Ecosystem",
   },
+  {
+    slug: "delila-katanga",
+    name: "Ms. Delila Katanga",
+    role: "Master of Ceremonies",
+  },
 ];
 
 export const speakerImage = (s: Speaker) => `/speakers-2026/${s.slug}.jpg`;
 
 export const speakerAlt = (s: Speaker) =>
-  `${s.name}, ${s.role}. ${s.organisation}. ${s.topicLabel}: ${s.topic}`;
+  [
+    `${s.name}, ${s.role}.`,
+    s.organisation ? `${s.organisation}.` : "",
+    s.topic ? `${s.topicLabel ?? "Topic"}: ${s.topic}` : "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+export type Poster = {
+  /** Also the image filename: /public/posters-2026/<slug>.jpg */
+  slug: string;
+  title: string;
+  /** One line under the title: dates, times, what it's for. */
+  caption: string;
+  /** The poster's text, for screen readers and search engines. */
+  alt: string;
+  width: number;
+  height: number;
+  link?: { href: string; label: string };
+};
+
+/**
+ * Posters supplied by MICT, shown whole (never cropped). The film screening
+ * schedule was supplied as an A3 PDF and converted to an image.
+ */
+export const POSTERS: Poster[] = [
+  {
+    slug: "summit-poster",
+    title: "9th National ICT Summit",
+    caption: "12–16 October 2026 · Ongwediva Trade Fair Centre",
+    alt: "Poster for the 9th National ICT Summit, 12 to 16 October 2026, Ongwediva Trade Fair Centre, Oshana Region. Theme: Harnessing ICT for Inclusive Growth: Digital Pathways to Reduce Unemployment and Eradicate Poverty. The summit includes a Youth Day for young people to showcase their innovations. Register at passcard.com.na.",
+    width: 864,
+    height: 1080,
+  },
+  {
+    slug: "register-qr",
+    title: "Register to attend",
+    caption: "Scan the QR code. Registration is required for attendance.",
+    alt: "Poster: scan the QR code to register for the 9th National ICT Summit. Registration is required for attendance.",
+    width: 2048,
+    height: 2048,
+    link: { href: SUMMIT.registrationUrl, label: "Register online" },
+  },
+  {
+    slug: "hackathon-day",
+    title: "Hackathon Day",
+    caption: "16 October 2026 · 08h00–17h00",
+    alt: "Poster for Hackathon Day at the 9th National ICT Summit 2026: 16 October 2026, 08h00 to 17h00, Ongwediva Trade Fair Centre.",
+    width: 763,
+    height: 1080,
+  },
+  {
+    slug: "film-screenings",
+    title: "Namibian film screenings",
+    caption: "14 & 15 October 2026 · from 18h00 · free",
+    alt: "Screening schedule for the Namibian film screenings at the ICT Summit 2026, Ongwediva Trade Centre. Wednesday 14 October: 18h00 welcoming; 18h30 Connection (Family, 12 min); 19h00 Okuruwo (PG, 27 min); 19h30 Echoes of Omusati (Family, 110 min). Thursday 15 October: 18h00 welcoming; 18h30 One More Win (PG, 27 min); 19h00 Emanya (PG, 29 min); 19h30 Die Rooftog (PG13, 44 min). Free screenings.",
+    width: 1800,
+    height: 2545,
+  },
+];
+
+export const posterImage = (p: Poster) => `/posters-2026/${p.slug}.jpg`;
 
 /**
  * Brand assets.

@@ -1,12 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { createPortal } from "react-dom";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, SquareArrowOutUpRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { speakerAlt, speakerImage, type Speaker } from "../lib/summit-data";
 import { cn } from "../lib/utils";
+import { ImageViewer, ROUND_BUTTON, type ViewerItem } from "./image-viewer";
 
 /**
  * The 2026 speaker announcement cards, shown exactly as MICT supplied them.
@@ -22,12 +22,6 @@ import { cn } from "../lib/utils";
  * is too small to read at card size. Selecting a card opens it full size, with
  * a link to the original file, which phones can pinch-zoom.
  */
-
-const ROUND_BUTTON =
-  "grid h-[46px] w-[46px] place-items-center rounded-full border border-line-subtle bg-white p-0 text-ink " +
-  "shadow-[0_2px_10px_rgba(0,0,0,0.25)] transition-colors duration-fast ease-standard hover:bg-blue-50 " +
-  "disabled:cursor-default disabled:opacity-35 disabled:hover:bg-white " +
-  "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-500";
 
 const GOLD_FOCUS =
   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-500";
@@ -45,6 +39,19 @@ export function SpeakerCarousel({ speakers }: { speakers: Speaker[] }) {
   const [atStart, setAtStart] = React.useState(true);
   const [atEnd, setAtEnd] = React.useState(false);
   const [open, setOpen] = React.useState<number | null>(null);
+
+  const items: ViewerItem[] = React.useMemo(
+    () =>
+      speakers.map((s) => ({
+        key: s.slug,
+        src: speakerImage(s),
+        alt: speakerAlt(s),
+        label: s.name,
+        width: 1080,
+        height: 1080,
+      })),
+    [speakers]
+  );
 
   /** Distance between the left edges of two neighbouring cards. */
   const step = React.useCallback(() => {
@@ -167,8 +174,12 @@ export function SpeakerCarousel({ speakers }: { speakers: Speaker[] }) {
           </button>
         </div>
 
+        {/*
+          Position dots on tablet and desktop. With twenty-odd cards a row of
+          dots is wider than a phone screen, so phones get a counter instead.
+        */}
         {stops > 1 ? (
-          <div className="mt-2 flex justify-center gap-2">
+          <div className="mt-2 hidden justify-center gap-2 sm:flex">
             {Array.from({ length: stops }, (_, i) => (
               <button
                 key={i}
@@ -185,135 +196,24 @@ export function SpeakerCarousel({ speakers }: { speakers: Speaker[] }) {
             ))}
           </div>
         ) : null}
+        <p
+          aria-hidden="true"
+          className="m-0 mt-1 text-center font-body text-body-sm tabular-nums text-white/70 sm:hidden"
+        >
+          {Math.min(current + 1, speakers.length)} / {speakers.length}
+        </p>
       </div>
 
       {open !== null ? (
-        <SpeakerViewer speakers={speakers} index={open} onIndex={setOpen} onClose={close} />
+        <ImageViewer
+          items={items}
+          index={open}
+          onIndex={setOpen}
+          onClose={close}
+          noun="speaker"
+          dialogLabel="Speaker card"
+        />
       ) : null}
     </>
-  );
-}
-
-/** Full-size view of one card, stepping through the rest in order. */
-function SpeakerViewer({
-  speakers,
-  index,
-  onIndex,
-  onClose,
-}: {
-  speakers: Speaker[];
-  index: number;
-  onIndex: (i: number) => void;
-  onClose: () => void;
-}) {
-  const dialog = React.useRef<HTMLDivElement>(null);
-  const closeButton = React.useRef<HTMLButtonElement>(null);
-  const speaker = speakers[index];
-
-  const go = React.useCallback(
-    (direction: 1 | -1) => onIndex((index + direction + speakers.length) % speakers.length),
-    [index, onIndex, speakers.length]
-  );
-
-  React.useEffect(() => {
-    closeButton.current?.focus();
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = previous;
-    };
-  }, []);
-
-  React.useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-      else if (e.key === "ArrowLeft") go(-1);
-      else if (e.key === "ArrowRight") go(1);
-      else if (e.key === "Tab") {
-        // keep focus inside the dialog
-        const items = dialog.current?.querySelectorAll<HTMLElement>("button, a[href]");
-        if (!items || items.length === 0) return;
-        const first = items[0];
-        const last = items[items.length - 1];
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault();
-          last.focus();
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault();
-          first.focus();
-        }
-      }
-    };
-    document.addEventListener("keydown", onKey);
-    return () => document.removeEventListener("keydown", onKey);
-  }, [go, onClose]);
-
-  return createPortal(
-    <div
-      ref={dialog}
-      role="dialog"
-      aria-modal="true"
-      aria-label={`Speaker card: ${speaker.name}`}
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-[rgba(0,8,30,0.9)] p-4 sm:p-6"
-    >
-      <button
-        ref={closeButton}
-        type="button"
-        aria-label="Close"
-        onClick={onClose}
-        className={cn(ROUND_BUTTON, "fixed right-4 top-4")}
-      >
-        <X className="h-5 w-5" aria-hidden="true" />
-      </button>
-
-      <button
-        type="button"
-        aria-label="Previous speaker"
-        onClick={() => go(-1)}
-        className={cn(ROUND_BUTTON, "fixed left-3 top-1/2 -translate-y-1/2 sm:left-5")}
-      >
-        <ChevronLeft className="h-[22px] w-[22px]" aria-hidden="true" />
-      </button>
-
-      <figure className="m-0 flex flex-col items-center gap-3">
-        <Image
-          key={speaker.slug}
-          src={speakerImage(speaker)}
-          alt={speakerAlt(speaker)}
-          width={1080}
-          height={1080}
-          quality={90}
-          sizes="(max-width: 960px) 92vw, 880px"
-          className="block h-auto max-h-[80vh] w-auto max-w-[min(92vw,880px)] rounded-md shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
-        />
-        <figcaption className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-center font-body text-body-sm text-white/85">
-          <span>
-            {index + 1} of {speakers.length} · {speaker.name}
-          </span>
-          <a
-            href={speakerImage(speaker)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 font-semibold text-gold-500 no-underline underline-offset-4 hover:underline"
-          >
-            Open full size
-            <SquareArrowOutUpRight className="h-[14px] w-[14px]" aria-hidden="true" />
-          </a>
-        </figcaption>
-      </figure>
-
-      <button
-        type="button"
-        aria-label="Next speaker"
-        onClick={() => go(1)}
-        className={cn(ROUND_BUTTON, "fixed right-3 top-1/2 -translate-y-1/2 sm:right-5")}
-      >
-        <ChevronRight className="h-[22px] w-[22px]" aria-hidden="true" />
-      </button>
-    </div>,
-    document.body
   );
 }
