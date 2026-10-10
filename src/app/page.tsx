@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SquareArrowOutUpRight } from "lucide-react";
+import { Download, SquareArrowOutUpRight } from "lucide-react";
 
 import {
   ASSETS,
@@ -8,7 +8,7 @@ import {
   OBJECTIVES,
   PACKAGES,
   POSTERS,
-  SPEAKERS,
+  SPEAKER_GROUPS,
   SUMMIT,
 } from "./lib/summit-data";
 import { Card } from "./ui/ds/card";
@@ -139,7 +139,51 @@ export default function Home() {
             </div>
           </div>
 
-          <FacebookVideo title={INVITATION.video.title} embedUrl={INVITATION.video.embedUrl} />
+          <FacebookVideo
+            title={INVITATION.video.title}
+            embedUrl={INVITATION.video.embedUrl}
+            orientation={INVITATION.video.orientation}
+          />
+        </div>
+
+        {/*
+          MICT's other summit videos. On desktop the landscape and portrait
+          videos sit side by side at the same height (columns in the ratio
+          3.16 : 1, which is 16:9 against 9:16); below that they stack.
+        */}
+        <div className="mt-12">
+          <h3 className="m-0 mb-5 font-display text-h4 font-bold leading-snug text-ink">
+            {INVITATION.moreTitle}
+          </h3>
+          <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,3.16fr)_minmax(0,1fr)]">
+            {INVITATION.more.map((video) => (
+              <figure
+                key={video.facebookUrl}
+                className={cn(
+                  "m-0",
+                  video.orientation === "portrait" && "mx-auto w-full max-w-[320px] lg:max-w-none"
+                )}
+              >
+                <FacebookVideo
+                  title={video.title}
+                  embedUrl={video.embedUrl}
+                  orientation={video.orientation}
+                />
+                <figcaption className="mt-3 font-body text-body-sm leading-normal text-ink-secondary">
+                  {video.caption}{" "}
+                  <a
+                    href={video.facebookUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 whitespace-nowrap font-semibold text-blue-700 no-underline underline-offset-4 hover:underline"
+                  >
+                    Watch on Facebook
+                    <SquareArrowOutUpRight className="h-[14px] w-[14px]" aria-hidden="true" />
+                  </a>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </Section>
 
@@ -174,10 +218,20 @@ export default function Home() {
           inverse
           overline="Speakers"
           title="Who’s taking the stage"
-          description={`Speakers, session hosts and the Master of Ceremonies at the ${SUMMIT.edition}, ${SUMMIT.dates}. Select a card to view it full size.`}
+          description={`Speakers, session hosts and the Master of Ceremonies at the ${SUMMIT.edition}, ${SUMMIT.dates}, followed by speakers from the summit’s platinum sponsors. Select a card to view it full size.`}
           className="mb-10"
         />
-        <SpeakerCarousel speakers={SPEAKERS} />
+        {SPEAKER_GROUPS.map((group, i) => (
+          <div key={group.id} className={i > 0 ? "mt-14" : undefined}>
+            <h3
+              id={group.id}
+              className="m-0 mb-5 font-display text-h4 font-bold leading-snug text-white"
+            >
+              {group.title}
+            </h3>
+            <SpeakerCarousel speakers={group.speakers} label={group.title} />
+          </div>
+        ))}
       </Section>
 
       <Section tone="sunken" id="objectives">
@@ -211,6 +265,21 @@ export default function Home() {
             <EventRow key={event.date + event.name} {...event} />
           ))}
         </div>
+        <div className="mt-8 flex flex-wrap items-center gap-x-4 gap-y-2">
+          <SummitLinkButton
+            variant="secondary"
+            href={SUMMIT.bookletUrl}
+            target="_blank"
+            rel="noreferrer"
+            title="9th ICT Summit Booklet & Programme 2026"
+            iconRight={<Download className="h-4 w-4" />}
+          >
+            Download the programme
+          </SummitLinkButton>
+          <span className="font-body text-caption font-semibold uppercase tracking-[0.04em] text-ink-muted">
+            {SUMMIT.bookletMeta}
+          </span>
+        </div>
       </Section>
 
       <Section tone="sunken" id="posters">
@@ -225,8 +294,8 @@ export default function Home() {
 
       <DocumentDownload
         title="9th ICT Summit Booklet & Programme 2026"
-        description="The full summit information booklet: objectives, programme, sponsorship packages, submission requirements and the pledge form."
-        meta="PDF · 11 pages"
+        description="The official summit booklet and programme: messages from the Minister, Deputy Minister and Executive Director, the speakers, the full programme for 12–16 October, the sponsors, and the Youth Day innovators and exhibitors."
+        meta={SUMMIT.bookletMeta}
         fileLabel="Download"
         href={SUMMIT.bookletUrl}
         backgroundSrc={ASSETS.bandA}

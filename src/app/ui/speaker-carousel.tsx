@@ -30,7 +30,14 @@ function scrollBehaviour(): ScrollBehavior {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
 }
 
-export function SpeakerCarousel({ speakers }: { speakers: Speaker[] }) {
+export function SpeakerCarousel({
+  speakers,
+  label = "Speakers",
+}: {
+  speakers: Speaker[];
+  /** Names the carousel for screen readers, e.g. "Platinum sponsor speakers". */
+  label?: string;
+}) {
   const viewport = React.useRef<HTMLDivElement>(null);
   const opener = React.useRef<HTMLElement | null>(null);
 
@@ -106,7 +113,7 @@ export function SpeakerCarousel({ speakers }: { speakers: Speaker[] }) {
 
   return (
     <>
-      <div role="region" aria-roledescription="carousel" aria-label="Speakers">
+      <div role="region" aria-roledescription="carousel" aria-label={label}>
         <div className="relative">
           <div
             ref={viewport}

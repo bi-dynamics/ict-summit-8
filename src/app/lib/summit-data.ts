@@ -23,8 +23,14 @@ export const SUMMIT = {
    * routes inside this application only.
    */
   registrationUrl: "https://passcard.com.na/Events/ict-summit-2026/Register",
-  /** The full 11-page 2026 sponsorship package booklet & pledge form. */
-  bookletUrl: "/9th-ICT-Summit-Booklet-2026.pdf",
+  /**
+   * The final 120-page summit booklet and programme (MICT, 7 October 2026),
+   * as a web version: images reduced to screen resolution (32 MB → 13 MB),
+   * text and layout unchanged. The earlier 11-page sponsorship booklet stays at
+   * /9th-ICT-Summit-Booklet-2026.pdf for any links already shared.
+   */
+  bookletUrl: "/9th-ICT-Summit-Booklet-and-Programme-2026.pdf",
+  bookletMeta: "PDF · 120 pages · 13 MB",
   pledgeFormUrl: "/pledge-form.pdf",
   email: "ICT.Summit@mict.gov.na",
 } as const;
@@ -438,6 +444,98 @@ export const SPEAKERS: Speaker[] = [
   },
 ];
 
+/**
+ * Speakers from the summit's platinum sponsors (MICT's 9 October cards, each
+ * billed "Speaker – Platinum Sponsor"), shown in their own carousel after the
+ * speakers and hosts. Ordered by seniority of office, as above.
+ *
+ * Audrey Chanakira's card reads "Chanakir"; the booklet has the full surname,
+ * which the alt text uses.
+ */
+export const PLATINUM_SPONSOR_SPEAKERS: Speaker[] = [
+  {
+    slug: "kayembe-ilunga",
+    name: "Mr. Kayembe Ilunga",
+    role: "Speaker, Platinum Sponsor",
+    organisation: "General Manager, Fintech & Maris Executive Director, Mobile Telecommunications Limited (MTC)",
+    topicLabel: "Topic",
+    topic: "Introduction to MTC Maris",
+  },
+  {
+    slug: "mufaro-nesongano",
+    name: "Mr. Mufaro Nesongano",
+    role: "Speaker, Platinum Sponsor",
+    organisation: "Executive: Communication & Consumer Relations, CRAN",
+    topicLabel: "Topic",
+    topic: "“Who Regulates the Disruptors? Technology’s Challenge to Traditional Governance Models”",
+  },
+  {
+    slug: "helvy-shaanika",
+    name: "Ms. Helvy Shaanika",
+    role: "Speaker, Platinum Sponsor",
+    organisation: "Managing Editor, New Era Publication Corporation",
+    topicLabel: "Topic",
+    topic: "The Media as a development partner: Harnessing Digital Transformation for economic empowerment in Namibia",
+  },
+  {
+    slug: "vivian-mieze",
+    name: "Ms. Vivian Bernice Mieze",
+    role: "Speaker, Platinum Sponsor",
+    organisation: "Senior Manager: FMC Core & Wireless Access, Telecom Namibia",
+    topicLabel: "Topic",
+    topic: "Building Namibia’s Digital Foundation: How Broadband Infrastructure Drives Inclusive Growth, Jobs, and Economic Opportunity",
+  },
+  {
+    slug: "lovisa-shilongo",
+    name: "Ms. Lovisa Shilongo",
+    role: "Speaker, Platinum Sponsor",
+    organisation: "Manager: Business Strategy and Transformation, CRAN",
+    topicLabel: "Topic",
+    topic: "The Role of Telco in Enabling Digital Transformation and Artificial Intelligence",
+  },
+  {
+    slug: "conroy-feris",
+    name: "Mr. Conroy Feris",
+    role: "Speaker, Platinum Sponsor",
+    organisation: "Manager: IT & Circulation, New Era Publication Corporation",
+    topicLabel: "Topic",
+    topic: "Harnessing ICT for Inclusive Growth",
+  },
+  {
+    slug: "audrey-chanakira",
+    name: "Ms. Audrey Chanakira",
+    role: "Speaker, Platinum Sponsor",
+    organisation: "Team Lead: Artificial Intelligence Division, Windhoek-Green Enterprise Solution",
+    topicLabel: "Topic",
+    topic: "Just Because We Can Use AI, Should We? Rethinking AI Adoption, Human Capability and Inclusive Growth in the Digital Economy",
+  },
+  {
+    slug: "melkisedek-hamakali",
+    name: "Mr. Melkisedek Hamakali",
+    role: "Speaker, Platinum Sponsor",
+    organisation: "Team Lead: Artificial Intelligence Division, Windhoek Green Enterprise Solution (Pty) Ltd",
+    topicLabel: "Topic",
+    topic: "The Role of Telco in Enabling Digital Transformation and Artificial Intelligence",
+  },
+  {
+    slug: "immanuel-tuyapeni",
+    name: "Mr. Immanuel Tuyapeni",
+    role: "Speaker, Platinum Sponsor",
+    organisation: "IT Engineer: Security, Telecom Namibia",
+    topicLabel: "Topic",
+    topic: "Connecting Communities: ICT Infrastructure as a Driver of Inclusive Development",
+  },
+];
+
+/**
+ * The speaker carousels on the home page, in order. Further sponsor tiers
+ * (Gold, Diamond, Silver) go here as extra groups, after Platinum.
+ */
+export const SPEAKER_GROUPS: { id: string; title: string; speakers: Speaker[] }[] = [
+  { id: "speakers-and-hosts", title: "Speakers and hosts", speakers: SPEAKERS },
+  { id: "platinum-sponsor-speakers", title: "Platinum sponsor speakers", speakers: PLATINUM_SPONSOR_SPEAKERS },
+];
+
 export const speakerImage = (s: Speaker) => `/speakers-2026/${s.slug}.jpg`;
 
 export const speakerAlt = (s: Speaker) =>
@@ -504,11 +602,27 @@ export const POSTERS: Poster[] = [
 
 export const posterImage = (p: Poster) => `/posters-2026/${p.slug}.jpg`;
 
+export type FacebookVideoInfo = {
+  title: string;
+  /** One line under the video. */
+  caption?: string;
+  facebookUrl: string;
+  embedUrl: string;
+  /** Landscape 16:9 or portrait 9:16, as the video was recorded. */
+  orientation: "landscape" | "portrait";
+};
+
+/** Facebook's embedded-player address for a public video or reel. */
+const facebookEmbed = (reelId: string) =>
+  `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(
+    `https://www.facebook.com/reel/${reelId}/`
+  )}&show_text=false&width=560&t=0`;
+
 /**
  * The Governor of the Oshana Region's invitation to the summit: MICT's
- * announcement text and its Facebook video (a landscape 16:9 reel), shown
- * together on the home page straight after the hero. The video plays in
- * Facebook's own embedded player; the "Watch on Facebook" button is the
+ * announcement text and its Facebook video, shown together on the home page
+ * straight after the hero, followed by MICT's other summit videos. Videos play
+ * in Facebook's own embedded player; the "Watch on Facebook" links are the
  * fallback for browsers that block Facebook embeds.
  */
 export const INVITATION = {
@@ -520,9 +634,28 @@ export const INVITATION = {
   video: {
     title: "Invitation to the 9th National ICT Summit from the Governor of the Oshana Region",
     facebookUrl: "https://www.facebook.com/reel/2304730913404312",
-    embedUrl:
-      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2304730913404312%2F&show_text=false&width=560&t=0",
-  },
+    embedUrl: facebookEmbed("2304730913404312"),
+    orientation: "landscape",
+  } satisfies FacebookVideoInfo,
+  moreTitle: "More from MICT",
+  more: [
+    {
+      title: "Invitation to the 9th National ICT Summit from the Mayor of Ongwediva",
+      caption:
+        "Her Worship Cllr. Naemi Amuthenu, Mayor of Ongwediva, invites residents of Ongwediva and surrounding communities to be part of the summit.",
+      facebookUrl: "https://www.facebook.com/reel/984215394163197",
+      embedUrl: facebookEmbed("984215394163197"),
+      orientation: "landscape",
+    },
+    {
+      title: "MICT takes the 9th ICT Summit to Oshana: school information session",
+      caption:
+        "MICT takes the summit to Oshana: an information session with learners at Philipus Aupa Nangolo Senior Secondary School on 7 October 2026.",
+      facebookUrl: "https://www.facebook.com/reel/1090917947057571",
+      embedUrl: facebookEmbed("1090917947057571"),
+      orientation: "portrait",
+    },
+  ] satisfies FacebookVideoInfo[],
 };
 
 /**
