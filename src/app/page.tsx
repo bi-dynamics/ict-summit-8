@@ -4,6 +4,7 @@ import { SquareArrowOutUpRight } from "lucide-react";
 import {
   ASSETS,
   EVENTS,
+  INVITATION,
   OBJECTIVES,
   PACKAGES,
   POSTERS,
@@ -19,6 +20,7 @@ import { Section } from "./ui/ds/section";
 import { SectionHeading } from "./ui/ds/section-heading";
 import { SponsorshipCard } from "./ui/ds/sponsorship-card";
 import { SummitLinkButton, summitButton } from "./ui/ds/button";
+import { FacebookVideo } from "./ui/facebook-video";
 import { PosterGallery } from "./ui/poster-gallery";
 import { SpeakerCarousel } from "./ui/speaker-carousel";
 import { cn } from "./lib/utils";
@@ -26,7 +28,7 @@ import { cn } from "./lib/utils";
 const KEY_DATES: [string, string][] = [
   ["Sponsor profiles due", "30 July 2026"],
   ["Sponsorship handover & launch", "28 August 2026"],
-  ["Networking dinner", "16 October 2026"],
+  ["Networking dinner", "13 October 2026"],
 ];
 
 function HeroAside() {
@@ -102,6 +104,44 @@ export default function Home() {
           </>
         }
       />
+
+      {/* The Governor's invitation: MICT's announcement text with its video, stacked on phones. */}
+      <Section tone="sunken" pad="md" id="invitation">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-14">
+          <div>
+            <SectionHeading overline={INVITATION.overline} title={INVITATION.title} />
+            <p className="m-0 mt-4 max-w-measure font-body text-body-lg leading-relaxed text-ink-secondary text-pretty">
+              {INVITATION.text}
+            </p>
+            <p className="m-0 mt-4 max-w-measure font-body text-body leading-relaxed text-ink-secondary text-pretty">
+              {INVITATION.theme}
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <SummitLinkButton
+                variant="primary"
+                href={SUMMIT.registrationUrl}
+                title="Register for the 9th National ICT Summit 2026"
+                target="_blank"
+                rel="noopener noreferrer"
+                iconRight={<SquareArrowOutUpRight className="h-4 w-4" />}
+              >
+                Register to attend
+              </SummitLinkButton>
+              <SummitLinkButton
+                variant="secondary"
+                href={INVITATION.video.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                iconRight={<SquareArrowOutUpRight className="h-4 w-4" />}
+              >
+                Watch on Facebook
+              </SummitLinkButton>
+            </div>
+          </div>
+
+          <FacebookVideo title={INVITATION.video.title} embedUrl={INVITATION.video.embedUrl} />
+        </div>
+      </Section>
 
       <Section id="about">
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-16">

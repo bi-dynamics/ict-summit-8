@@ -87,6 +87,13 @@ export const EVENTS: SummitEvent[] = [
     highlight: true,
   },
   {
+    date: "13 October 2026",
+    name: "Networking dinner",
+    town: "TBC",
+    dressCode:
+      "“Gala & Kicks” — Dress to impress, a suit, gown, or tux. Break the rules with your favorite sneakers.",
+  },
+  {
     date: "14–15 October 2026",
     name: "Namibian film screenings",
     town: "Ongwediva Trade Fair Centre",
@@ -97,13 +104,6 @@ export const EVENTS: SummitEvent[] = [
     name: "Hackathon Day",
     town: "Ongwediva Trade Fair Centre",
     detail: "08h00–17h00",
-  },
-  {
-    date: "16 October 2026",
-    name: "Networking dinner",
-    town: "TBC",
-    dressCode:
-      "“Gala & Kicks” — Dress to impress, a suit, gown, or tux. Break the rules with your favorite sneakers.",
   },
 ];
 
@@ -503,6 +503,27 @@ export const POSTERS: Poster[] = [
 ];
 
 export const posterImage = (p: Poster) => `/posters-2026/${p.slug}.jpg`;
+
+/**
+ * The Governor of the Oshana Region's invitation to the summit: MICT's
+ * announcement text and its Facebook video (a landscape 16:9 reel), shown
+ * together on the home page straight after the hero. The video plays in
+ * Facebook's own embedded player; the "Watch on Facebook" button is the
+ * fallback for browsers that block Facebook embeds.
+ */
+export const INVITATION = {
+  overline: "Join the National ICT Summit",
+  title: "An invitation from the Governor of the Oshana Region",
+  text: "The Governor of the Oshana Region, Hon. Hofni Alugodhi Iipinge, is inviting residents of Oshana to join the 9th National ICT Summit, taking place from 12–16 October 2026 at the Ongwediva Trade Fair Centre.",
+  theme:
+    "The summit will be held under the theme: “Harnessing ICT for Inclusive Growth: Digital Pathways to Reduce Unemployment and Eradicate Poverty.”",
+  video: {
+    title: "Invitation to the 9th National ICT Summit from the Governor of the Oshana Region",
+    facebookUrl: "https://www.facebook.com/reel/2304730913404312",
+    embedUrl:
+      "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2304730913404312%2F&show_text=false&width=560&t=0",
+  },
+};
 
 /**
  * Brand assets.
