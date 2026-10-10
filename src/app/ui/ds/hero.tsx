@@ -64,7 +64,9 @@ export function Hero({
       <div
         className={cn(
           "relative mx-auto grid w-full max-w-container items-center gap-10 px-4 py-16 sm:px-6 md:px-8 lg:gap-16 lg:py-20",
-          aside ? "lg:grid-cols-[1.15fr_0.85fr]" : "grid-cols-1"
+          // grid-cols-1 is minmax(0, 1fr): on phones the column must never grow
+          // wider than the screen to fit the countdown, or the hero gets clipped.
+          aside ? "grid-cols-1 lg:grid-cols-[1.15fr_0.85fr]" : "grid-cols-1"
         )}
       >
         <div className="flex flex-col gap-5 text-white">

@@ -95,7 +95,7 @@ export const EVENTS: SummitEvent[] = [
   {
     date: "13 October 2026",
     name: "Networking dinner",
-    town: "TBC",
+    town: "Bennies Entertainment Park & Lodge — Ongwediva",
     dressCode:
       "“Gala & Kicks” — Dress to impress, a suit, gown, or tux. Break the rules with your favorite sneakers.",
   },

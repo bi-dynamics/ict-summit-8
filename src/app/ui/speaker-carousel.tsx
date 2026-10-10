@@ -115,11 +115,17 @@ export function SpeakerCarousel({
     <>
       <div role="region" aria-roledescription="carousel" aria-label={label}>
         <div className="relative">
+          {/*
+            `relative` matters: it makes this scroll box the containing block
+            for the hidden "View full size" labels (sr-only, absolutely
+            positioned). Without it they escape the scroll box and stretch the
+            page sideways to the width of the whole track.
+          */}
           <div
             ref={viewport}
             tabIndex={0}
             className={cn(
-              "-mx-1 snap-x snap-mandatory overflow-x-auto rounded-md px-1 pb-4 pt-1",
+              "relative -mx-1 snap-x snap-mandatory overflow-x-auto rounded-md px-1 pb-4 pt-1",
               "[scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
               GOLD_FOCUS
             )}

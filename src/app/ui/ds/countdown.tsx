@@ -51,7 +51,12 @@ export function Countdown({ target, inverse = false, compact = false, className 
 
   return (
     <div
-      className={cn("flex", compact ? "gap-3" : "gap-4", className)}
+      className={cn(
+        // compact sits in the hero box: four cells don't fit a phone screen, so
+        // phones get a 2 × 2 grid and wider screens the usual row
+        compact ? "grid grid-cols-2 gap-3 sm:flex" : "flex gap-4",
+        className
+      )}
       role="timer"
       aria-label="Time until the summit opens"
     >

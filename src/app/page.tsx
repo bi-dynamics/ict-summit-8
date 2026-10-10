@@ -87,13 +87,13 @@ export default function Home() {
             <SummitLinkButton
               variant="inverse"
               size="lg"
-              href={SUMMIT.registrationUrl}
-              title="Register for the 9th National ICT Summit 2026"
+              href={SUMMIT.bookletUrl}
+              title="9th ICT Summit Booklet & Programme 2026"
               target="_blank"
-              rel="noopener noreferrer"
-              iconRight={<SquareArrowOutUpRight className="h-5 w-5" />}
+              rel="noreferrer"
+              iconRight={<Download className="h-5 w-5" />}
             >
-              Register for the summit
+              Download the programme
             </SummitLinkButton>
             <Link
               href="/sponsorship"
