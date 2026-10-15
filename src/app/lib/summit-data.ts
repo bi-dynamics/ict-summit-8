@@ -47,6 +47,7 @@ export type NavItem = {
 export const NAV_ITEMS: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "Speakers", href: "/#speakers" },
+  { label: "Presentations", href: "/#presentations" },
   {
     label: "Previous Summits",
     children: [
@@ -657,6 +658,246 @@ export const INVITATION = {
     },
   ] satisfies FacebookVideoInfo[],
 };
+
+export type Presentation = {
+  /** Path under /public/presentations-2026/ */
+  file: string;
+  title: string;
+  presenter: string;
+  /** Role and organisation, as on the title slide or in the programme. */
+  role?: string;
+  /** Programme start time, when the session was in the printed programme. */
+  time?: string;
+  pages: number;
+  /** Download size, e.g. "1.2 MB" or "480 KB". */
+  size: string;
+};
+
+export type PresentationDay = {
+  id: string;
+  label: string;
+  date: string;
+  presentations: Presentation[];
+};
+
+/**
+ * Presentations from the summit, one tab per day, in programme order. MICT
+ * supplied PowerPoint files; they were converted to PDF and compressed for
+ * the web (slides unchanged). Add later days as further entries.
+ */
+export const PRESENTATION_DAYS: PresentationDay[] = [
+  {
+    id: "day-1",
+    label: "Day 1",
+    date: "Monday, 12 October",
+    presentations: [
+      {
+        file: "day-1/nikanor-digital-literacy-payments.pdf",
+        title: "Empowering Citizens Through Digital Literacy and Digital Payments",
+        presenter: "Ms. Claudia Itembu-Nikanor",
+        role: "Head: Operations, Instant Payments Namibia",
+        time: "09:20",
+        pages: 16,
+        size: "1.1 MB",
+      },
+      {
+        file: "day-1/one-digital-agenda.pdf",
+        title: "One Digital Agenda: From Policy to Platform",
+        presenter: "Ms. Anna Amoomo-David",
+        role: "Internet Society, Namibia Chapter",
+        time: "11:15",
+        pages: 12,
+        size: "170 KB",
+      },
+      {
+        file: "day-1/amugongo-keynote.pdf",
+        title: "Harnessing ICT for Inclusive Growth: AI, Youth Opportunity and Namibia’s Digital Future",
+        presenter: "Dr. Mbangula Lameck Amugongo",
+        role: "Technologist, Researcher and AI Expert",
+        time: "11:40",
+        pages: 22,
+        size: "1.2 MB",
+      },
+      {
+        file: "day-1/nampost-digital-access.pdf",
+        title: "Extending Digital Access: Leveraging Postal Infrastructure to Bridge Namibia’s Digital Divide",
+        presenter: "Mr. Rodney Shivangulula",
+        role: "Head: Payment Solutions, NamPost",
+        time: "12:30",
+        pages: 11,
+        size: "4.6 MB",
+      },
+      {
+        file: "day-1/cran-pki-diginam.pdf",
+        title: "Namibia’s Public Key Infrastructure and DigiNam",
+        presenter: "Mr. Mufaro Nesongano",
+        role: "Executive: Communication and Consumer Relations, CRAN",
+        time: "14:40",
+        pages: 15,
+        size: "1.1 MB",
+      },
+      {
+        file: "day-1/huawei-5g-a-mobile-ai.pdf",
+        title: "Growing 5G, Building AI: Namibia’s Stride into the Mobile AI Era",
+        presenter: "Ms. Kate Fan",
+        role: "Chief Technical Officer, Huawei Technologies Namibia",
+        time: "15:20",
+        pages: 22,
+        size: "4.1 MB",
+      },
+      {
+        file: "day-1/mtc-mobile-financial-services.pdf",
+        title: "Mobile Financial Services",
+        presenter: "Mr. Kayembe Ilunga",
+        role: "GM Fintech & MTC Maris Executive Director, MTC",
+        time: "15:50",
+        pages: 15,
+        size: "1.6 MB",
+      },
+      {
+        file: "day-1/telecom-digital-foundation.pdf",
+        title: "Building Namibia’s Digital Foundation: How Broadband Infrastructure Drives Inclusive Growth, Jobs, and Economic Opportunity",
+        presenter: "Ms. Vivian Bernice Mieze",
+        role: "Senior Manager: FMC Core & Wireless Access, Telecom Namibia",
+        time: "16:20",
+        pages: 10,
+        size: "480 KB",
+      },
+      {
+        file: "day-1/ixp-namibia.pdf",
+        title: "Internet Exchange Point Association of Namibia",
+        presenter: "Mr. Marius Greeff",
+        role: "Chairperson, Internet Exchange Point Association of Namibia",
+        pages: 11,
+        size: "570 KB",
+      },
+    ],
+  },
+  {
+    id: "day-2",
+    label: "Day 2",
+    date: "Tuesday, 13 October",
+    presentations: [
+      {
+        file: "day-1/amugongo-keynote.pdf",
+        title: "Guest Speaker Address: Harnessing ICT for Inclusive Growth",
+        presenter: "Dr. Mbangula Lameck Amugongo",
+        role: "Technologist, Researcher and AI Expert",
+        time: "09:30",
+        pages: 22,
+        size: "1.2 MB",
+      },
+      {
+        file: "day-2/nam-csirt-social-engineering.pdf",
+        title: "NAM-CSIRT Social Engineering Awareness",
+        presenter: "Ms. Cornelia Shipindo",
+        role: "Executive, NAM-CSIRT",
+        time: "09:50",
+        pages: 20,
+        size: "1.7 MB",
+      },
+      {
+        file: "day-2/minister-keynote.pdf",
+        title: "Keynote Address: Yes, Technology Can Fight Poverty",
+        presenter: "Hon. Emma Inamutila Theofelus",
+        role: "Minister of Information and Communication Technology",
+        time: "10:40",
+        pages: 16,
+        size: "3.0 MB",
+      },
+      {
+        file: "day-2/undp-digital-identity.pdf",
+        title: "Namibia’s Digital Identity System: Global Lessons and Principles",
+        presenter: "Ms. Amanda K. Serumaga",
+        role: "Resident Representative, UNDP Namibia",
+        time: "15:30",
+        pages: 10,
+        size: "200 KB",
+      },
+      {
+        file: "day-2/nsa-ict-and-employment.pdf",
+        title: "Mapping How ICT Adoption Is Transforming Employment in Namibia: Trends and Statistics, 2016–2025",
+        presenter: "Ms. Linda Shitenga",
+        role: "Manager: Welfare and Labour Statistics, Namibia Statistics Agency",
+        time: "16:20",
+        pages: 14,
+        size: "260 KB",
+      },
+    ],
+  },
+  {
+    id: "day-3",
+    label: "Day 3",
+    date: "Wednesday, 14 October",
+    presentations: [
+      {
+        file: "day-3/itu-ai-automation.pdf",
+        title: "AI and Automation: Protecting Low-Income Workers",
+        presenter: "Dr. Halima Letamo",
+        role: "ITU Area Representative for Southern Africa",
+        time: "09:00",
+        pages: 23,
+        size: "200 KB",
+      },
+      {
+        file: "day-3/nbc-conventional-broadcasting.pdf",
+        title: "Sustaining Conventional Broadcasting in the Digital Era",
+        presenter: "Ms. Nsinde Limbo",
+        role: "Manager: Radio Services Administration, NBC",
+        time: "10:20",
+        pages: 17,
+        size: "4.0 MB",
+      },
+      {
+        file: "day-3/namwater-digital-water.pdf",
+        title: "Digital Water: Leveraging ICT for Reliability, Inclusion and Growth",
+        presenter: "Mr. Hosea Hashili",
+        role: "Manager: Maintenance, Business Unit North-West, NamWater",
+        time: "10:50",
+        pages: 14,
+        size: "1.7 MB",
+      },
+      {
+        file: "day-3/nafuka-digital-health.pdf",
+        title: "Who Answers When the System Fails a Patient? ICT for Telemedicine, Early Warning and Emergency Response",
+        presenter: "Dr. Tuwilika Nafuka",
+        role: "Namibian Medical Doctor and Chevening Scholar",
+        time: "11:40",
+        pages: 14,
+        size: "190 KB",
+      },
+      {
+        file: "day-3/eismac-electronic-transactions.pdf",
+        title: "Driving Innovation, Trust and Inclusive Growth: The Role of the Electronic Transactions Act",
+        presenter: "Dr. Anna Auguste Anghuwo-Iita",
+        role: "Chairperson, Electronic Information Systems Management Advisory Council (EISMAC)",
+        time: "12:40",
+        pages: 15,
+        size: "230 KB",
+      },
+      {
+        file: "day-3/khachab-cybersecurity.pdf",
+        title: "Cybersecurity Awareness Month: Don’t Make It Easy for Them",
+        presenter: "Mr. Ernst Khachab",
+        role: "Junior Empowerment Specialist, Salt Essential IT",
+        time: "14:40",
+        pages: 12,
+        size: "280 KB",
+      },
+      {
+        file: "day-3/multichoice-piracy-panel.pdf",
+        title: "Introduction Remarks on a Panel Discussion: Content Piracy Is a Threat to Namibia’s Broadcasting and Content Ecosystem",
+        presenter: "Mr. Roger Gertze",
+        role: "Country CEO and Executive Board Member, MultiChoice",
+        time: "15:40",
+        pages: 19,
+        size: "1.4 MB",
+      },
+    ],
+  },
+];
+
+export const presentationUrl = (p: Presentation) => `/presentations-2026/${p.file}`;
 
 /**
  * Brand assets.

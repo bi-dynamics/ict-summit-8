@@ -8,6 +8,7 @@ import {
   OBJECTIVES,
   PACKAGES,
   POSTERS,
+  PRESENTATION_DAYS,
   SPEAKER_GROUPS,
   SUMMIT,
 } from "./lib/summit-data";
@@ -22,6 +23,7 @@ import { SponsorshipCard } from "./ui/ds/sponsorship-card";
 import { SummitLinkButton, summitButton } from "./ui/ds/button";
 import { FacebookVideo } from "./ui/facebook-video";
 import { PosterGallery } from "./ui/poster-gallery";
+import { PresentationTabs } from "./ui/presentation-tabs";
 import { SpeakerCarousel } from "./ui/speaker-carousel";
 import { cn } from "./lib/utils";
 
@@ -232,6 +234,16 @@ export default function Home() {
             <SpeakerCarousel speakers={group.speakers} label={group.title} />
           </div>
         ))}
+      </Section>
+
+      <Section id="presentations">
+        <SectionHeading
+          overline="Presentations"
+          title="Slides from the summit"
+          description="Download the presentations from each day of the 9th National ICT Summit."
+          className="mb-8"
+        />
+        <PresentationTabs days={PRESENTATION_DAYS} />
       </Section>
 
       <Section tone="sunken" id="objectives">
