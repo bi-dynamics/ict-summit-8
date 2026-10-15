@@ -38,7 +38,7 @@ export function PresentationTabs({ days }: { days: PresentationDay[] }) {
         role="tablist"
         aria-label="Summit days"
         onKeyDown={onKeyDown}
-        className="mb-8 flex flex-wrap gap-x-2 border-b border-line-subtle"
+        className="mb-8 flex flex-wrap gap-x-1 border-b border-line-subtle md:gap-x-2"
       >
         {days.map((day, i) => (
           <button
@@ -54,14 +54,15 @@ export function PresentationTabs({ days }: { days: PresentationDay[] }) {
             tabIndex={i === active ? 0 : -1}
             onClick={() => setActive(i)}
             className={cn(
-              "-mb-px flex flex-col items-start border-0 border-b-[3px] border-solid bg-transparent px-4 pb-3 pt-2 text-left",
+              "-mb-px flex flex-col items-start border-0 border-b-[3px] border-solid bg-transparent px-3 pb-3 pt-2 text-left md:px-4",
               "transition-colors duration-fast ease-standard",
               "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand",
               i === active ? "border-brand text-ink" : "border-transparent text-ink-secondary hover:text-ink"
             )}
           >
             <span className="font-display text-h4 font-bold leading-snug">{day.label}</span>
-            <span className="font-body text-caption">{day.date}</span>
+            <span className="font-body text-caption md:hidden">{day.shortDate}</span>
+            <span className="hidden font-body text-caption md:block">{day.date}</span>
           </button>
         ))}
       </div>
@@ -91,9 +92,11 @@ export function PresentationTabs({ days }: { days: PresentationDay[] }) {
                   <h3 className="m-0 font-display text-body-lg font-bold leading-snug text-ink text-pretty">
                     {p.title}
                   </h3>
-                  <p className="m-0 mt-1 font-body text-body-sm font-semibold leading-snug text-ink">
-                    {p.presenter}
-                  </p>
+                  {p.presenter ? (
+                    <p className="m-0 mt-1 font-body text-body-sm font-semibold leading-snug text-ink">
+                      {p.presenter}
+                    </p>
+                  ) : null}
                   {p.role ? (
                     <p className="m-0 font-body text-caption leading-normal text-ink-secondary">{p.role}</p>
                   ) : null}
@@ -115,7 +118,7 @@ export function PresentationTabs({ days }: { days: PresentationDay[] }) {
                   </span>
                   <span className="flex items-center gap-2">
                     <span className="font-normal text-caption text-ink-secondary">
-                      {p.pages} slides · {p.size}
+                      {p.pages} {p.document ? "pages" : "slides"} · {p.size}
                     </span>
                     <Download className="h-4 w-4" aria-hidden="true" />
                   </span>

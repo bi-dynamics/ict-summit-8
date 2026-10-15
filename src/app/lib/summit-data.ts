@@ -663,12 +663,15 @@ export type Presentation = {
   /** Path under /public/presentations-2026/ */
   file: string;
   title: string;
-  presenter: string;
+  /** Left out when neither the slides nor the programme name the presenter. */
+  presenter?: string;
   /** Role and organisation, as on the title slide or in the programme. */
   role?: string;
-  /** Programme start time, when the session was in the printed programme. */
+  /** Programme time, when the session was in the printed programme. */
   time?: string;
   pages: number;
+  /** A written document rather than slides, so its length shows in pages. */
+  document?: boolean;
   /** Download size, e.g. "1.2 MB" or "480 KB". */
   size: string;
 };
@@ -676,20 +679,24 @@ export type Presentation = {
 export type PresentationDay = {
   id: string;
   label: string;
+  /** Shown on the tab from tablet width up. */
   date: string;
+  /** Shown on the tab on phones, so all the day tabs fit on one row. */
+  shortDate: string;
   presentations: Presentation[];
 };
 
 /**
  * Presentations from the summit, one tab per day, in programme order. MICT
- * supplied PowerPoint files; they were converted to PDF and compressed for
- * the web (slides unchanged). Add later days as further entries.
+ * supplied PowerPoint files (and the odd PDF); they were converted to PDF and
+ * compressed for the web (slides unchanged). Add later days as further entries.
  */
 export const PRESENTATION_DAYS: PresentationDay[] = [
   {
     id: "day-1",
     label: "Day 1",
     date: "Monday, 12 October",
+    shortDate: "12 Oct",
     presentations: [
       {
         file: "day-1/nikanor-digital-literacy-payments.pdf",
@@ -777,6 +784,7 @@ export const PRESENTATION_DAYS: PresentationDay[] = [
     id: "day-2",
     label: "Day 2",
     date: "Tuesday, 13 October",
+    shortDate: "13 Oct",
     presentations: [
       {
         file: "day-1/amugongo-keynote.pdf",
@@ -829,6 +837,7 @@ export const PRESENTATION_DAYS: PresentationDay[] = [
     id: "day-3",
     label: "Day 3",
     date: "Wednesday, 14 October",
+    shortDate: "14 Oct",
     presentations: [
       {
         file: "day-3/itu-ai-automation.pdf",
@@ -892,6 +901,81 @@ export const PRESENTATION_DAYS: PresentationDay[] = [
         time: "15:40",
         pages: 19,
         size: "1.4 MB",
+      },
+    ],
+  },
+  {
+    // Youth Day: the youth innovators' pitches, in the booklet's order.
+    id: "day-4",
+    label: "Day 4",
+    date: "Thursday, 15 October",
+    shortDate: "15 Oct",
+    presentations: [
+      {
+        file: "day-4/hydrolink-water-monitor-pro.pdf",
+        title: "Hydro-Link Water Monitor Pro: Water Readings, Clearer Decisions",
+        presenter: "Tito Barnabas Pashukeni",
+        role: "Chief Engineer and Director, Engenete Investment CC",
+        time: "14:40–15:30",
+        pages: 8,
+        size: "240 KB",
+      },
+      {
+        file: "day-4/medvault-one.pdf",
+        title: "MedVault One: Patient Records That Travel with the Patient",
+        presenter:
+          "Douglas Mashonganyika, Farai Mashonganyika, Abisai Shiimi, Elizabeth Nuugonya and Johannes Martins",
+        time: "14:40–15:30",
+        pages: 7,
+        size: "1.1 MB",
+      },
+      {
+        file: "day-4/quotewise.pdf",
+        title: "QuoteWise: Connecting Clients with Service Providers in Namibia",
+        presenter: "Lasarus Shiyelekeni",
+        time: "14:40–15:30",
+        pages: 7,
+        size: "150 KB",
+      },
+      {
+        file: "day-4/sids-schools-information-system.pdf",
+        title: "Schools Information & Data System (SIDS): Education Deserves a Connected Future",
+        presenter: "Laurentius Haindaka",
+        time: "14:40–15:30",
+        pages: 7,
+        size: "240 KB",
+      },
+      {
+        file: "day-4/coree-business-system.pdf",
+        title: "Coree: One Simple System to Run Your Whole Business",
+        presenter: "David David",
+        role: "Intellectual Technology",
+        time: "14:40–15:30",
+        pages: 9,
+        size: "280 KB",
+      },
+      {
+        file: "day-4/onenam.pdf",
+        title: "OneNam: A National Offline-Capable Digital Gateway and Knowledge Network",
+        presenter: "Erwin Ngulonda",
+        time: "14:40–15:30",
+        pages: 10,
+        document: true,
+        size: "700 KB",
+      },
+      {
+        file: "day-4/facial-ai-verification.pdf",
+        title: "Facial AI Verification Platform: Consent-Based, One-to-One Identity Verification",
+        time: "14:40–15:30",
+        pages: 12,
+        size: "100 KB",
+      },
+      {
+        file: "day-4/investa-investment-marketplace.pdf",
+        title: "Investa: Namibia’s Digital Investment and Enterprise Marketplace",
+        time: "14:40–15:30",
+        pages: 6,
+        size: "510 KB",
       },
     ],
   },
